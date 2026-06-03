@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Times New Roman", Times, Georgia, serif;
+  --font-serif: "Times New Roman", Times, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-brand: #A0624C; /* Satin Copper */
+  --color-rose-gold: #C29F94; /* Brushed Rose Gold */
+  --color-blush: #ECDCD6; /* Muted Blush */
+  --color-ivory: #FCFAF7; /* Soft Ivory */
+  --color-gray-light: #F2EEEC; /* A touch of light gray */
+  --color-espresso: #241C1B; /* Luxe dark espresso text */
+  --color-espresso-muted: #6E615E; /* Muted espresso/gray */
+  
+  --color-bg-dark: var(--color-ivory);
+  --color-bg-deep: var(--color-gray-light);
+  
+  --color-glow-blue: var(--color-rose-gold);
+  --color-glow-purple: var(--color-brand);
+  --color-glow-pink: var(--color-brand);
+  --color-panel: #FFFFFF;
+  --color-panel-border: rgba(160, 98, 76, 0.12); /* matching Satin Copper but transparent */
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-espresso);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+.text-gradient {
+  color: var(--color-brand);
+}
+
+.text-gradient-neon {
+  color: var(--color-brand);
+}
+
+.bg-grid-white {
+  background-image: linear-gradient(to right, rgba(160, 98, 76, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(160, 98, 76, 0.04) 1px, transparent 1px);
+}
+
+/* Editorial theme utilities */
+.editorial-h1 {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -3px;
+  color: var(--color-espresso);
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .editorial-h1 {
+    font-size: 84px;
+  }
+}
+
+.editorial-h2 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: var(--color-espresso);
+}
+@media (min-width: 768px) {
+  .editorial-h2 {
+    font-size: 56px;
+  }
+}
+
+.editorial-eyebrow {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--color-brand);
+  letter-spacing: 0.5px;
+}
+
+.editorial-nav-link {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-espresso-muted);
+  transition: color 0.2s ease;
+}
+.editorial-nav-link:hover {
+  color: var(--color-brand);
+}
+
+.editorial-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--color-espresso-muted);
+  opacity: 0.7;
+  letter-spacing: 1.5px;
+}
+
+.footer-link {
+  color: var(--color-espresso-muted);
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.footer-link:hover {
+  color: var(--color-espresso);
+  transform: translateX(4px);
+}
+
+.editorial-button {
+  background: var(--color-espresso);
+  color: var(--color-ivory);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  padding: 16px 36px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+.editorial-button:hover {
+  transform: translateY(-1px);
+  background: var(--color-brand);
+}
+
+.editorial-button-outline {
+  background: transparent;
+  color: var(--color-espresso);
+  border: 1px solid rgba(36, 28, 27, 0.2);
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  padding: 16px 36px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+.editorial-button-outline:hover {
+  background: rgba(160, 98, 76, 0.05);
+  border-color: var(--color-brand);
+}
+
+.editorial-badge {
+  background: var(--color-blush);
+  border: 1px solid rgba(160, 98, 76, 0.25);
+  color: var(--color-brand);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  display: inline-block;
+}
+
+/* Utility overrides to seamlessly convert dark-themed Tailwind components */
+.text-white {
+  color: var(--color-espresso) !important;
+}
+.text-white\/90 {
+  color: rgba(36, 28, 27, 0.9) !important;
+}
+.text-white\/80 {
+  color: rgba(36, 28, 27, 0.8) !important;
+}
+.text-white\/60 {
+  color: rgba(36, 28, 27, 0.6) !important;
+}
+.text-white\/50 {
+  color: rgba(36, 28, 27, 0.5) !important;
+}
+.text-white\/40 {
+  color: rgba(36, 28, 27, 0.4) !important;
+}
+.text-white\/30 {
+  color: rgba(36, 28, 27, 0.3) !important;
+}
+.text-white\/20 {
+  color: rgba(36, 28, 27, 0.2) !important;
+}
+.text-white\/10 {
+  color: rgba(36, 28, 27, 0.1) !important;
+}
+
+.border-white\/10 {
+  border-color: var(--color-panel-border) !important;
+}
+.border-white\/5 {
+  border-color: rgba(160, 98, 76, 0.08) !important;
+}
+.border-white\/20 {
+  border-color: rgba(160, 98, 76, 0.2) !important;
+}
+
+.bg-zinc-900 {
+  background-color: var(--color-panel) !important;
+}
+.bg-zinc-900\/50 {
+  background-color: rgba(255, 253, 251, 0.6) !important;
+}
+
+.editorial-container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
