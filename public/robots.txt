@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://luvia.ai/sitemap.xml
+Sitemap: https://luvia.id.vn/sitemap.xml
