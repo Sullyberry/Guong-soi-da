@@ -11,23 +11,23 @@ interface NewsPost {
 
 const newsPosts: NewsPost[] = [
   {
-    category: "CÔNG NGHỆ AI",
-    title: "Cách mô hình Edge AI đo lường lỗ chân lông không xâm lấn",
-    excerpt: "Tìm hiểu cơ chế lõi thông minh tại biên giúp định danh chính xác 98% kích thước lỗ chân lông và đánh giá bít tắc ngay dưới ánh sáng phòng tắm bình thường, đảm bảo bảo mật dữ liệu tuyệt đối.",
+    category: "CÔNG NGHỆ SOI DA AI",
+    title: "Cách công nghệ AI soi da phát hiện bít tắc lỗ chân lông và mụn ẩn sớm nhất",
+    excerpt: "Tìm hiểu cơ chế hoạt động của thuật toán Edge AI tích hợp trong gương thông minh giúp định danh chính xác 98% mức độ tắc nghẽn bã nhờn, nhân mụn ẩn và mụn đầu đen trực tiếp ngay tại nhà.",
     date: "03 TH06, 2026",
     readTime: "5 phút đọc"
   },
   {
-    category: "KHOA HỌC DA LIỄU",
-    title: "Hiểu về nhịp sinh học biểu bì vào lúc 7:00 sáng",
-    excerpt: "Độ ẩm của da bắt đầu sụt giảm mạnh khi tiếp xúc với không khí khô và tia UV buổi sớm. Nghiên cứu mới lý giải tại sao việc tinh chỉnh routine cấp ẩm lúc này là quan trọng nhất cho sức khỏe biểu bì.",
+    category: "CHĂM SÓC DA KHOA HỌC",
+    title: "Bật mí cách đo độ ẩm da và thiết lập skincare routine buổi sáng cực chuẩn",
+    excerpt: "Khi độ ẩm sụt giảm, màng bảo vệ da suy yếu gây mụn và kích ứng. Khám phá tần suất đo lượng nước biểu bì và cách tùy chỉnh sữa rửa mặt, kem dưỡng ẩm phù hợp theo thời tiết hàng ngày.",
     date: "01 TH06, 2026",
     readTime: "7 phút đọc"
   },
   {
-    category: "PHONG CÁCH SỐNG ELITE",
-    title: "Chế tác dòng sản phẩm giới hạn Luvia Genesis: Định hình phong cách sống mới",
-    excerpt: "Từ sự kết hợp hoàn hảo giữa nhôm hàng không CNC, lớp phủ Brushed Rose Gold và tấm gương mạ bạc Bỉ huyền thoại. Tìm hiểu quy trình tuyển chọn vật liệu khắt khe của các nhà thiết kế Thụy Sĩ.",
+    category: "THIẾT BỊ LÀM ĐẸP",
+    title: "Gương thông minh phân tích da LUVIA: Đột phá chăm sóc da nhạy cảm",
+    excerpt: "Một thiết bị đột phá giúp theo dõi nhạy cảm da liên tục. Không cần sử dụng các máy soi da cồng kềnh tại spa, bạn hoàn toàn có thể tự khám da mặt và tối ưu quy trình trị mụn ẩn ngay trước gương phòng tắm.",
     date: "28 TH05, 2026",
     readTime: "4 phút đọc"
   }

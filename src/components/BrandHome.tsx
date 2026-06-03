@@ -37,7 +37,7 @@ export function BrandHome({ onNavigateToProduct, onNavigateToAbout }: BrandHomeP
           transition={{ duration: 1.2, delay: 0.2 }}
           className="text-[17px] text-[#241C1B]/70 leading-relaxed max-w-[500px] mb-12"
         >
-          Chào mừng tới thế giới gương thông minh độc bản LUVIA. Nơi tích hợp công nghệ phân tích da y đức ngoại tuyến, thấu cảm nhịp sinh học làn da và tinh chỉnh routine chăm sóc mỗi sáng trở nên hoàn mỹ.
+          Chào mừng tới thế giới gương thông minh phân tích da cao cấp từ LUVIA. Ứng dụng công nghệ soi da và phân tích da mặt bằng AI, gương sẽ tự động đo độ ẩm da, xác định sợi bã nhờn, nhân mụn ẩn và tối ưu hóa quy trình skincare routine cá nhân hóa hàng ngày của bạn ngay tại nhà.
         </motion.p>
         
         <motion.div
@@ -48,15 +48,15 @@ export function BrandHome({ onNavigateToProduct, onNavigateToAbout }: BrandHomeP
         >
           <button 
             onClick={onNavigateToProduct}
-            className="editorial-button flex-1 justify-center align-middle py-4"
+            className="editorial-button flex-1 justify-center align-middle py-0 h-[57px]"
           >
-            <span>Trải nghiệm sản phẩm</span>
+            <span className="inline-flex items-center justify-center w-[120px] h-[40px] text-[11px] text-center font-normal">Trải nghiệm sản phẩm</span>
             <span className="ml-4">→</span>
           </button>
           
           <button 
             onClick={onNavigateToAbout}
-            className="editorial-button-outline flex-1 py-4 text-[#241C1B]"
+            className="editorial-button-outline flex-1 py-4 text-[#241C1B] text-[11px]"
           >
             Sứ mệnh LUVIA
           </button>
