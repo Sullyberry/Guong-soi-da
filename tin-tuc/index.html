@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tin Tức &amp; Xu Hướng Da Liễu Công Nghệ | Luvia AI Smart Skin Mirror</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Cập nhật những nghiên cứu mới nhất về công nghệ chăm sóc da AI, phân tích quang phổ học biểu bì, và các xu hướng routine skincare định hình tương lai làm đẹp thế giới." />
+    <meta name="keywords" content="tin tức luvia, skincare blog, nghiên cứu mụn ai, công nghệ gương thông minh luvia blog" />
+    <meta name="author" content="Luvia AI Inc." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#C29F94" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://luvia.identity.vn/tin-tuc" />
+    <meta property="og:title" content="Tin tức &amp; Xu hướng - Độc quyền từ LUVIA" />
+    <meta property="og:description" content="Tìm hiểu khoa học đằng sau làn da rạng ngời và những đột phá mới nhất về chẩn đoán da liễu tại gia." />
+    <meta property="og:image" content="../og_preview.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../favicon_preview.png" />
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="../src/index.css" />
+  </head>
+  <body>
+    <!-- Root container cho React Hydration thành mô hình động SPA -->
+    <div id="root">
+      <header class="fixed-nav-skeleton">
+        <div class="nav-container">
+          <div class="logo-area">
+            <a href="../" title="Về trang chủ Luvia">
+              <span class="brand-text">LUVIA</span>
+            </a>
+          </div>
+          <nav aria-label="Menu điều hướng chính từ trang tin tức">
+            <ul>
+              <li><a href="../">Trang chủ</a></li>
+              <li><a href="../san-pham/">Sản phẩm</a></li>
+              <li><a href="../gioi-thieu/">Giới thiệu</a></li>
+              <li><a href="./" class="active">Tin tức</a></li>
+            </ul>
+          </nav>
+          <div class="cart-area">
+            <a href="#cart" class="cart-btn">GIỎ HÀNG (0)</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <article class="news-page">
+          <section class="news-hero-section">
+            <div class="container">
+              <p class="section-tagline">Luvia Journal &amp; Insights</p>
+              <h1 class="main-heading">Cập nhật Khoa Học và Công Nghệ Sắc Đẹp</h1>
+              <p class="description">
+                Khám phá các phân tích chuyên sâu về y tế da liễu, ứng dụng quang phổ học, và trí tuệ nhân tạo được biên soạn bởi đội ngũ cố vấn khoa học hàng đầu của LUVIA.
+              </p>
+            </div>
+          </section>
+
+          <section class="news-grid-section">
+            <div class="container">
+              <div class="news-grid">
+                <article class="news-card">
+                  <span class="news-category">Công nghệ AI</span>
+                  <h3>Cách mô hình Edge AI đo lường lỗ chân lông không xâm lấn</h3>
+                  <p>Tìm hiểu cơ chế lõi thông minh tại biên giúp định danh kích thước lỗ chân lông chính xác 98% ngay dưới ánh sáng phòng tắm bình thường...</p>
+                  <a href="#read" class="read-more">Đọc thêm →</a>
+                </article>
+                <article class="news-card">
+                  <span class="news-category">Khoa học Da liễu</span>
+                  <h3>Hiểu về nhịp sinh học biểu bì vào lúc 7:00 sáng</h3>
+                  <p>Độ ẩm của da bắt đầu sụt giảm mạnh khi tiếp xúc với không khí khô và tia UV buổi sớm. Nghiên cứu mới lý giải tại sao việc tinh chỉnh routine cấp ẩm lúc này là quan trọng nhất...</p>
+                  <a href="#read" class="read-more">Đọc thêm →</a>
+                </article>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+
+      <footer>
+        <div class="footer-container">
+          <p class="copyright">&copy; 2026 Luvia AI Inc. Bảo lưu mọi quyền.</p>
+          <div class="footer-links">
+            <a href="#privacy">Chính sách bảo mật dữ liệu da liễu</a>
+            <a href="#terms">Điều khoản sử dụng</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Script nạp React App từ thư mục gốc -->
+    <script type="module" src="../src/main.tsx"></script>
+  </body>
+</html>

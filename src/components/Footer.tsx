@@ -2,7 +2,7 @@ import React from "react";
 import { Logo } from "./Logo";
 
 interface FooterProps {
-  onViewChange?: (view: 'home' | 'product' | 'about') => void;
+  onViewChange?: (view: 'home' | 'product' | 'about' | 'news') => void;
 }
 
 export function Footer({ onViewChange }: FooterProps) {
@@ -22,7 +22,7 @@ export function Footer({ onViewChange }: FooterProps) {
     }
   };
 
-  const handlePageClick = (e: React.MouseEvent<HTMLAnchorElement>, view: 'home' | 'product' | 'about') => {
+  const handlePageClick = (e: React.MouseEvent<HTMLAnchorElement>, view: 'home' | 'product' | 'about' | 'news') => {
     if (onViewChange) {
       e.preventDefault();
       onViewChange(view);
@@ -69,13 +69,13 @@ export function Footer({ onViewChange }: FooterProps) {
           <div className="editorial-label mb-6">Kết nối</div>
           <ul className="flex flex-col gap-4 text-[13px] text-white/60 list-none m-0 p-0">
             <li>
-              <a href="https://news.luvia.ai" target="_blank" rel="noopener noreferrer" className="footer-link" title="Bản tin công nghệ Luvia">Tin tức công nghệ</a>
+              <a href="#" onClick={(e) => handlePageClick(e, 'news')} className="footer-link" title="Bản tin khoa học da liễu Luvia">Tin tức & Xu hướng</a>
             </li>
             <li>
-              <a href="#" onClick={(e) => handlePageClick(e, 'about')} className="footer-link" title="Câu chuyện phát triển Luvia Labs">Về Luvia Labs</a>
+              <a href="#" onClick={(e) => handlePageClick(e, 'about')} className="footer-link" title="Câu chuyện phát triển LUVIA">Về LUVIA</a>
             </li>
             <li>
-              <a href="https://news.luvia.ai" target="_blank" rel="noopener noreferrer" className="footer-link" title="Báo cáo & Truyền thông mới nhất">Tòa soạn & Truyền thông</a>
+              <a href="#" onClick={(e) => handlePageClick(e, 'news')} className="footer-link" title="Báo cáo & Sưu tập tài liệu mới nhất">Tòa soạn & Insights</a>
             </li>
           </ul>
         </div>

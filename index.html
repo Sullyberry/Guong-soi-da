@@ -36,25 +36,25 @@
       "@graph": [
         {
           "@type": "WebSite",
-          "@id": "https://luvia.ai/#website",
-          "url": "https://luvia.ai",
+          "@id": "https://luvia.id.vn/#website",
+          "url": "https://luvia.id.vn",
           "name": "Luvia AI",
           "description": "Luvia - Gương thông minh phân tích da công nghệ AI cá nhân hoá quy trình skincare",
           "publisher": {
-            "@id": "https://luvia.ai/#organization"
+            "@id": "https://luvia.id.vn/#organization"
           },
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://luvia.ai/?q={search_term_string}",
+            "target": "https://luvia.id.vn/?q={search_term_string}",
             "query-input": "required name=search_term_string"
           }
         },
         {
           "@type": "Organization",
-          "@id": "https://luvia.ai/#organization",
+          "@id": "https://luvia.id.vn/#organization",
           "name": "Luvia AI",
-          "url": "https://luvia.ai",
-          "logo": "https://luvia.ai/favicon_preview",
+          "url": "https://luvia.id.vn",
+          "logo": "https://luvia.id.vn/favicon_preview.png",
           "sameAs": [
             "https://www.instagram.com/luvia.ai",
             "https://www.tiktok.com/@luvia.ai"
@@ -67,30 +67,30 @@
             {
               "@type": "SiteNavigationElement",
               "position": 1,
-              "name": "Công nghệ & Khoa học",
-              "description": "Khám phá công nghệ phân tích da đa lớp thời gian thực sử dụng trí tuệ nhân tạo.",
-              "url": "https://luvia.ai/#features"
+              "name": "Trang chủ",
+              "description": "Thế giới công nghệ và phong cách sống cao cấp của LUVIA.",
+              "url": "https://luvia.id.vn/"
             },
             {
               "@type": "SiteNavigationElement",
               "position": 2,
-              "name": "Cách hoạt động",
-              "description": "Trải nghiệm quy trình sử dụng đơn giản 3 bước đứng trước gương Luvia AI.",
-              "url": "https://luvia.ai/#how-it-works"
+              "name": "Trang sản phẩm",
+              "description": "Khám phá chi tiết gương dấn thân phân tích da đa lớp thời gian thực Luvia AI.",
+              "url": "https://luvia.id.vn/san-pham/"
             },
             {
               "@type": "SiteNavigationElement",
               "position": 3,
-              "name": "Đặt mua Luvia",
-              "description": "Tham gia danh sách đặt trước gương thông minh Luvia để nhận các ưu đãi giới hạn.",
-              "url": "https://luvia.ai/#pricing"
+              "name": "Về chúng tôi",
+              "description": "Triết lý thương hiệu, sứ mệnh y đức bảo mật thông tin và đội ngũ Luvia AI.",
+              "url": "https://luvia.id.vn/gioi-thieu/"
             },
             {
               "@type": "SiteNavigationElement",
               "position": 4,
-              "name": "Câu hỏi thường gặp FAQs",
-              "description": "Giải đáp thắc mắc về bảo mật dữ liệu khách hàng, thời gian vận chuyển và chính sách hỗ trợ.",
-              "url": "https://luvia.ai/#faq"
+              "name": "Tin tức da liễu",
+              "description": "Các chia sẻ y khoa, xu hướng dưỡng da và công nghệ từ các cố vấn.",
+              "url": "https://luvia.id.vn/tin-tuc/"
             }
           ]
         }
@@ -99,7 +99,58 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Root element for React App mounting & Hydration with pre-rendered SEO Semantic HTML Skeleton -->
+    <div id="root">
+      <header class="fixed-nav-skeleton bg-transparent">
+        <div class="nav-container max-w-[1024px] mx-auto px-6 py-8 flex items-center justify-between">
+          <div class="logo-area">
+            <a href="/" title="Về trang chủ Luvia">
+              <span class="brand-text font-serif text-[24px] font-bold tracking-widest text-[#A0624C]">LUVIA</span>
+            </a>
+          </div>
+          <nav aria-label="Menu điều hướng chính từ trang chủ">
+            <ul class="flex items-center gap-8 list-none">
+              <li><a href="/" class="active text-[#A0624C] font-semibold">Trang chủ</a></li>
+              <li><a href="/san-pham/">Sản phẩm</a></li>
+              <li><a href="/gioi-thieu/">Giới thiệu</a></li>
+              <li><a href="/tin-tuc/">Tin tức</a></li>
+            </ul>
+          </nav>
+          <div class="cart-area">
+            <a href="#cart" class="cart-btn text-[11px] tracking-wider uppercase border-b border-black">GIỎ HÀNG (0)</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <!-- Trang chủ - Brand Landing Area -->
+        <article class="brand-homepage text-center py-20 bg-radial-gradient">
+          <section class="hero-intro">
+            <div class="max-w-[700px] mx-auto px-6">
+              <span class="editorial-badge bg-[#ECDCD6] text-[#A0624C] text-[11px] py-1 px-3 rounded-full uppercase tracking-wider">Giải Thưởng Sáng Tạo CES 2024</span>
+              <h1 class="text-[52px] md:text-[84px] font-light tracking-tighter leading-none text-[#241C1B] mt-6 font-display">YOUR SELF,<br><span class="text-[#241C1B]/40">PERFECTED</span></h1>
+              <p class="text-[16px] text-[#241C1B]/60 leading-relaxed mt-6 max-w-[480px] mx-auto">
+                Dấn thân vào kỷ nguyên gương thông minh độc bản. Luvia AI soi chiếu làn da sâu đa chiều, tự động nhận diện độ ẩm, sợi bã nhờn, nhân mụn ẩn và căng thẳng tức thì giúp tinh chỉnh routine mỗi sáng hoàn mỹ.
+              </p>
+              <div class="mt-8 flex justify-center gap-4">
+                <a href="/san-pham/" class="editorial-button bg-[#241C1B] text-[#FCFAF7] px-8 py-4 rounded text-[11px] tracking-widest font-semibold uppercase hover:bg-[#A0624C] transition duration-200">KHÁM PHÁ CHI TIẾT SẢN PHẨM →</a>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+
+      <footer>
+        <div class="footer-container max-w-[1024px] mx-auto px-6 py-12 flex flex-col md:flex-row justify-between border-t border-[#A0624C]/12 mt-20">
+          <p class="copyright text-[12px] text-[#241C1B]/50">&copy; 2026 Luvia AI Inc. Bảo lưu mọi quyền.</p>
+          <div class="footer-links flex gap-6 text-[12px]">
+            <a href="/privacy/" class="hover:text-[#A0624C]">Chính sách bảo mật</a>
+            <a href="/terms/" class="hover:text-[#A0624C]">Điều khoản sử dụng</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

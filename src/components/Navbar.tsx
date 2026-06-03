@@ -4,8 +4,8 @@ import { cn } from "@/src/lib/utils";
 import { Logo } from "./Logo";
 
 interface NavbarProps {
-  currentView: 'home' | 'product' | 'about';
-  onViewChange: (view: 'home' | 'product' | 'about') => void;
+  currentView: 'home' | 'product' | 'about' | 'news';
+  onViewChange: (view: 'home' | 'product' | 'about' | 'news') => void;
 }
 
 export function Navbar({ currentView, onViewChange }: NavbarProps) {
@@ -20,10 +20,10 @@ export function Navbar({ currentView, onViewChange }: NavbarProps) {
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Trang chủ', title: 'Trang chủ Luvia Labs', type: 'internal' },
-    { id: 'product', label: 'Sản phẩm', title: 'Chi tiết Gương thông minh Luvia AI', type: 'internal' },
-    { id: 'about', label: 'Về chúng tôi', title: 'Triết lý và Hành trình', type: 'internal' },
-    { id: 'news', label: 'Tin tức', title: 'Tin tức và Xu hướng công nghệ', type: 'external', href: 'https://news.luvia.ai' },
+    { id: 'home', label: 'Trang chủ', title: 'Trang chủ LUVIA' },
+    { id: 'product', label: 'Sản phẩm', title: 'Chi tiết Gương thông minh Luvia AI' },
+    { id: 'about', label: 'Giới thiệu', title: 'Về chúng tôi - Triết lý và Hành trình' },
+    { id: 'news', label: 'Tin tức', title: 'Tin tức và Xu hướng công nghệ' },
   ] as const;
 
   return (
@@ -49,35 +49,23 @@ export function Navbar({ currentView, onViewChange }: NavbarProps) {
           <ul className="flex items-center gap-8 list-none m-0 p-0">
             {navItems.map((item) => (
               <li key={item.id}>
-                {item.type === 'external' ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="editorial-nav-link relative py-1 cursor-pointer inline-block"
-                    title={item.title}
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <button
-                    onClick={() => onViewChange(item.id as any)}
-                    className={cn(
-                      "editorial-nav-link relative py-1 cursor-pointer bg-transparent border-none",
-                      currentView === item.id ? "text-[var(--color-brand)] font-medium" : ""
-                    )}
-                    title={item.title}
-                  >
-                    {item.label}
-                    {currentView === item.id && (
-                      <motion.div 
-                        layoutId="activeNavIndicator"
-                        className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[var(--color-brand)]"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      />
-                    )}
-                  </button>
-                )}
+                <button
+                  onClick={() => onViewChange(item.id as any)}
+                  className={cn(
+                    "editorial-nav-link relative py-1 cursor-pointer bg-transparent border-none font-medium text-[11px] tracking-widest uppercase",
+                    currentView === item.id ? "text-[var(--color-brand)] font-semibold" : "text-white/60 hover:text-[var(--color-brand)]"
+                  )}
+                  title={item.title}
+                >
+                  {item.label}
+                  {currentView === item.id && (
+                    <motion.div 
+                      layoutId="activeNavIndicator"
+                      className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[var(--color-brand)]"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </button>
               </li>
             ))}
           </ul>
