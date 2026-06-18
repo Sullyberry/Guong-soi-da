@@ -19,44 +19,68 @@
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body {
         font-family: Georgia, 'Times New Roman', serif;
-        background: radial-gradient(circle at 50% 30%, #FCFAF7 0%, #F2E7E1 100%);
+        background: radial-gradient(circle at 50% 25%, #FCFAF7 0%, #F2E7E1 100%);
         color: #241C1B;
         min-height: 100vh;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding: 24px;
+        padding: 40px 24px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 480px;
+        width: 100%;
+      }
+      .brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 40px;
       }
       .brand-logo {
-        height: 60px;
+        height: 56px;
         width: auto;
         object-fit: contain;
-        margin-bottom: 48px;
+      }
+      .brand-divider {
+        width: 40px;
+        height: 1px;
+        background: rgba(160, 98, 76, 0.35);
+      }
+      /* khối 404 + tiêu đề gộp thành một đơn vị */
+      .hero {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       .code {
-        font-size: clamp(80px, 18vw, 160px);
+        font-size: clamp(96px, 22vw, 168px);
         font-weight: 300;
-        line-height: 1;
+        line-height: 0.9;
         color: #241C1B;
-        letter-spacing: -0.04em;
+        letter-spacing: -0.05em;
       }
-      .code span { color: rgba(36, 28, 27, 0.25); }
+      .code span { color: rgba(160, 98, 76, 0.28); }
       .title {
         font-family: 'Times New Roman', Times, serif;
-        font-size: clamp(22px, 5vw, 32px);
+        font-size: clamp(22px, 5vw, 30px);
         font-weight: 400;
-        margin-top: 16px;
+        margin-top: 8px;
         color: #241C1B;
       }
       .desc {
         font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
-        font-size: 16px;
-        color: rgba(36, 28, 27, 0.6);
-        max-width: 440px;
-        line-height: 1.6;
-        margin: 20px auto 36px;
+        font-size: 15px;
+        color: rgba(36, 28, 27, 0.55);
+        max-width: 400px;
+        line-height: 1.7;
+        margin: 22px auto 38px;
       }
       .btn {
         display: inline-block;
@@ -68,37 +92,49 @@
         font-weight: 600;
         letter-spacing: 0.15em;
         text-transform: uppercase;
-        padding: 16px 32px;
-        border-radius: 4px;
-        transition: background 0.2s;
+        padding: 16px 36px;
+        border-radius: 999px;
+        transition: background 0.2s, transform 0.2s;
       }
-      .btn:hover { background: #A0624C; }
+      .btn:hover { background: #A0624C; transform: translateY(-2px); }
       .links {
-        margin-top: 28px;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(160, 98, 76, 0.18);
+        width: 100%;
+        max-width: 320px;
         font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
         font-size: 13px;
       }
       .links a {
         color: #A0624C;
         text-decoration: none;
-        margin: 0 12px;
+        margin: 0 14px;
+        transition: opacity 0.2s;
       }
-      .links a:hover { text-decoration: underline; }
+      .links a:hover { opacity: 0.65; }
     </style>
   </head>
   <body>
-    <img src="/luvia_logo.png" alt="Luvia" class="brand-logo" />
-    <div class="code">4<span>0</span>4</div>
-    <h1 class="title">Ối! Không tìm thấy trang này</h1>
-    <p class="desc">
-      Trang bạn tìm có thể đã được di chuyển, đổi tên hoặc chưa từng tồn tại.
-      Hãy quay về trang chủ để tiếp tục khám phá gương thông minh phân tích da Luvia AI.
-    </p>
-    <a href="/" class="btn">← Về trang chủ</a>
-    <nav class="links">
-      <a href="/san-pham/">Sản phẩm</a>
-      <a href="/gioi-thieu/">Giới thiệu</a>
-      <a href="/tin-tuc/">Tin tức</a>
-    </nav>
+    <main class="card">
+      <div class="brand">
+        <img src="/luvia_logo.png" alt="Luvia" class="brand-logo" />
+        <span class="brand-divider"></span>
+      </div>
+      <div class="hero">
+        <div class="code">4<span>0</span>4</div>
+        <h1 class="title">Ối! Không tìm thấy trang này</h1>
+      </div>
+      <p class="desc">
+        Trang bạn tìm có thể đã được di chuyển, đổi tên hoặc chưa từng tồn tại.
+        Hãy quay về trang chủ để tiếp tục khám phá gương thông minh phân tích da Luvia AI.
+      </p>
+      <a href="/" class="btn">← Về trang chủ</a>
+      <nav class="links">
+        <a href="/san-pham/">Sản phẩm</a>
+        <a href="/gioi-thieu/">Giới thiệu</a>
+        <a href="/tin-tuc/">Tin tức</a>
+      </nav>
+    </main>
   </body>
 </html>
