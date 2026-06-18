@@ -1,3 +1,0 @@
-# Mọi đường dẫn không tồn tại -> trang 404 (mã 404 đúng chuẩn SEO).
-# Các file/trang có thật vẫn được phục vụ bình thường (ưu tiên trước rule này).
-/*    /404.html    404
