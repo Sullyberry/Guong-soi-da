@@ -29,11 +29,10 @@
         text-align: center;
         padding: 24px;
       }
-      .brand {
-        font-weight: bold;
-        font-size: 22px;
-        letter-spacing: 0.25em;
-        color: #A0624C;
+      .brand-logo {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
         margin-bottom: 48px;
       }
       .code {
@@ -45,6 +44,7 @@
       }
       .code span { color: rgba(36, 28, 27, 0.25); }
       .title {
+        font-family: 'Times New Roman', Times, serif;
         font-size: clamp(22px, 5vw, 32px);
         font-weight: 400;
         margin-top: 16px;
@@ -84,23 +84,10 @@
         margin: 0 12px;
       }
       .links a:hover { text-decoration: underline; }
-      .notice {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 16px;
-        font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
-        font-size: 10px;
-        color: rgba(160, 98, 76, 0.7);
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        line-height: 1.6;
-      }
     </style>
   </head>
   <body>
-    <div class="brand">LUVIA</div>
+    <img src="/luvia_logo.png" alt="Luvia" class="brand-logo" />
     <div class="code">4<span>0</span>4</div>
     <h1 class="title">Ối! Không tìm thấy trang này</h1>
     <p class="desc">
@@ -113,8 +100,5 @@
       <a href="/gioi-thieu/">Giới thiệu</a>
       <a href="/tin-tuc/">Tin tức</a>
     </nav>
-    <p class="notice">
-      CHÚ Ý: Đây là website thử nghiệm phục vụ đề tài môn học Digital Marketing. Sản phẩm không có thật.
-    </p>
   </body>
 </html>

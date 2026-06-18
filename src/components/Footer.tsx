@@ -110,11 +110,6 @@ export function Footer({ onViewChange }: FooterProps) {
           Kiến tạo cho tương lai.
         </div>
       </div>
-      <div className="max-w-[1024px] mx-auto mt-6 pt-4 border-t border-[var(--color-panel-border)]/40 text-center">
-        <p className="text-[11px] text-[#A0624C] tracking-wide leading-relaxed uppercase font-light">
-          CHÚ Ý: Đây là website thử nghiệm phục vụ cho đề tài môn học Digital Marketing. Sản phẩm không có thật và không phục vụ mục đích thương mại.
-        </p>
-      </div>
     </footer>
   );
 }
