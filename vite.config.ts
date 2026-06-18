@@ -1,15 +1,11 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig, loadEnv} from 'vite';
+import {defineConfig} from 'vite';
 
-export default defineConfig(({mode}) => {
-  const env = loadEnv(mode, '.', '');
+export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
-    define: {
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
@@ -22,6 +18,9 @@ export default defineConfig(({mode}) => {
           sanpham: path.resolve(__dirname, 'san-pham/index.html'),
           gioithieu: path.resolve(__dirname, 'gioi-thieu/index.html'),
           tintuc: path.resolve(__dirname, 'tin-tuc/index.html'),
+          baiMunAn: path.resolve(__dirname, 'tin-tuc/cong-nghe-ai-soi-da-phat-hien-mun-an/index.html'),
+          baiDoAm: path.resolve(__dirname, 'tin-tuc/do-do-am-da-skincare-routine-buoi-sang/index.html'),
+          baiNhayCam: path.resolve(__dirname, 'tin-tuc/guong-thong-minh-luvia-cham-soc-da-nhay-cam/index.html'),
         },
       },
     },
