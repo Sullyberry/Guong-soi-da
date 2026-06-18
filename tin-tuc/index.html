@@ -24,15 +24,64 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Luvia AI" />
+    <meta property="og:locale" content="vi_VN" />
     <meta property="og:url" content="https://luvia.id.vn/tin-tuc/" />
     <meta property="og:title" content="Tin tức &amp; Xu hướng - Độc quyền từ LUVIA" />
     <meta property="og:description" content="Tìm hiểu khoa học đằng sau làn da rạng ngời và những đột phá mới nhất về chẩn đoán da liễu tại gia." />
-    <meta property="og:image" content="../og_preview.png" />
+    <meta property="og:image" content="https://luvia.id.vn/og_preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Gương thông minh phân tích da Luvia AI" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://luvia.id.vn/tin-tuc/" />
+    <meta property="twitter:title" content="Tin tức &amp; Xu hướng Da Liễu Công Nghệ | Luvia AI" />
+    <meta property="twitter:description" content="Tìm hiểu khoa học đằng sau làn da rạng ngời và những đột phá mới nhất về chẩn đoán da liễu tại gia." />
+    <meta property="twitter:image" content="https://luvia.id.vn/og_preview.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon_preview.png" />
     <link rel="apple-touch-icon" href="/favicon_preview.png" />
-    
+
+    <!-- Blog Collection & Breadcrumb Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Blog",
+          "url": "https://luvia.id.vn/tin-tuc/",
+          "name": "Tin tức & Xu hướng Da Liễu Công Nghệ Luvia AI",
+          "description": "Nghiên cứu mới nhất về công nghệ chăm sóc da AI, phân tích quang phổ học biểu bì và các xu hướng routine skincare.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Luvia AI",
+            "url": "https://luvia.id.vn"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Trang chủ",
+              "item": "https://luvia.id.vn/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tin tức",
+              "item": "https://luvia.id.vn/tin-tuc/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <!-- CSS Link -->
     <link rel="stylesheet" href="../src/index.css" />
   </head>
