@@ -120,6 +120,10 @@
       .back-link { display: inline-block; margin: 40px 0 8px; font-size: 13px; color: var(--color-brand); text-decoration: none; }
       .back-link:hover { text-decoration: underline; }
       .site-footer { max-width: 1024px; margin: 64px auto 0; padding: 28px 24px; border-top: 1px solid var(--color-panel-border); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: 12px; color: var(--color-espresso-muted); }
+      .footer-social { display: inline-flex; align-items: center; gap: 10px; }
+      .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 999px; border: 1px solid var(--color-panel-border); color: var(--color-espresso-muted); transition: color .2s, border-color .2s; }
+      .footer-social a:hover { color: var(--color-brand); border-color: var(--color-brand); }
+      .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
     </style>
   </head>
   <body>
@@ -199,6 +203,10 @@
     <footer class="site-footer">
       <span>&copy; 2026 Luvia AI Inc. Bảo lưu mọi quyền.</span>
       <span><a href="/gioi-thieu/" style="color: var(--color-brand); text-decoration: none;">Giới thiệu</a> · <a href="/san-pham/" style="color: var(--color-brand); text-decoration: none;">Sản phẩm</a></span>
+      <span class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=100070111910232" target="_blank" rel="noopener noreferrer" aria-label="Fanpage Facebook Luvia" title="Fanpage Facebook Luvia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 21v-7H7v-3h2.5V8.5C9.5 6 11 4.7 13.2 4.7c1.06 0 2.17.19 2.17.19V7.3h-1.2c-1.2 0-1.57.74-1.57 1.5V11H15l-.44 3h-2.35v7z"/></svg></a>
+        <a href="https://www.tiktok.com/@luviabeautytech?_r=1&amp;_t=ZS-97heWj7tLNM" target="_blank" rel="noopener noreferrer" aria-label="TikTok Luvia" title="TikTok Luvia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.3 4.3 0 0 1-1.06-2.82h-3.2v12.9a2.34 2.34 0 0 1-2.34 2.28 2.34 2.34 0 1 1 .73-4.57V8.3a5.56 5.56 0 0 0-.73-.05A5.55 5.55 0 1 0 15.5 14.4V9.01a7.5 7.5 0 0 0 4.37 1.4V7.2a4.3 4.3 0 0 1-3.27-1.38z"/></svg></a>
+      </span>
     </footer>
   </body>
 </html>

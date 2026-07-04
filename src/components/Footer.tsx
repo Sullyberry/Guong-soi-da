@@ -48,8 +48,34 @@ export function Footer({ onViewChange }: FooterProps) {
           <div className="text-[14px] text-white/50 leading-relaxed">
             Tuyệt tác gương thông minh giải mã tương lai của làn da.
           </div>
+          <div className="flex items-center gap-3 mt-6">
+            <a
+              href="https://www.facebook.com/profile.php?id=100070111910232"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Fanpage Facebook Luvia"
+              title="Fanpage Facebook Luvia"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-[var(--color-panel-border)] text-white/60 hover:text-[var(--color-brand)] hover:border-[var(--color-brand)]/50 transition-colors"
+            >
+              <svg viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true">
+                <path d="M9.5 21v-7H7v-3h2.5V8.5C9.5 6 11 4.7 13.2 4.7c1.06 0 2.17.19 2.17.19V7.3h-1.2c-1.2 0-1.57.74-1.57 1.5V11H15l-.44 3h-2.35v7z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.tiktok.com/@luviabeautytech?_r=1&_t=ZS-97heWj7tLNM"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok Luvia"
+              title="TikTok Luvia"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-[var(--color-panel-border)] text-white/60 hover:text-[var(--color-brand)] hover:border-[var(--color-brand)]/50 transition-colors"
+            >
+              <svg viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true">
+                <path d="M16.6 5.82a4.3 4.3 0 0 1-1.06-2.82h-3.2v12.9a2.34 2.34 0 0 1-2.34 2.28 2.34 2.34 0 1 1 .73-4.57V8.3a5.56 5.56 0 0 0-.73-.05A5.55 5.55 0 1 0 15.5 14.4V9.01a7.5 7.5 0 0 0 4.37 1.4V7.2a4.3 4.3 0 0 1-3.27-1.38z" />
+              </svg>
+            </a>
+          </div>
         </div>
-        
+
         <div>
           <div className="editorial-label mb-6">Khám phá</div>
           <ul className="flex flex-col gap-4 text-[13px] text-white/60 list-none m-0 p-0">
