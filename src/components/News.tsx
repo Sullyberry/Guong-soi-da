@@ -39,7 +39,7 @@ const newsPosts: NewsPost[] = [
     category: "GÓC NHÌN SKINCARE",
     title: "Clip triệu view, da triệu mụn: Vì sao bạn mua mỹ phẩm theo review mãi vẫn không đẹp?",
     excerpt: "Các clip review không sai, sản phẩm cũng không tệ. Cái sai là 5 sai lầm chí mạng khi chọn đồ skincare theo số đông — và cách để công nghệ thay lời review.",
-    date: "02 TH07, 2026",
+    date: "04 TH07, 2026",
     readTime: "6 phút đọc",
     url: "/tin-tuc/mua-my-pham-theo-review/"
   },
@@ -47,7 +47,7 @@ const newsPosts: NewsPost[] = [
     category: "THIẾT BỊ LÀM ĐẸP",
     title: "Cúng tiền cho mỹ phẩm nhưng da vẫn nát: Do bà xài sai hay tại... đoán mò?",
     excerpt: "Máy phân tích da dùng công nghệ AI quét sâu vạch trần độ ẩm, dầu thừa, sắc tố ẩn và mức độ lão hóa — chấm dứt chuỗi ngày chọn mỹ phẩm bằng cảm giác.",
-    date: "30 TH06, 2026",
+    date: "04 TH07, 2026",
     readTime: "5 phút đọc",
     url: "/tin-tuc/may-phan-tich-da/"
   },
@@ -55,7 +55,7 @@ const newsPosts: NewsPost[] = [
     category: "CÔNG NGHỆ SOI DA AI",
     title: "Da gào cứu bên dưới mà mắt thường không thấy: Vì sao bạn skincare mãi vẫn xấu?",
     excerpt: "Gương soi da AI quét đa tầng, phân tích chuyên sâu và trả kết quả bằng những con số biết nói — để bạn vĩnh biệt skincare tâm linh, ngưng đoán mò và lãng phí.",
-    date: "28 TH06, 2026",
+    date: "04 TH07, 2026",
     readTime: "6 phút đọc",
     url: "/tin-tuc/guong-soi-ai/"
   },
@@ -63,7 +63,7 @@ const newsPosts: NewsPost[] = [
     category: "XU HƯỚNG LÀM ĐẸP",
     title: "Beauty Tech là gì? Xu hướng công nghệ làm đẹp đang thay đổi skincare như thế nào?",
     excerpt: "Từ ứng dụng phân tích da bằng AI đến thiết bị chăm sóc da thông minh — công nghệ đang thay đổi cách chúng ta hiểu và chăm sóc làn da: chính xác, tiện lợi và cá nhân hóa hơn.",
-    date: "26 TH06, 2026",
+    date: "04 TH07, 2026",
     readTime: "6 phút đọc",
     url: "/tin-tuc/beauty-tech-la-gi/"
   },
@@ -71,7 +71,7 @@ const newsPosts: NewsPost[] = [
     category: "CÔNG NGHỆ LÀM ĐẸP",
     title: "AI Skincare là gì? Khi công nghệ bắt đầu hiểu làn da của bạn",
     excerpt: "Trí tuệ nhân tạo được ứng dụng vào phân tích và chăm sóc da, giúp người dùng hiểu rõ làn da của mình thay vì đoán mò khi skincare.",
-    date: "24 TH06, 2026",
+    date: "04 TH07, 2026",
     readTime: "6 phút đọc",
     url: "/tin-tuc/ai-skincare-la-gi/"
   }
