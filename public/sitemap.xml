@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://luvia.id.vn/</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -20,25 +20,55 @@
   </url>
   <url>
     <loc>https://luvia.id.vn/tin-tuc/</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://luvia.id.vn/tin-tuc/cong-nghe-ai-soi-da-phat-hien-mun-an/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://luvia.id.vn/tin-tuc/cach-xac-dinh-loai-da-tai-nha/</loc>
+    <lastmod>2026-06-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://luvia.id.vn/tin-tuc/do-do-am-da-skincare-routine-buoi-sang/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <loc>https://luvia.id.vn/tin-tuc/skincare-ca-nhan-hoa/</loc>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://luvia.id.vn/tin-tuc/guong-thong-minh-luvia-cham-soc-da-nhay-cam/</loc>
-    <lastmod>2026-05-28</lastmod>
+    <loc>https://luvia.id.vn/tin-tuc/ai-skincare-la-gi/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luvia.id.vn/tin-tuc/beauty-tech-la-gi/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luvia.id.vn/tin-tuc/guong-soi-ai/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luvia.id.vn/tin-tuc/may-phan-tich-da/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luvia.id.vn/tin-tuc/mua-my-pham-theo-review/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luvia.id.vn/tin-tuc/cham-soc-da-theo-tinh-trang-da/</loc>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
