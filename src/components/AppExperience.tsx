@@ -133,7 +133,7 @@ export function AppExperience() {
                 src={step.img}
                 alt={`Bước ${step.n}: ${step.title}`}
                 loading="lazy"
-                className="w-full aspect-[4/3] object-cover border-b border-[var(--color-panel-border)]"
+                className="w-full h-auto block border-b border-[var(--color-panel-border)]"
               />
               <div className="p-6 md:p-8">
                 <div className="flex items-baseline gap-3 mb-3">

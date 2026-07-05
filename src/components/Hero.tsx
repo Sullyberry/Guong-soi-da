@@ -83,16 +83,6 @@ export function Hero() {
               loading="eager"
               className="w-full h-auto block"
             />
-
-            {/* Chip chỉ số overlay */}
-            <div className="absolute top-4 right-4 bg-white/95 border border-[var(--color-panel-border)] shadow-sm py-2 px-3 rounded-[4px] flex flex-col gap-[2px] font-mono">
-              <span className="editorial-label !text-[8px] text-[var(--color-brand)] font-bold">ĐỘ ẨM LÀN DA</span>
-              <span className="text-[var(--color-brand)] font-bold text-[13px]">82% Đạt Chuẩn</span>
-            </div>
-            <div className="absolute bottom-4 left-4 bg-white/95 border border-[var(--color-panel-border)] shadow-sm py-2 px-3 rounded-[4px] flex flex-col gap-[2px] font-mono">
-              <span className="editorial-label !text-[8px] text-[var(--color-brand)] font-bold">LỖ CHÂN LÔNG</span>
-              <span className="text-[var(--color-brand)] font-bold text-[13px]">-12% Se Nhỏ</span>
-            </div>
           </div>
         </motion.div>
         
