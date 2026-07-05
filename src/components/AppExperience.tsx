@@ -1,15 +1,6 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import {
-  Download,
-  ScanFace,
-  FlaskConical,
-  Sparkles,
-  Bluetooth,
-  History,
-  BellRing,
-  LineChart,
-} from "lucide-react";
+import { Bluetooth, History, BellRing, LineChart } from "lucide-react";
 
 const capabilities = [
   { icon: Bluetooth, text: "Kết nối gương qua Bluetooth / Wi-Fi, đồng bộ dữ liệu skincare theo thời gian thực." },
@@ -21,25 +12,25 @@ const capabilities = [
 const steps = [
   {
     n: "01",
-    icon: Download,
+    img: "/images/san-pham/step-1.jpg",
     title: "Tải app & Kết nối",
     desc: "Tải ứng dụng Luvia, kết nối gương qua Bluetooth hoặc Wi-Fi và đăng nhập. Hệ thống tạo hồ sơ skincare cá nhân để lưu dữ liệu phân tích da.",
   },
   {
     n: "02",
-    icon: ScanFace,
+    img: "/images/san-pham/step-2.jpg",
     title: "AI phân tích da",
     desc: "Đứng trước gương, camera và cảm biến quét khuôn mặt để đo độ ẩm, lượng dầu, sắc tố, mụn và độ nhạy cảm của da.",
   },
   {
     n: "03",
-    icon: FlaskConical,
+    img: "/images/san-pham/step-3.jpg",
     title: "Kết quả & Phối trộn dưỡng chất",
     desc: "Kết quả hiển thị trên gương và đồng bộ lên app. AI chọn dưỡng chất phù hợp và tự động phối trộn mặt nạ cá nhân hóa chỉ trong 90 giây.",
   },
   {
     n: "04",
-    icon: Sparkles,
+    img: "/images/san-pham/step-4.jpg",
     title: "Xuất mặt nạ & Lưu dữ liệu",
     desc: "Mặt nạ được xuất ra tại khay bên dưới gương. Dữ liệu được lưu trữ an toàn trên cloud để theo dõi sự thay đổi của làn da theo thời gian.",
   },
@@ -129,21 +120,28 @@ export function AppExperience() {
           Từ điện thoại đến mặt nạ cá nhân hóa <span className="text-white/40">trong 4 bước</span>
         </motion.h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {steps.map((step, i) => (
             <motion.div
               key={step.n}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative p-8 bg-[var(--color-panel)] border border-[var(--color-panel-border)] rounded-[4px] flex flex-col"
+              className="bg-[var(--color-panel)] border border-[var(--color-panel-border)] rounded-[8px] overflow-hidden flex flex-col"
             >
-              <div className="flex items-center justify-between mb-8">
-                <step.icon className="w-8 h-8 text-glow-blue opacity-80" />
-                <span className="font-mono text-[28px] font-bold text-white/10 leading-none">{step.n}</span>
+              <img
+                src={step.img}
+                alt={`Bước ${step.n}: ${step.title}`}
+                loading="lazy"
+                className="w-full aspect-[4/3] object-cover border-b border-[var(--color-panel-border)]"
+              />
+              <div className="p-6 md:p-8">
+                <div className="flex items-baseline gap-3 mb-3">
+                  <span className="font-mono text-[14px] font-bold text-[var(--color-brand)]">{step.n}</span>
+                  <h4 className="text-[16px] font-bold text-white uppercase tracking-wide">{step.title}</h4>
+                </div>
+                <p className="text-[14px] leading-relaxed text-white/60">{step.desc}</p>
               </div>
-              <h4 className="text-[16px] font-bold text-white mb-3 uppercase tracking-wide">{step.title}</h4>
-              <p className="text-[14px] leading-relaxed text-white/60">{step.desc}</p>
             </motion.div>
           ))}
         </div>
