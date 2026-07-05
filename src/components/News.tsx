@@ -103,7 +103,7 @@ export function News() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-[16px] text-white/60 leading-relaxed max-w-[600px]"
+            className="text-[16px] text-[var(--color-espresso-muted)] leading-relaxed max-w-[600px]"
           >
             Khám phá các bài phân tích chuyên sâu về khoa học biểu bì, trí tuệ nhân tạo riêng tư (Edge AI) và nghệ thuật chế tác gương kết tinh bởi đội ngũ cố vấn y khoa của LUVIA.
           </motion.p>
@@ -140,7 +140,7 @@ export function News() {
                 <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-[var(--color-brand)] mb-4 group-hover:gap-2 transition-all duration-200">
                   Đọc tiếp →
                 </span>
-                <div className="flex items-center justify-between pt-4 border-t border-[var(--color-panel-border)]/50 font-mono text-[10px] text-white/40">
+                <div className="flex items-center justify-between pt-4 border-t border-[var(--color-panel-border)]/50 font-mono text-[10px] text-[var(--color-espresso-muted)]">
                   <span>{post.date}</span>
                   <span>{post.readTime}</span>
                 </div>

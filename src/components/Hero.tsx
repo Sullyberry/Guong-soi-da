@@ -21,7 +21,7 @@ export function Hero() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="editorial-badge mb-6 md:mb-8"
           >
-            Vinh danh Giải thưởng Sáng tạo CES 2024
+            Phiên bản Genesis · Chế tác giới hạn
           </motion.div>
 
           <motion.div

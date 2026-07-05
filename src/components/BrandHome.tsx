@@ -18,7 +18,7 @@ export function BrandHome({ onNavigateToProduct, onNavigateToAbout }: BrandHomeP
           transition={{ duration: 0.8 }}
           className="editorial-badge bg-[#ECDCD6] text-[#A0624C] border border-[#A0624C]/20 mb-8"
         >
-          PREMIUM CES INNOVATION RECIPIENT
+          CÔNG NGHỆ SOI DA AI CAO CẤP
         </motion.div>
         
         <motion.h1

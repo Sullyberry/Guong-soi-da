@@ -88,7 +88,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-[var(--color-bg-dark)] text-white min-h-screen flex flex-col justify-between">
+    <div className="bg-[var(--color-bg-dark)] text-[var(--color-espresso)] min-h-screen flex flex-col justify-between">
       <Navbar currentView={currentView} onViewChange={handleViewChange} />
       <main className="flex-grow">
         <AnimatePresence mode="wait">

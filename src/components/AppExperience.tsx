@@ -59,13 +59,13 @@ export function AppExperience() {
             className="editorial-h2 mb-6"
           >
             Trợ lý skincare cá nhân hóa <br />
-            <span className="text-white/40">ngay trong túi của bạn</span>
+            <span className="text-[var(--color-espresso-muted)]">ngay trong túi của bạn</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[16px] text-white/60 leading-relaxed"
+            className="text-[16px] text-[var(--color-espresso-muted)] leading-relaxed"
           >
             Gương LUVIA đồng bộ với ứng dụng di động qua Bluetooth/Wi-Fi, biến chiếc điện thoại của bạn thành một trợ lý skincare cá nhân hóa — lưu lại lịch sử làn da, nhắc lịch chăm sóc và theo dõi hiệu quả theo thời gian.
           </motion.p>
@@ -96,7 +96,7 @@ export function AppExperience() {
             {capabilities.map((cap, i) => (
               <li key={i} className="flex gap-4 items-start border-b border-[var(--color-panel-border)] pb-6 last:border-b-0">
                 <cap.icon className="w-5 h-5 text-glow-blue shrink-0 opacity-80 mt-0.5" />
-                <span className="text-[15px] text-white/80 leading-relaxed">{cap.text}</span>
+                <span className="text-[15px] text-[var(--color-espresso)] leading-relaxed">{cap.text}</span>
               </li>
             ))}
           </motion.ul>
@@ -117,7 +117,7 @@ export function AppExperience() {
           transition={{ duration: 0.6 }}
           className="editorial-h2 !text-3xl mb-12"
         >
-          Từ điện thoại đến mặt nạ cá nhân hóa <span className="text-white/40">trong 4 bước</span>
+          Từ điện thoại đến mặt nạ cá nhân hóa <span className="text-[var(--color-espresso-muted)]">trong 4 bước</span>
         </motion.h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -138,9 +138,9 @@ export function AppExperience() {
               <div className="p-6 md:p-8">
                 <div className="flex items-baseline gap-3 mb-3">
                   <span className="font-mono text-[14px] font-bold text-[var(--color-brand)]">{step.n}</span>
-                  <h4 className="text-[16px] font-bold text-white uppercase tracking-wide">{step.title}</h4>
+                  <h4 className="text-[16px] font-bold text-[var(--color-espresso)] uppercase tracking-wide">{step.title}</h4>
                 </div>
-                <p className="text-[14px] leading-relaxed text-white/60">{step.desc}</p>
+                <p className="text-[14px] leading-relaxed text-[var(--color-espresso-muted)]">{step.desc}</p>
               </div>
             </motion.div>
           ))}
