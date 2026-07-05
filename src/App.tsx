@@ -12,6 +12,7 @@ import { Footer } from "./components/Footer";
 import { BrandHome } from "./components/BrandHome";
 import { AboutUs } from "./components/AboutUs";
 import { News } from "./components/News";
+import { AppExperience } from "./components/AppExperience";
 
 type AppView = 'home' | 'product' | 'about' | 'news';
 
@@ -77,6 +78,7 @@ export default function App() {
             <Problem />
             <Features />
             <InteractiveDemo />
+            <AppExperience />
             <Trust />
             <Pricing />
             <FAQ />
