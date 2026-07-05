@@ -68,7 +68,7 @@ export function Hero() {
               <span className="ml-5">→</span>
             </button>
             <div className="text-[10px] text-[var(--color-espresso-muted)]/80 uppercase tracking-wider mt-2">
-              Chế tác giới hạn. Giao hàng mùa thu 2026.
+              Chế tác giới hạn. Giao hàng dự kiến Tháng 12, 2026.
             </div>
           </motion.div>
         </div>

@@ -52,13 +52,13 @@ export function Features() {
           className="editorial-h2 mb-6"
         >
           Công nghệ tiên phong <br />
-          <span className="text-white/40">Chỉ trong một cái nhìn</span>
+          <span className="text-[var(--color-espresso)]/40">Chỉ trong một cái nhìn</span>
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-[16px] text-white/60 leading-relaxed max-w-2xl mx-auto"
+          className="text-[16px] text-[var(--color-espresso-muted)] leading-relaxed max-w-2xl mx-auto"
         >
           Trang bị camera 4K siêu cận và cảm biến ánh sáng phức hợp, AI Smart Skin Mirror thấu hiểu làn da bạn sâu hơn những gì mắt thường có thể thấy.
         </motion.p>
@@ -78,8 +78,8 @@ export function Features() {
           >
             <feature.icon className="w-8 h-8 text-glow-blue mb-8 opacity-80" />
             <div>
-              <h3 className="text-base sm:text-lg md:text-sm lg:text-base xl:text-lg font-bold text-white mb-3 uppercase tracking-wide font-serif whitespace-nowrap">{feature.title}</h3>
-              <p className="text-[14px] leading-relaxed text-white/60">
+              <h3 className="text-base sm:text-lg md:text-sm lg:text-base xl:text-lg font-bold text-[var(--color-espresso)] mb-3 uppercase tracking-wide font-serif">{feature.title}</h3>
+              <p className="text-[14px] leading-relaxed text-[var(--color-espresso-muted)]">
                 {feature.description}
               </p>
             </div>

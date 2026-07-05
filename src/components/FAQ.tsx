@@ -35,8 +35,8 @@ export function FAQ() {
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
               className="w-full text-left py-8 flex justify-between items-center group cursor-pointer"
             >
-              <span className="text-[18px] font-medium pr-8 group-hover:text-glow-blue transition-colors duration-300">{faq.q}</span>
-              <ChevronDown className={cn("w-5 h-5 text-white/40 transition-transform duration-300", openIndex === i ? "rotate-180 text-glow-blue" : "")} />
+              <span className="text-[18px] font-medium pr-8 text-[var(--color-espresso)] group-hover:text-glow-blue transition-colors duration-300">{faq.q}</span>
+              <ChevronDown className={cn("w-5 h-5 text-[var(--color-espresso)]/40 transition-transform duration-300", openIndex === i ? "rotate-180 text-glow-blue" : "")} />
             </button>
             <AnimatePresence>
               {openIndex === i && (
@@ -44,7 +44,7 @@ export function FAQ() {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  className="pb-8 text-[15px] leading-relaxed text-white/60 overflow-hidden"
+                  className="pb-8 text-[15px] leading-relaxed text-[var(--color-espresso-muted)] overflow-hidden"
                 >
                   {faq.a}
                 </motion.div>

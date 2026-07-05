@@ -55,7 +55,7 @@ export function InteractiveDemo() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
             transition={{ duration: 0.8 }}
             className="editorial-h2 mb-8"
-            style={{ textAlign: "left", width: "444px", maxWidth: "100%" }}
+            style={{ textAlign: "left" }}
           >
             Phân tích da tự động mỗi sáng <br />
           </motion.h2>
@@ -63,7 +63,7 @@ export function InteractiveDemo() {
              initial={{ opacity: 0 }}
              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
              transition={{ duration: 0.8, delay: 0.3 }}
-             className="space-y-6 text-[16px] text-white/60 leading-relaxed"
+             className="space-y-6 text-[16px] text-[var(--color-espresso-muted)] leading-relaxed"
           >
             <p>
               Chỉ cần đứng trước gương. Các cảm biến quang học tiên tiến sẽ tự kích hoạt, chụp và phân tích sâu các tầng biểu bì trên da mà không chói mắt hay cần thao tác nút bấm.

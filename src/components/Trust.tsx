@@ -18,16 +18,16 @@ export function Trust() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-glow-blue/5 blur-[80px] group-hover:bg-glow-blue/10 transition-colors duration-700" />
           <div className="relative z-10">
-            <ShieldCheck className="w-10 h-10 text-white/40 mb-8" />
-            <h3 className="editorial-h2 !text-4xl text-white mb-6">Được tin dùng bởi các Bác sĩ Da liễu hàng đầu.</h3>
-            <p className="text-[14px] leading-relaxed text-white/60 max-w-sm">
+            <ShieldCheck className="w-10 h-10 text-[var(--color-espresso)]/40 mb-8" />
+            <h3 className="editorial-h2 !text-4xl text-[var(--color-espresso)] mb-6">Được tin dùng bởi các Bác sĩ Da liễu hàng đầu.</h3>
+            <p className="text-[14px] leading-relaxed text-[var(--color-espresso-muted)] max-w-sm">
               "AI Smart Skin Mirror thay thế hoàn toàn máy soi da cồng kềnh tại clinic. Độ chính xác lên tới 98% trên 10,000+ mẫu lâm sàng."
             </p>
           </div>
           <div className="flex items-center gap-4 mt-8 relative z-10 border-t border-[var(--color-panel-border)] pt-6">
-            <div className="w-12 h-12 bg-white/10 shrink-0" />
+            <div className="w-12 h-12 shrink-0 rounded-full bg-[var(--color-brand)]/15 border border-[var(--color-brand)]/40 flex items-center justify-center font-serif text-[var(--color-brand)] text-xl">E</div>
             <div>
-              <div className="text-[14px] font-bold text-white tracking-widest uppercase mb-1">Dr. Elena Rostova</div>
+              <div className="text-[14px] font-bold text-[var(--color-espresso)] tracking-widest uppercase mb-1">Dr. Elena Rostova</div>
               <div className="editorial-label">Giám đốc Viện Da liễu Quốc tế</div>
             </div>
           </div>
@@ -40,7 +40,7 @@ export function Trust() {
            transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h2 className="editorial-eyebrow mb-4">Thông số kỹ thuật</h2>
-          <h3 className="editorial-h2 mb-10">Hiệu năng mạnh mẽ<br/><span className="text-white/40">Thiết kế tinh giản</span></h3>
+          <h3 className="editorial-h2 mb-10">Hiệu năng mạnh mẽ<br/><span className="text-[var(--color-espresso)]/40">Thiết kế tinh giản</span></h3>
           
           <div className="space-y-6">
             {[
@@ -52,7 +52,7 @@ export function Trust() {
             ].map((spec, i) => (
               <div key={i} className="flex gap-4 items-center border-b border-[var(--color-panel-border)] pb-6">
                 <CheckCircle2 className="w-5 h-5 text-glow-blue shrink-0 opacity-80" />
-                <span className="text-[14px] text-white/80">{spec}</span>
+                <span className="text-[14px] text-[var(--color-espresso)]">{spec}</span>
               </div>
             ))}
           </div>

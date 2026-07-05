@@ -75,7 +75,7 @@ export function Navbar({ currentView, onViewChange }: NavbarProps) {
                   onClick={() => onViewChange(item.id as any)}
                   className={cn(
                     "editorial-nav-link relative py-1 cursor-pointer bg-transparent border-none font-medium text-[11px] tracking-widest uppercase",
-                    currentView === item.id ? "text-[var(--color-brand)] font-semibold" : "text-white/60 hover:text-[var(--color-brand)]"
+                    currentView === item.id ? "text-[var(--color-brand)] font-semibold" : "text-[var(--color-espresso-muted)] hover:text-[var(--color-brand)]"
                   )}
                   title={item.title}
                 >
@@ -93,14 +93,14 @@ export function Navbar({ currentView, onViewChange }: NavbarProps) {
           </ul>
         </nav>
 
-        <button className="hidden md:inline-block editorial-nav-link border-b border-white pb-0.5 hover:text-white cursor-pointer bg-transparent" style={{ borderBottomWidth: '1px' }}>
+        <button className="hidden md:inline-block editorial-nav-link border-b border-[var(--color-espresso)]/50 pb-0.5 hover:text-[var(--color-espresso)] cursor-pointer bg-transparent" style={{ borderBottomWidth: '1px' }}>
           GIỎ HÀNG (0)
         </button>
 
         {/* Nút hamburger - chỉ hiển thị trên mobile */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
-          className="md:hidden flex items-center justify-center w-10 h-10 -mr-2 bg-transparent border-none cursor-pointer text-white"
+          className="md:hidden flex items-center justify-center w-10 h-10 -mr-2 bg-transparent border-none cursor-pointer text-[var(--color-espresso)]"
           aria-label={mobileOpen ? "Đóng menu" : "Mở menu"}
           aria-expanded={mobileOpen}
         >
@@ -127,7 +127,7 @@ export function Navbar({ currentView, onViewChange }: NavbarProps) {
                     onClick={() => handleMobileNav(item.id as any)}
                     className={cn(
                       "w-full text-left py-4 px-2 bg-transparent border-none border-b border-[var(--color-panel-border)] cursor-pointer text-[15px] tracking-wide uppercase font-medium transition-colors",
-                      currentView === item.id ? "text-[var(--color-brand)]" : "text-white/80 hover:text-[var(--color-brand)]"
+                      currentView === item.id ? "text-[var(--color-brand)]" : "text-[var(--color-espresso-muted)] hover:text-[var(--color-brand)]"
                     )}
                     title={item.title}
                   >
@@ -136,7 +136,7 @@ export function Navbar({ currentView, onViewChange }: NavbarProps) {
                 </li>
               ))}
               <li className="mt-4">
-                <button className="w-full editorial-nav-link text-center py-3 rounded-full border border-white/70 text-white bg-transparent cursor-pointer">
+                <button className="w-full editorial-nav-link text-center py-3 rounded-full border border-[var(--color-espresso)]/40 text-[var(--color-espresso)] bg-transparent cursor-pointer">
                   GIỎ HÀNG (0)
                 </button>
               </li>
