@@ -76,15 +76,13 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
           className="relative w-full max-w-[360px] mt-16 md:mt-0 md:w-[44%] shrink-0"
         >
-          <div className="relative overflow-hidden rounded-t-[180px] rounded-b-[16px] border border-white/70 shadow-[0_30px_100px_rgba(160,98,76,0.15)] bg-white/50 aspect-[4/5]">
+          <div className="relative overflow-hidden rounded-[20px] border border-white/70 shadow-[0_30px_100px_rgba(160,98,76,0.15)] bg-white">
             <img
               src="/images/san-pham/hero.jpg"
               alt="Gương thông minh Luvia AI phân tích da"
               loading="eager"
-              className="w-full h-full object-cover"
+              className="w-full h-auto block"
             />
-            {/* Đường quét mô phỏng */}
-            <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color-brand)] to-transparent absolute top-[42%] shadow-[0_0_15px_rgba(160,98,76,0.35)] animate-pulse" />
 
             {/* Chip chỉ số overlay */}
             <div className="absolute top-4 right-4 bg-white/95 border border-[var(--color-panel-border)] shadow-sm py-2 px-3 rounded-[4px] flex flex-col gap-[2px] font-mono">

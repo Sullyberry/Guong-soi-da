@@ -16,52 +16,29 @@ export function InteractiveDemo() {
     <section className="py-32 bg-[var(--color-bg-deep)] relative overflow-hidden" id="how-it-works">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 blur-[100px] rounded-full pointer-events-none" />
       <div className="max-w-[1024px] mx-auto px-12 grid md:grid-cols-2 gap-16 items-center" ref={ref}>
-        {/* Left: Device Mockup */}
-        <div className="relative aspect-[3/4] max-w-sm mx-auto w-full">
-          {/* Mirror Frame */}
-          <div className="absolute inset-0 rounded-[300px_300px_0_0] border-[10px] border-[#C29F94] bg-[#1C1615] shadow-2xl overflow-hidden flex flex-col justify-center items-center">
-            {/* Pseudo reflection/face shape */}
-            <div className="w-[180px] h-[240px] bg-white/5 blur-2xl rounded-full absolute" />
-            
-            {/* Mirror UI overlay */}
-            <div className="absolute top-12 w-full px-8 flex justify-between items-start font-mono">
-              <div>
-                <div className="text-white text-xl">07:30</div>
-                <div className="editorial-label !text-[8px] mt-1 !text-white/60">24 Th10</div>
-              </div>
-              <div className="text-right">
-                <div className="text-[var(--color-rose-gold)] text-sm font-bold">82%</div>
-                <div className="editorial-label !text-[8px] mt-1 !text-white/60">Độ ẩm</div>
-              </div>
-            </div>
+        {/* Left: Ảnh AI phân tích da thật */}
+        <div className="relative aspect-[3/4] max-w-sm mx-auto w-full rounded-[16px] overflow-hidden border border-[var(--color-panel-border)] shadow-2xl">
+          <img
+            src="/images/san-pham/phan-tich.jpg"
+            alt="AI tự động quét và phân tích da mặt trên gương Luvia mỗi sáng"
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
 
-            {/* Scanning Laser Effect */}
-            {scanning && (
-              <motion.div
-                initial={{ top: "0%" }}
-                animate={{ top: "100%" }}
-                transition={{
-                  duration: 2.5,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut"
-                }}
-                className="absolute left-0 w-full h-[1px] bg-glow-blue shadow-[0_0_15px_#00f0ff] z-10"
-              />
-            )}
-            
-            {/* Fake Scanning nodes */}
-            <motion.div 
-               animate={scanning ? { opacity: [0, 1, 0] } : { opacity: 0 }}
-               transition={{ duration: 1, repeat: Infinity, delay: 0.5 }}
-               className="absolute top-1/3 left-1/4 w-1.5 h-1.5 rounded-full bg-glow-blue ring-2 ring-glow-blue/20"
+          {/* Hiệu ứng quét laser overlay trên ảnh */}
+          {scanning && (
+            <motion.div
+              initial={{ top: "0%" }}
+              animate={{ top: "100%" }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+              className="absolute left-0 w-full h-[2px] bg-glow-blue shadow-[0_0_15px_#00f0ff] z-10"
             />
-            <motion.div 
-               animate={scanning ? { opacity: [0, 1, 0] } : { opacity: 0 }}
-               transition={{ duration: 1.2, repeat: Infinity, delay: 1 }}
-               className="absolute top-1/2 right-1/4 w-1.5 h-1.5 rounded-full bg-white ring-2 ring-white/20"
-            />
-          </div>
+          )}
         </div>
 
         {/* Right: Text */}
