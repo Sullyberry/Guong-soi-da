@@ -25,10 +25,10 @@ export function BrandHome({ onNavigateToProduct, onNavigateToAbout }: BrandHomeP
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-[44px] md:text-[84px] font-light tracking-tighter leading-none text-[#241C1B] mb-8 uppercase font-display"
+          className="text-[44px] md:text-[80px] font-light tracking-tighter leading-[1.05] text-[#241C1B] mb-8 font-display"
         >
-          <span>Your self,</span><br/>
-          <span className="text-[#241C1B]/30 italic">Perfected</span>
+          HIỂU DA BẠN<br/>
+          <span className="text-[var(--color-rose-gold)] italic font-light" style={{ fontSize: "0.6em" }}>hơn chính bạn</span>
         </motion.h1>
         
         <motion.p

@@ -25,8 +25,8 @@ export function Pricing() {
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-12 mb-16">
           <div className="text-center md:text-right">
-            <div className="text-[var(--color-espresso)]/40 line-through text-xl mb-2 font-serif">$399</div>
-            <div className="editorial-h1 !text-7xl font-bold text-[var(--color-espresso)]">$199</div>
+            <div className="text-[var(--color-espresso)]/40 line-through text-lg mb-2 font-serif">9.990.000đ</div>
+            <div className="editorial-h1 !text-[40px] md:!text-6xl font-bold text-[var(--color-espresso)]">5.990.000đ</div>
           </div>
           <div className="hidden md:block w-[1px] h-24 bg-[var(--color-panel-border)]" />
           <div className="text-center md:text-left flex flex-col gap-2">
@@ -39,8 +39,12 @@ export function Pricing() {
         <button className="editorial-button">
           ĐẶT HÀNG NGAY
         </button>
-        <div className="editorial-label mt-8 text-[var(--color-espresso-muted)]">
-          Đảm bảo hoàn tiền trong 30 ngày. Miễn phí vận chuyển toàn cầu.
+        <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3">
+          {["Bảo hành cam kết 1 đổi 1", "Đổi trả trong 30 ngày", "Miễn phí vận chuyển toàn quốc", "Cập nhật App trọn đời"].map((t) => (
+            <span key={t} className="editorial-label !text-[10px] text-[var(--color-espresso-muted)] flex items-center gap-1.5">
+              <span className="w-1 h-1 rounded-full bg-[var(--color-brand)]" /> {t}
+            </span>
+          ))}
         </div>
       </motion.div>
     </section>

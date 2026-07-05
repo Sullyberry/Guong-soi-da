@@ -37,10 +37,10 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="editorial-h1 !text-[40px] md:!text-[84px] mb-6 md:mb-8 uppercase"
+            className="editorial-h1 !text-[44px] md:!text-[80px] leading-[1.05] mb-6 md:mb-8"
           >
-            <span>Your self,</span><br/>
-            <span className="text-[var(--color-rose-gold)]">Perfected</span>
+            HIỂU DA BẠN<br/>
+            <span className="text-[var(--color-rose-gold)] italic font-light" style={{ fontSize: "0.6em" }}>hơn chính bạn</span>
           </motion.h1>
 
           <motion.p
