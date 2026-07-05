@@ -69,29 +69,31 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Mirror Mockup mimicking the Design HTML */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
+        {/* Product image (responsive, hiện cả trên mobile) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-          className="hidden md:flex absolute right-[-50px] top-[120px] w-[600px] h-[700px] bg-gradient-to-br from-white/95 to-white/60 rounded-t-[300px] border border-white/80 backdrop-blur-[20px] shadow-[0_30px_100px_rgba(160,98,76,0.12)] justify-center items-start pt-[80px]"
+          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+          className="relative w-full max-w-[360px] mt-16 md:mt-0 md:w-[44%] shrink-0"
         >
-          <div className="w-[340px] h-[460px] border border-dashed border-[var(--color-rose-gold)]/50 rounded-[170px] relative bg-[radial-gradient(circle_at_center,rgba(252,250,247,0.8)_0%,transparent_80%)]">
-            <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color-brand)] to-transparent absolute top-[40%] shadow-[0_0_15px_rgba(160,98,76,0.25)] animate-pulse" />
-            
-            <div className="absolute top-[20%] right-[-60px] bg-white/95 border border-[var(--color-panel-border)] shadow-sm p-3 px-4 rounded-[4px] flex flex-col gap-[2px] font-mono text-[10px]">
+          <div className="relative overflow-hidden rounded-t-[180px] rounded-b-[16px] border border-white/70 shadow-[0_30px_100px_rgba(160,98,76,0.15)] bg-white/50 aspect-[4/5]">
+            <img
+              src="/images/san-pham/hero.jpg"
+              alt="Gương thông minh Luvia AI phân tích da"
+              loading="eager"
+              className="w-full h-full object-cover"
+            />
+            {/* Đường quét mô phỏng */}
+            <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color-brand)] to-transparent absolute top-[42%] shadow-[0_0_15px_rgba(160,98,76,0.35)] animate-pulse" />
+
+            {/* Chip chỉ số overlay */}
+            <div className="absolute top-4 right-4 bg-white/95 border border-[var(--color-panel-border)] shadow-sm py-2 px-3 rounded-[4px] flex flex-col gap-[2px] font-mono">
               <span className="editorial-label !text-[8px] text-[var(--color-brand)] font-bold">ĐỘ ẨM LÀN DA</span>
-              <span className="text-[var(--color-brand)] font-bold text-[14px]">82% Đạt Chuẩn</span>
+              <span className="text-[var(--color-brand)] font-bold text-[13px]">82% Đạt Chuẩn</span>
             </div>
-            
-            <div className="absolute top-[50%] left-[-80px] bg-white/95 border border-[var(--color-panel-border)] shadow-sm p-3 px-4 rounded-[4px] flex flex-col gap-[2px] font-mono text-[10px]">
+            <div className="absolute bottom-4 left-4 bg-white/95 border border-[var(--color-panel-border)] shadow-sm py-2 px-3 rounded-[4px] flex flex-col gap-[2px] font-mono">
               <span className="editorial-label !text-[8px] text-[var(--color-brand)] font-bold">LỖ CHÂN LÔNG</span>
-              <span className="text-[var(--color-brand)] font-bold text-[14px]">-12% Se Nhỏ</span>
-            </div>
-            
-            <div className="absolute bottom-[20%] right-[-40px] bg-white/95 border border-[var(--color-panel-border)] shadow-sm p-3 px-4 rounded-[4px] flex flex-col gap-[2px] font-mono text-[10px]">
-              <span className="editorial-label !text-[8px] text-[var(--color-brand)] font-bold">CHỈ SỐ CĂNG THẲNG</span>
-              <span className="text-[var(--color-brand)] font-bold text-[14px]">Êm dịu (Cấp độ 2)</span>
+              <span className="text-[var(--color-brand)] font-bold text-[13px]">-12% Se Nhỏ</span>
             </div>
           </div>
         </motion.div>

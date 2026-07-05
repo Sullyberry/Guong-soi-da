@@ -13,6 +13,7 @@ import { BrandHome } from "./components/BrandHome";
 import { AboutUs } from "./components/AboutUs";
 import { News } from "./components/News";
 import { AppExperience } from "./components/AppExperience";
+import { ProductGallery } from "./components/ProductGallery";
 
 type AppView = 'home' | 'product' | 'about' | 'news';
 
@@ -77,6 +78,7 @@ export default function App() {
             <Hero />
             <Problem />
             <Features />
+            <ProductGallery />
             <InteractiveDemo />
             <AppExperience />
             <Trust />
