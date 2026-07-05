@@ -5,7 +5,6 @@ import { Hero } from "./components/Hero";
 import { Problem } from "./components/Problem";
 import { Features } from "./components/Features";
 import { InteractiveDemo } from "./components/InteractiveDemo";
-import { Trust } from "./components/Trust";
 import { Pricing } from "./components/Pricing";
 import { FAQ } from "./components/FAQ";
 import { Footer } from "./components/Footer";
@@ -80,7 +79,6 @@ export default function App() {
             <Features />
             <InteractiveDemo />
             <AppExperience />
-            <Trust />
             <ProductValue />
             <Pricing />
             <FAQ />

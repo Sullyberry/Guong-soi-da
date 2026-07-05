@@ -12,23 +12,14 @@ export function BrandHome({ onNavigateToProduct, onNavigateToAbout }: BrandHomeP
       <div className="absolute inset-0 bg-grid-white bg-[size:50px_50px] opacity-60" />
       
       <div className="max-w-[1024px] mx-auto px-12 relative z-10 w-full text-center py-20 flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="editorial-badge bg-[#ECDCD6] text-[#A0624C] border border-[#A0624C]/20 mb-8"
-        >
-          CÔNG NGHỆ SOI DA AI CAO CẤP
-        </motion.div>
-        
         <motion.h1
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-[44px] md:text-[80px] font-light tracking-tighter leading-[1.05] text-[#241C1B] mb-8 font-display"
+          className="text-[44px] md:text-[80px] font-light tracking-tighter leading-[1.05] text-[#241C1B] mb-12 font-display"
         >
           HIỂU DA BẠN<br/>
-          <span className="text-[var(--color-rose-gold)] italic font-light" style={{ fontSize: "0.6em" }}>hơn chính bạn</span>
+          <span className="text-[var(--color-rose-gold)]" style={{ fontSize: "0.85em" }}>hơn chính bạn</span>
         </motion.h1>
         
         <motion.p

@@ -79,7 +79,7 @@ const newsPosts: NewsPost[] = [
 
 export function News() {
   return (
-    <div className="pt-32 pb-24 bg-[var(--color-bg-dark)] min-h-screen">
+    <div className="pt-40 md:pt-44 pb-24 bg-[var(--color-bg-dark)] min-h-screen">
       <div className="max-w-[1024px] mx-auto px-12">
         {/* Header Section */}
         <div className="mb-16 border-b border-[var(--color-panel-border)] pb-8">

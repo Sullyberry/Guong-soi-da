@@ -27,7 +27,7 @@ const manifestoItems: ManifestoItem[] = [
 
 export function AboutUs() {
   return (
-    <div className="pt-32 pb-24 bg-[var(--color-bg-dark)] min-h-screen">
+    <div className="pt-40 md:pt-44 pb-24 bg-[var(--color-bg-dark)] min-h-screen">
       <div className="max-w-[1024px] mx-auto px-6 md:px-12">
         {/* About Hero Section (Editorial Split) */}
         <div className="mb-20 pb-16 border-b border-[var(--color-panel-border)]">
