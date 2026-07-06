@@ -17,19 +17,8 @@ export function Hero() {
         className="md:hidden absolute inset-0 bg-cover bg-top"
         style={{ backgroundImage: "url('/images/san-pham/hero-bg-mobile.jpg')" }}
       />
-      {/* Lớp blur cho vùng chứa chữ (phía trên), mờ dần để phần sản phẩm bên dưới vẫn nét - mobile */}
-      <div
-        className="md:hidden absolute inset-0 bg-cover bg-top"
-        style={{
-          backgroundImage: "url('/images/san-pham/hero-bg-mobile.jpg')",
-          filter: "blur(7px)",
-          transform: "scale(1.08)",
-          WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 45%, transparent 66%)",
-          maskImage: "linear-gradient(to bottom, #000 0%, #000 45%, transparent 66%)",
-        }}
-      />
-      {/* Scrim sáng cho vùng chữ - mobile */}
-      <div className="md:hidden absolute inset-0 bg-[linear-gradient(to_bottom,rgba(252,250,247,0.74)_0%,rgba(252,250,247,0.28)_38%,transparent_62%)]" />
+      {/* Scrim sáng nhẹ cho vùng chữ - mobile (không blur) */}
+      <div className="md:hidden absolute inset-0 bg-[linear-gradient(to_bottom,rgba(252,250,247,0.55)_0%,rgba(252,250,247,0.12)_40%,transparent_60%)]" />
 
       {/* Nội dung chữ */}
       <div className="relative z-10 max-w-[1024px] mx-auto w-full px-6 md:px-12 pt-44 pb-10 md:py-0 md:min-h-screen md:flex md:items-center">
