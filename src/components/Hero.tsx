@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-screen bg-[var(--color-ivory)]">
+    <section className="relative overflow-hidden md:min-h-screen bg-[var(--color-ivory)]">
       {/* Ảnh nền có sản phẩm - desktop (full-bleed) */}
       <div
         className="hidden md:block absolute inset-0 bg-cover bg-center"
@@ -12,16 +12,17 @@ export function Hero() {
       {/* Scrim ngang giúp chữ bên trái đọc rõ - desktop */}
       <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[var(--color-ivory)]/95 via-[var(--color-ivory)]/55 to-transparent" />
 
-      {/* Ảnh nền dọc - mobile (nét) */}
-      <div
-        className="md:hidden absolute inset-0 bg-cover bg-top"
-        style={{ backgroundImage: "url('/images/san-pham/hero-bg-mobile.jpg')" }}
+      {/* Ảnh dọc - mobile: hiển thị TRỌN theo tỷ lệ gốc (không crop, luôn thấy đủ sản phẩm) */}
+      <img
+        src="/images/san-pham/hero-bg-mobile.jpg"
+        alt="Gương thông minh AI Luvia trong không gian phòng tắm cao cấp"
+        className="md:hidden block w-full h-auto"
       />
-      {/* Scrim sáng nhẹ cho vùng chữ - mobile (không blur) */}
-      <div className="md:hidden absolute inset-0 bg-[linear-gradient(to_bottom,rgba(252,250,247,0.55)_0%,rgba(252,250,247,0.12)_40%,transparent_60%)]" />
+      {/* Scrim sáng nhẹ cho vùng chữ phía trên - mobile */}
+      <div className="md:hidden absolute inset-0 bg-[linear-gradient(to_bottom,rgba(252,250,247,0.6)_0%,rgba(252,250,247,0.12)_40%,transparent_58%)]" />
 
-      {/* Nội dung chữ */}
-      <div className="relative z-10 max-w-[1024px] mx-auto w-full px-6 md:px-12 pt-44 pb-10 md:py-0 md:min-h-screen md:flex md:items-center">
+      {/* Nội dung chữ: đè lên phần trên (mobile) / căn giữa (desktop) */}
+      <div className="absolute top-0 inset-x-0 md:static z-10 max-w-[1024px] mx-auto w-full px-6 md:px-12 pt-40 pb-10 md:py-0 md:min-h-screen md:flex md:items-center">
         <div className="flex flex-col items-start text-left max-w-[540px]">
           <motion.div
             initial={{ opacity: 0 }}
@@ -36,7 +37,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="editorial-h1 !text-[44px] md:!text-[80px] leading-[1.05] mb-14 md:mb-24"
+            className="editorial-h1 !text-[44px] md:!text-[80px] leading-[1.05] mb-8 md:mb-24"
           >
             HIỂU DA BẠN<br/>
             <span className="text-[var(--color-rose-gold)]" style={{ fontSize: "0.85em" }}>hơn chính bạn</span>
@@ -46,7 +47,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-[15px] md:text-[16px] text-[var(--color-espresso-muted)] leading-relaxed max-w-[440px] mb-10 md:mb-12"
+            className="text-[15px] md:text-[16px] text-[var(--color-espresso-muted)] leading-relaxed max-w-[440px] mb-8 md:mb-12"
           >
             Đừng đoán mò làn da. Gương thông minh AI Luvia phân tích chuyên sâu mụn, bã nhờn, độ ẩm và mức độ căng thẳng theo thời gian thực, mang đến liệu trình chăm sóc da lý tưởng được may đo hoàn hảo cho riêng bạn mỗi sớm mai.
           </motion.p>
