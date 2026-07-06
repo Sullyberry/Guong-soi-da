@@ -28,7 +28,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="editorial-h1 !text-[44px] md:!text-[80px] leading-[1.05] mb-10 md:mb-16"
+            className="editorial-h1 !text-[44px] md:!text-[80px] leading-[1.05] mb-14 md:mb-24"
           >
             HIỂU DA BẠN<br/>
             <span className="text-[var(--color-rose-gold)]" style={{ fontSize: "0.85em" }}>hơn chính bạn</span>
@@ -40,7 +40,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-[15px] md:text-[16px] text-[var(--color-espresso-muted)] leading-relaxed max-w-[440px] mb-10 md:mb-12"
           >
-            Đừng đoán mò làn da. Gương thông minh Luvia AI phân tích chuyên sâu mụn, bã nhờn, độ ẩm và mức độ căng thẳng theo thời gian thực, mang đến liệu trình chăm sóc da lý tưởng được may đo hoàn hảo cho riêng bạn mỗi sớm mai.
+            Đừng đoán mò làn da. Gương thông minh AI Luvia phân tích chuyên sâu mụn, bã nhờn, độ ẩm và mức độ căng thẳng theo thời gian thực, mang đến liệu trình chăm sóc da lý tưởng được may đo hoàn hảo cho riêng bạn mỗi sớm mai.
           </motion.p>
 
           <motion.div
@@ -68,7 +68,7 @@ export function Hero() {
       {/* Ảnh sản phẩm dưới phần chữ - chỉ mobile (xếp dọc, không đè chữ) */}
       <img
         src="/images/san-pham/hero-bg-mobile.jpg"
-        alt="Gương thông minh Luvia AI trong không gian phòng tắm cao cấp"
+        alt="Gương thông minh AI Luvia trong không gian phòng tắm cao cấp"
         className="md:hidden w-full h-auto block"
       />
 

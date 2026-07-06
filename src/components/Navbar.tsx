@@ -31,7 +31,7 @@ export function Navbar({ currentView, onViewChange }: NavbarProps) {
 
   const navItems = [
     { id: 'home', label: 'Trang chủ', title: 'Trang chủ LUVIA' },
-    { id: 'product', label: 'Sản phẩm', title: 'Chi tiết Gương thông minh Luvia AI' },
+    { id: 'product', label: 'Sản phẩm', title: 'Chi tiết Gương thông minh AI Luvia' },
     { id: 'about', label: 'Giới thiệu', title: 'Về chúng tôi - Triết lý và Hành trình' },
     { id: 'news', label: 'Tin tức', title: 'Tin tức và Xu hướng công nghệ' },
   ] as const;
