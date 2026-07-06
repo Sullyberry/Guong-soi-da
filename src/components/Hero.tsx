@@ -22,7 +22,7 @@ export function Hero() {
       <div className="md:hidden absolute inset-0 bg-[linear-gradient(to_bottom,rgba(252,250,247,0.6)_0%,rgba(252,250,247,0.12)_40%,transparent_58%)]" />
 
       {/* Nội dung chữ: đè lên phần trên (mobile) / căn giữa (desktop) */}
-      <div className="absolute top-0 inset-x-0 md:static z-10 max-w-[1024px] mx-auto w-full px-6 md:px-12 pt-40 pb-10 md:py-0 md:min-h-screen md:flex md:items-center">
+      <div className="absolute top-0 inset-x-0 md:relative z-10 max-w-[1024px] mx-auto w-full px-6 md:px-12 pt-40 pb-10 md:py-0 md:min-h-screen md:flex md:items-center">
         <div className="flex flex-col items-start text-left max-w-[540px]">
           <motion.div
             initial={{ opacity: 0 }}
