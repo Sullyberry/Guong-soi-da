@@ -16,6 +16,9 @@ export function Hero() {
       <img
         src="/images/san-pham/hero-bg-mobile.jpg"
         alt="Gương thông minh AI Luvia trong không gian phòng tắm cao cấp"
+        width={1080}
+        height={2546}
+        fetchPriority="high"
         className="md:hidden block w-full h-auto"
       />
       {/* Scrim sáng nhẹ cho vùng chữ phía trên - mobile */}

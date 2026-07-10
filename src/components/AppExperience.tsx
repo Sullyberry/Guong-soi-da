@@ -13,24 +13,28 @@ const steps = [
   {
     n: "01",
     img: "/images/san-pham/step-1.jpg",
+    w: 682, h: 502,
     title: "Tải app & Kết nối",
     desc: "Tải ứng dụng Luvia, kết nối gương qua Bluetooth hoặc Wi-Fi và đăng nhập. Hệ thống tạo hồ sơ skincare cá nhân để lưu dữ liệu phân tích da.",
   },
   {
     n: "02",
     img: "/images/san-pham/step-2.jpg",
+    w: 695, h: 502,
     title: "AI phân tích da",
     desc: "Đứng trước gương, camera và cảm biến quét khuôn mặt để đo độ ẩm, lượng dầu, sắc tố, mụn và độ nhạy cảm của da.",
   },
   {
     n: "03",
     img: "/images/san-pham/step-3.jpg",
+    w: 682, h: 597,
     title: "Kết quả & Phối trộn dưỡng chất",
     desc: "Kết quả hiển thị trên gương và đồng bộ lên app. AI chọn dưỡng chất phù hợp và tự động phối trộn mặt nạ cá nhân hóa chỉ trong 90 giây.",
   },
   {
     n: "04",
     img: "/images/san-pham/step-4.jpg",
+    w: 695, h: 597,
     title: "Xuất mặt nạ & Lưu dữ liệu",
     desc: "Mặt nạ được xuất ra tại khay bên dưới gương. Dữ liệu được lưu trữ an toàn trên cloud để theo dõi sự thay đổi của làn da theo thời gian.",
   },
@@ -82,6 +86,8 @@ export function AppExperience() {
             <img
               src="/images/san-pham/app-luvia.jpg"
               alt="Ứng dụng LUVIA hiển thị bảng phân tích sức khỏe làn da trên điện thoại"
+              width={664}
+              height={567}
               loading="lazy"
               className="w-full h-auto block"
             />
@@ -132,6 +138,8 @@ export function AppExperience() {
               <img
                 src={step.img}
                 alt={`Bước ${step.n}: ${step.title}`}
+                width={step.w}
+                height={step.h}
                 loading="lazy"
                 className="w-full h-auto block border-b border-[var(--color-panel-border)]"
               />

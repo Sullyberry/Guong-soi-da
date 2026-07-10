@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://luvia.id.vn/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://luvia.id.vn/og_preview.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://luvia.id.vn/san-pham/</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/san-pham/og-product.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://luvia.id.vn/gioi-thieu/</loc>
@@ -29,47 +31,55 @@
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/tin-tuc/xac-dinh-loai-da-1.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://luvia.id.vn/tin-tuc/skincare-ca-nhan-hoa/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/tin-tuc/skincare-ca-nhan-hoa-1.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://luvia.id.vn/tin-tuc/cham-soc-da-theo-tinh-trang-da/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/tin-tuc/cham-soc-da-tinh-trang-1.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://luvia.id.vn/tin-tuc/mua-my-pham-theo-review/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/tin-tuc/review-my-pham-1.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://luvia.id.vn/tin-tuc/may-phan-tich-da/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/tin-tuc/may-phan-tich-da-1.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://luvia.id.vn/tin-tuc/guong-soi-ai/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/tin-tuc/guong-soi-ai-2.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://luvia.id.vn/tin-tuc/beauty-tech-la-gi/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/tin-tuc/beauty-tech-1.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://luvia.id.vn/tin-tuc/ai-skincare-la-gi/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/tin-tuc/ai-skincare-1.jpg</image:loc></image:image>
   </url>
 </urlset>
