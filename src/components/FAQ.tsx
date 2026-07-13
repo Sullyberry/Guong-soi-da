@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: "Việc quét da có an toàn cho mắt không?",
-    a: "Hoàn toàn an toàn. Chúng tôi sử dụng dải ánh sáng quang phổ rộng và hồng ngoại công suất cực thấp, được FDA kiểm duyệt không gây rủi ro cho mắt hoặc da."
+    a: "Hoàn toàn an toàn. Chúng tôi sử dụng dải ánh sáng quang phổ rộng và hồng ngoại công suất cực thấp, được kiểm duyệt không gây rủi ro cho mắt hoặc da."
   },
   {
     q: "Sau bao lâu tôi có thể thấy kết quả thay đổi từ routine?",
