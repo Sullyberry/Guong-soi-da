@@ -1,6 +1,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Bluetooth, History, BellRing, LineChart } from "lucide-react";
+import { Img } from "./Img";
 
 const capabilities = [
   { icon: Bluetooth, text: "Kết nối gương qua Bluetooth / Wi-Fi, đồng bộ dữ liệu skincare theo thời gian thực." },
@@ -83,7 +84,7 @@ export function AppExperience() {
             transition={{ duration: 0.8 }}
             className="rounded-[8px] overflow-hidden border border-[var(--color-panel-border)] bg-[var(--color-panel)]"
           >
-            <img
+            <Img
               src="/images/san-pham/app-luvia.jpg"
               alt="Ứng dụng LUVIA hiển thị bảng phân tích sức khỏe làn da trên điện thoại"
               width={664}
@@ -135,7 +136,7 @@ export function AppExperience() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="bg-[var(--color-panel)] border border-[var(--color-panel-border)] rounded-[8px] overflow-hidden flex flex-col"
             >
-              <img
+              <Img
                 src={step.img}
                 alt={`Bước ${step.n}: ${step.title}`}
                 width={step.w}

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
+import { Img } from "./Img";
 
 export function Hero() {
   return (
@@ -7,13 +8,16 @@ export function Hero() {
       {/* Ảnh nền có sản phẩm - desktop (full-bleed) */}
       <div
         className="hidden md:block absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/san-pham/hero-bg.jpg')" }}
+        style={{
+          backgroundImage:
+            "image-set(url('/images/san-pham/hero-bg.webp') type('image/webp'), url('/images/san-pham/hero-bg.jpg') type('image/jpeg'))",
+        }}
       />
       {/* Scrim ngang giúp chữ bên trái đọc rõ - desktop */}
       <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[var(--color-ivory)]/95 via-[var(--color-ivory)]/55 to-transparent" />
 
       {/* Ảnh dọc - mobile: hiển thị TRỌN theo tỷ lệ gốc (không crop, luôn thấy đủ sản phẩm) */}
-      <img
+      <Img
         src="/images/san-pham/hero-bg-mobile.jpg"
         alt="Gương thông minh AI Luvia trong không gian phòng tắm cao cấp"
         width={1080}

@@ -6,3 +6,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# WebP sinh tự động khi build (CI) — không commit
+public/images/**/*.webp

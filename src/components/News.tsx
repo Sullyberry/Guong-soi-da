@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
+import { Img } from "./Img";
 
 interface NewsPost {
   category: string;
@@ -128,7 +129,7 @@ export function News() {
                   {post.title}
                 </h3>
                 <div className="overflow-hidden rounded-md mb-6 border border-[var(--color-panel-border)]">
-                  <img
+                  <Img
                     src={post.image}
                     alt={post.title}
                     loading="lazy"

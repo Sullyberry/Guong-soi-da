@@ -1,5 +1,6 @@
 import { motion, useInView } from "motion/react";
 import { useRef, useState, useEffect } from "react";
+import { Img } from "./Img";
 
 export function InteractiveDemo() {
   const ref = useRef(null);
@@ -18,7 +19,7 @@ export function InteractiveDemo() {
       <div className="max-w-[1024px] mx-auto px-12 grid md:grid-cols-2 gap-16 items-center" ref={ref}>
         {/* Left: Ảnh AI phân tích da thật */}
         <div className="relative aspect-[3/4] max-w-sm mx-auto w-full rounded-[16px] overflow-hidden border border-[var(--color-panel-border)] shadow-2xl">
-          <img
+          <Img
             src="/images/san-pham/phan-tich.jpg"
             alt="AI tự động quét và phân tích da mặt trên gương Luvia mỗi sáng"
             loading="lazy"
