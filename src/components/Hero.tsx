@@ -8,10 +8,7 @@ export function Hero() {
       {/* Ảnh nền có sản phẩm - desktop (full-bleed) */}
       <div
         className="hidden md:block absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "image-set(url('/images/san-pham/hero-bg.webp') type('image/webp'), url('/images/san-pham/hero-bg.jpg') type('image/jpeg'))",
-        }}
+        style={{ backgroundImage: "url('/images/san-pham/hero-bg.jpg')" }}
       />
       {/* Scrim ngang giúp chữ bên trái đọc rõ - desktop */}
       <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[var(--color-ivory)]/95 via-[var(--color-ivory)]/55 to-transparent" />

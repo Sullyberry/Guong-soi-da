@@ -31,11 +31,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate WebP images
-        run: |
-          npm install --no-save sharp
-          node scripts/gen-webp.mjs
-
       - name: Build
         run: npm run build
 
