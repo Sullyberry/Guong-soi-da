@@ -69,11 +69,47 @@
             "url": "https://luvia.id.vn/san-pham/",
             "priceCurrency": "VND",
             "price": "5990000",
+            "validFrom": "2026-07-04T00:00:00+07:00",
             "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/PreOrder",
             "seller": {
               "@type": "Organization",
               "name": "Luvia AI"
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "VN",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": 30,
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn"
+            },
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "VND"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "VN"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 0,
+                  "maxValue": 2,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 2,
+                  "maxValue": 5,
+                  "unitCode": "DAY"
+                }
+              }
             }
           }
         },
