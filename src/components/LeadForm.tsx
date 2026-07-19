@@ -91,7 +91,7 @@ export function LeadForm() {
       // Ghi nhận chuyển đổi trong Google Analytics 4.
       if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
         (window as any).gtag("event", "generate_lead", {
-          form_name: "dat_truoc_luvia",
+          form_name: "lien_he_luvia",
           page_path: window.location.pathname,
         });
       }
@@ -109,7 +109,7 @@ export function LeadForm() {
 
   return (
     <section
-      id="dat-truoc"
+      id="lien-he"
       className="py-32 bg-[var(--color-bg-dark)] border-t border-[var(--color-panel-border)]"
     >
       <div className="max-w-[720px] mx-auto px-6 md:px-12" ref={ref}>
@@ -118,7 +118,7 @@ export function LeadForm() {
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           className="editorial-eyebrow mb-4"
         >
-          Đăng ký đặt trước
+          Liên hệ
         </motion.div>
 
         <motion.h2
@@ -130,14 +130,15 @@ export function LeadForm() {
           Để lại thông tin, <span className="text-[var(--color-espresso-muted)]">tụi mình liên hệ tư vấn</span>
         </motion.h2>
 
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
           className="text-[16px] text-[var(--color-espresso-muted)] leading-relaxed mb-10"
         >
-          Điền thông tin để nhận tư vấn về Gương thông minh AI Luvia và giữ suất đặt trước phiên bản
-          Genesis. Việc đăng ký hoàn toàn miễn phí và chưa phát sinh nghĩa vụ thanh toán.
+          Bạn quan tâm đến Gương thông minh AI Luvia hoặc có thắc mắc cần giải đáp? Để lại thông tin,
+          tụi mình sẽ liên hệ tư vấn. Hoàn toàn miễn phí và không ràng buộc gì cả.
         </motion.p>
 
         {status === "success" ? (
@@ -160,7 +161,7 @@ export function LeadForm() {
               onClick={() => setStatus("idle")}
               className="mt-6 text-[12px] uppercase tracking-widest text-[var(--color-brand)] underline underline-offset-4"
             >
-              Gửi thêm một đăng ký khác
+              Gửi thông tin khác
             </button>
           </motion.div>
         ) : (
@@ -320,7 +321,7 @@ export function LeadForm() {
                   <Loader2 className="h-4 w-4 animate-spin" /> ĐANG GỬI...
                 </span>
               ) : (
-                <span>GỬI ĐĂNG KÝ ĐẶT TRƯỚC →</span>
+                <span>GỬI THÔNG TIN →</span>
               )}
             </button>
 

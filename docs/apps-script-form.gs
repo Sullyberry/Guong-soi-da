@@ -1,12 +1,12 @@
 /**
- * LUVIA — Nhận đăng ký đặt trước từ website luvia.id.vn
- * ------------------------------------------------------
+ * LUVIA — Nhận thông tin khách hàng từ biểu mẫu liên hệ trên luvia.id.vn
+ * ---------------------------------------------------------------------
  * Dán TOÀN BỘ file này vào Apps Script của Google Sheet.
  * Xem hướng dẫn triển khai ở cuối file.
  */
 
 // ⚙️ CẤU HÌNH — sửa 2 dòng này
-const SHEET_NAME = 'DangKy';                  // Tên tab sẽ lưu dữ liệu
+const SHEET_NAME = 'ThongTinKhachHang';       // Tên tab sẽ lưu dữ liệu
 const EMAIL_THONG_BAO = 'THAY_EMAIL_CUA_BAN'; // Email nhận thông báo. Để '' nếu không muốn nhận.
 
 function doPost(e) {
@@ -37,7 +37,7 @@ function doPost(e) {
     if (EMAIL_THONG_BAO && EMAIL_THONG_BAO.indexOf('@') > -1) {
       MailApp.sendEmail({
         to: EMAIL_THONG_BAO,
-        subject: '🔔 Đăng ký đặt trước Luvia: ' + (p.hoTen || 'Khách mới'),
+        subject: '🔔 Liên hệ mới từ website Luvia: ' + (p.hoTen || 'Khách mới'),
         body: [
           'Có khách vừa để lại thông tin trên website:',
           '',
@@ -72,7 +72,7 @@ function doGet() {
 /**
  * ===== HƯỚNG DẪN TRIỂN KHAI =====
  *
- * 1. Tạo Google Sheet mới, đặt tên "Luvia - Đăng ký đặt trước".
+ * 1. Tạo Google Sheet mới, đặt tên "Luvia - Thông tin khách hàng".
  * 2. Trong Sheet: Tiện ích mở rộng (Extensions) → Apps Script.
  * 3. Xoá hết code mẫu, dán toàn bộ file này vào.
  * 4. Sửa EMAIL_THONG_BAO thành email của bạn. Lưu (Ctrl+S).
