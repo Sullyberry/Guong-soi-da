@@ -8,7 +8,7 @@ import { Check, Loader2, AlertCircle } from "lucide-react";
  * quyền truy cập "Bất kỳ ai"), rồi dán vào đây.
  */
 const ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbwsVbEP-s6HvMmJSaJC9jLAbEw3CazPdTbjFmprow6BqYB2RPSbUFqnp_JcilXOLKKJ/exec";
+  "https://script.google.com/macros/s/AKfycbx9u7MdOfeftBLdHS2de2P5CNFqwjDfzfCU_YWHpUqEYmdRAvMmb5HMbFOZCglihx8k/exec";
 
 type Status = "idle" | "sending" | "success" | "error";
 

@@ -7,7 +7,7 @@
   'use strict';
 
   var ENDPOINT =
-    'https://script.google.com/macros/s/AKfycbwsVbEP-s6HvMmJSaJC9jLAbEw3CazPdTbjFmprow6BqYB2RPSbUFqnp_JcilXOLKKJ/exec';
+    'https://script.google.com/macros/s/AKfycbx9u7MdOfeftBLdHS2de2P5CNFqwjDfzfCU_YWHpUqEYmdRAvMmb5HMbFOZCglihx8k/exec';
 
   var CONSENT_KEY = 'luvia_cookie_consent';
   var POPUP_KEY = 'luvia_popup_state';
