@@ -80,6 +80,8 @@ export function LeadForm() {
         tinhThanh: form.tinhThanh.trim(),
         ghiChu: form.ghiChu.trim(),
         trangGui: typeof window !== "undefined" ? window.location.pathname : "",
+        // Gửi kèm ô bẫy bot để máy chủ tự kiểm tra thay vì chỉ tin phía trình duyệt
+        website: form.website.trim(),
       });
 
       // no-cors: Apps Script không trả header CORS cho trình duyệt, nhưng dữ liệu

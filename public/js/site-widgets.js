@@ -279,6 +279,7 @@
       body.append('tinhThanh', '');
       body.append('ghiChu', '');
       body.append('trangGui', window.location.pathname + ' [popup]');
+      body.append('website', hp.value.trim()); // o bay bot, may chu se tu kiem tra
 
       fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
         .then(function () {
