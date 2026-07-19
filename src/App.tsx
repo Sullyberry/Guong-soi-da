@@ -13,6 +13,7 @@ import { AboutUs } from "./components/AboutUs";
 import { News } from "./components/News";
 import { AppExperience } from "./components/AppExperience";
 import { ProductValue } from "./components/ProductValue";
+import { LeadForm } from "./components/LeadForm";
 
 type AppView = 'home' | 'product' | 'about' | 'news';
 
@@ -81,6 +82,7 @@ export default function App() {
             <AppExperience />
             <ProductValue />
             <Pricing />
+            <LeadForm />
             <FAQ />
           </div>
         );

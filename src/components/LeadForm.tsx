@@ -7,7 +7,8 @@ import { Check, Loader2, AlertCircle } from "lucide-react";
  * Lấy sau khi Deploy script trong Google Sheet (Triển khai → Ứng dụng web →
  * quyền truy cập "Bất kỳ ai"), rồi dán vào đây.
  */
-const ENDPOINT = "";
+const ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbwsVbEP-s6HvMmJSaJC9jLAbEw3CazPdTbjFmprow6BqYB2RPSbUFqnp_JcilXOLKKJ/exec";
 
 type Status = "idle" | "sending" | "success" | "error";
 
