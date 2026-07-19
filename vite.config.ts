@@ -18,6 +18,8 @@ export default defineConfig(() => {
           sanpham: path.resolve(__dirname, 'san-pham/index.html'),
           gioithieu: path.resolve(__dirname, 'gioi-thieu/index.html'),
           tintuc: path.resolve(__dirname, 'tin-tuc/index.html'),
+          privacy: path.resolve(__dirname, 'privacy/index.html'),
+          terms: path.resolve(__dirname, 'terms/index.html'),
           baiXacDinhLoaiDa: path.resolve(__dirname, 'tin-tuc/cach-xac-dinh-loai-da-tai-nha/index.html'),
           baiSkincareCaNhanHoa: path.resolve(__dirname, 'tin-tuc/skincare-ca-nhan-hoa/index.html'),
           baiChamSocDa: path.resolve(__dirname, 'tin-tuc/cham-soc-da-theo-tinh-trang-da/index.html'),

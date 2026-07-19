@@ -113,16 +113,16 @@ export function Footer({ onViewChange }: FooterProps) {
               <a href="#faq" onClick={(e) => handleAnchorClick(e, 'faq')} className="footer-link" title="Câu hỏi thường gặp và giải đáp thắc mắc">Hỏi đáp (FAQs)</a>
             </li>
             <li>
-              <a href="#" onClick={(e) => handlePageClick(e, 'about')} className="footer-link" title="Chính sách bảo mật thông tin khách hàng">Chính sách Bảo mật</a>
+              <a href="/privacy/" className="footer-link" title="Chính sách bảo mật thông tin khách hàng">Chính sách Bảo mật</a>
             </li>
             <li>
-              <a href="#" onClick={(e) => handlePageClick(e, 'about')} className="footer-link" title="Chính sách bảo hành và đổi trả sản phẩm Luvia">Chính sách Đổi trả</a>
+              <a href="/terms/#doi-tra" className="footer-link" title="Chính sách bảo hành và đổi trả sản phẩm Luvia">Chính sách Đổi trả</a>
             </li>
             <li>
-              <a href="#" onClick={(e) => handlePageClick(e, 'about')} className="footer-link" title="Chính sách bảo hành sản phẩm thông minh Luvia">Chính sách Bảo hành</a>
+              <a href="/terms/#doi-tra" className="footer-link" title="Chính sách bảo hành sản phẩm thông minh Luvia">Chính sách Bảo hành</a>
             </li>
             <li>
-              <a href="#" onClick={(e) => handlePageClick(e, 'about')} className="footer-link" title="Điều khoản sử dụng gương thông minh Luvia">Điều khoản Sử dụng</a>
+              <a href="/terms/" className="footer-link" title="Điều khoản sử dụng gương thông minh Luvia">Điều khoản Sử dụng</a>
             </li>
           </ul>
         </div>
