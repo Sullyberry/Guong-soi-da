@@ -124,6 +124,9 @@ export function Footer({ onViewChange }: FooterProps) {
             <li>
               <a href="/terms/" className="footer-link" title="Điều khoản sử dụng gương thông minh Luvia">Điều khoản Sử dụng</a>
             </li>
+            <li>
+              <a href="#" data-lv-cookie-settings className="footer-link" title="Thay đổi lựa chọn cookie của bạn">Cài đặt Cookie</a>
+            </li>
           </ul>
         </div>
       </div>

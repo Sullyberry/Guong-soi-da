@@ -125,9 +125,9 @@
     el.setAttribute('aria-label', 'Thông báo về cookie');
     el.innerHTML =
       '<h2>Website này sử dụng cookie</h2>' +
-      '<p>Luvia dùng cookie của Google Analytics để thống kê lượt truy cập ẩn danh, nhằm cải thiện nội dung và trải nghiệm. ' +
-      'Bạn có thể từ chối mà vẫn sử dụng website bình thường. Xem thêm tại ' +
-      '<a href="' + PRIVACY_URL + '">Chính sách bảo mật</a>.</p>' +
+      '<p>Trang web của chúng tôi sử dụng cookie để cải thiện trải nghiệm của bạn và phân tích lưu lượng truy cập. ' +
+      'Bạn có thể quản lý lựa chọn của mình bất kỳ lúc nào tại mục "Cài đặt cookie" ở chân trang. ' +
+      'Xem thêm tại <a href="' + PRIVACY_URL + '">Chính sách bảo mật</a>.</p>' +
       '<div class="lv-cookie-actions">' +
       '<button type="button" class="lv-btn lv-btn-primary" data-lv="accept">Chấp nhận</button>' +
       '<button type="button" class="lv-btn lv-btn-ghost" data-lv="decline">Từ chối</button>' +
@@ -335,6 +335,26 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
   }
+
+  /* ------------------------------------------- Mở lại lựa chọn cookie sau này */
+  function openCookieSettings() {
+    if (document.querySelector('.lv-cookie')) return;
+    showCookieBanner(null);
+  }
+
+  /* Uỷ quyền sự kiện ở document: hoạt động cả khi link do React render sau này */
+  document.addEventListener('click', function (e) {
+    var t = e.target && e.target.closest ? e.target.closest('[data-lv-cookie-settings]') : null;
+    if (t) {
+      e.preventDefault();
+      openCookieSettings();
+    }
+  });
+
+  window.LuviaCookies = {
+    open: openCookieSettings,
+    getState: function () { return getLS(CONSENT_KEY); }
+  };
 
   /* ------------------------------------------------------------------ init */
   function init() {
