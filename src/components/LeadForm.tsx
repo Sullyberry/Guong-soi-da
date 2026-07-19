@@ -98,7 +98,7 @@ export function LeadForm() {
       }
     } catch {
       setStatus("error");
-      setErrorMsg("Không gửi được lúc này. Bạn thử lại sau ít phút hoặc nhắn cho tụi mình qua Fanpage nhé.");
+      setErrorMsg("Không gửi được lúc này. Bạn thử lại sau ít phút hoặc liên hệ Luvia qua Fanpage nhé.");
     }
   };
 
@@ -128,7 +128,7 @@ export function LeadForm() {
           transition={{ duration: 0.6 }}
           className="editorial-h2 mb-4"
         >
-          Để lại thông tin, <span className="text-[var(--color-espresso-muted)]">tụi mình liên hệ tư vấn</span>
+          Để lại thông tin, <span className="text-[var(--color-espresso-muted)]">Luvia liên hệ tư vấn</span>
         </motion.h2>
 
 
@@ -139,7 +139,7 @@ export function LeadForm() {
           className="text-[16px] text-[var(--color-espresso-muted)] leading-relaxed mb-10"
         >
           Bạn quan tâm đến Gương thông minh AI Luvia hoặc có thắc mắc cần giải đáp? Để lại thông tin,
-          tụi mình sẽ liên hệ tư vấn. Hoàn toàn miễn phí và không ràng buộc gì cả.
+          Luvia sẽ liên hệ tư vấn. Hoàn toàn miễn phí và không ràng buộc gì cả.
         </motion.p>
 
         {status === "success" ? (
@@ -155,7 +155,7 @@ export function LeadForm() {
               Đã nhận thông tin của bạn!
             </h3>
             <p className="text-[15px] leading-relaxed text-[var(--color-espresso-muted)]">
-              Tụi mình sẽ liên hệ trong vòng 24 giờ làm việc. Cảm ơn bạn đã quan tâm đến Luvia.
+              Luvia sẽ liên hệ trong vòng 24 giờ làm việc. Cảm ơn bạn đã quan tâm.
             </p>
             <button
               type="button"
@@ -273,7 +273,7 @@ export function LeadForm() {
                 id="ghiChu"
                 name="ghiChu"
                 rows={4}
-                placeholder="Tình trạng da bạn đang quan tâm, câu hỏi cho tụi mình..."
+                placeholder="Tình trạng da bạn đang quan tâm, câu hỏi cho Luvia..."
                 value={form.ghiChu}
                 onChange={(e) => update("ghiChu", e.target.value)}
                 className={`${fieldBase} resize-y border-[var(--color-panel-border)]`}
@@ -287,11 +287,11 @@ export function LeadForm() {
                 className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-brand)]"
               />
               <span>
-                Tôi đồng ý để Luvia lưu trữ và sử dụng thông tin trên nhằm mục đích liên hệ tư vấn, theo{" "}
+                Tôi đã đọc và đồng ý với{" "}
                 <a href="/privacy/" className="text-[var(--color-brand)] underline underline-offset-2">
                   Chính sách bảo mật
-                </a>
-                .
+                </a>{" "}
+                của website
               </span>
             </label>
 
@@ -325,11 +325,6 @@ export function LeadForm() {
                 <span>GỬI THÔNG TIN →</span>
               )}
             </button>
-
-            <p className="text-[12px] leading-relaxed text-[var(--color-espresso-muted)]/80">
-              Thông tin của bạn chỉ dùng để liên hệ tư vấn. Tụi mình không chia sẻ cho bên thứ ba vì
-              mục đích thương mại.
-            </p>
           </motion.form>
         )}
       </div>

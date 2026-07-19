@@ -8,6 +8,18 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      // Consent Mode v2: mac dinh tu choi cho toi khi nguoi dung bam "Chap nhan"
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+      });
+      try {
+        if (localStorage.getItem('luvia_cookie_consent') === 'accepted') {
+          gtag('consent', 'update', { analytics_storage: 'granted' });
+        }
+      } catch (e) {}
       gtag('js', new Date());
       gtag('config', 'G-T1QMV0N1F1');
     </script>
@@ -17,7 +29,7 @@
     <link rel="canonical" href="https://luvia.id.vn/privacy/" />
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Chính sách bảo mật của Luvia AI: cách chúng tôi thu thập, sử dụng, lưu trữ và bảo vệ dữ liệu cá nhân của bạn theo Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân." />
+    <meta name="description" content="Chính sách bảo mật của Luvia AI: cách chúng tôi thu thập, sử dụng, lưu trữ và bảo vệ dữ liệu cá nhân của Quý khách theo Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân." />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#C29F94" />
 
@@ -27,7 +39,7 @@
     <meta property="og:locale" content="vi_VN" />
     <meta property="og:url" content="https://luvia.id.vn/privacy/" />
     <meta property="og:title" content="Chính sách bảo mật thông tin khách hàng | Luvia AI" />
-    <meta property="og:description" content="Cách Luvia AI thu thập, sử dụng, lưu trữ và bảo vệ dữ liệu cá nhân của bạn." />
+    <meta property="og:description" content="Cách Luvia AI thu thập, sử dụng, lưu trữ và bảo vệ dữ liệu cá nhân của Quý khách." />
     <meta property="og:image" content="https://luvia.id.vn/og_preview.png" />
 
     <!-- Favicon -->
@@ -44,7 +56,7 @@
           "@id": "https://luvia.id.vn/privacy/",
           "url": "https://luvia.id.vn/privacy/",
           "name": "Chính sách bảo mật thông tin khách hàng",
-          "description": "Cách Luvia AI thu thập, sử dụng, lưu trữ và bảo vệ dữ liệu cá nhân của bạn theo Nghị định 13/2023/NĐ-CP.",
+          "description": "Cách Luvia AI thu thập, sử dụng, lưu trữ và bảo vệ dữ liệu cá nhân của Quý khách theo Nghị định 13/2023/NĐ-CP.",
           "inLanguage": "vi-VN",
           "dateModified": "2026-07-19",
           "isPartOf": { "@id": "https://luvia.id.vn/#website" },
@@ -137,45 +149,45 @@
         <p class="page-updated">Cập nhật lần cuối: 19/07/2026</p>
 
         <div class="prose">
-          <p>Luvia AI ("chúng tôi") tôn trọng và cam kết bảo vệ dữ liệu cá nhân của bạn. Chính sách này giải thích rõ chúng tôi thu thập thông tin gì, dùng để làm gì, lưu ở đâu và bạn có những quyền nào — phù hợp với <strong>Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân</strong> của Việt Nam.</p>
+          <p>Luvia AI (sau đây gọi là "chúng tôi") tôn trọng và cam kết bảo vệ dữ liệu cá nhân của Quý khách. Chính sách này trình bày phạm vi thông tin được thu thập, mục đích sử dụng, nơi lưu trữ và các quyền của chủ thể dữ liệu, tuân thủ <strong>Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân</strong> của Việt Nam.</p>
 
           <h2>1. Chúng tôi thu thập dữ liệu nào?</h2>
 
-          <h3>a. Thông tin bạn chủ động cung cấp</h3>
-          <p>Khi bạn chủ động điền vào biểu mẫu liên hệ trên website, chúng tôi thu thập:</p>
+          <h3>a. Thông tin Quý khách chủ động cung cấp</h3>
+          <p>Khi Quý khách chủ động điền vào biểu mẫu liên hệ trên website, chúng tôi thu thập các thông tin sau:</p>
           <ul>
-            <li><strong>Họ và tên</strong> — để xưng hô khi liên hệ lại.</li>
-            <li><strong>Số điện thoại</strong> — để liên hệ tư vấn cho bạn.</li>
-            <li><strong>Địa chỉ email</strong> — để gửi thông tin sản phẩm và xác nhận.</li>
-            <li><strong>Tỉnh/Thành phố</strong> (không bắt buộc) — để ước tính khu vực giao hàng.</li>
-            <li><strong>Nội dung ghi chú</strong> (không bắt buộc) — nếu bạn muốn nêu nhu cầu cụ thể.</li>
+            <li><strong>Họ và tên</strong>: sử dụng để xưng hô chính xác khi liên hệ.</li>
+            <li><strong>Số điện thoại</strong>: sử dụng để liên hệ tư vấn.</li>
+            <li><strong>Địa chỉ email</strong>: sử dụng để gửi thông tin sản phẩm và thư xác nhận.</li>
+            <li><strong>Tỉnh hoặc Thành phố</strong> (không bắt buộc): sử dụng để ước tính khu vực giao hàng.</li>
+            <li><strong>Nội dung ghi chú</strong> (không bắt buộc): dành cho trường hợp Quý khách muốn nêu nhu cầu cụ thể.</li>
           </ul>
-          <p>Bạn <strong>hoàn toàn tự nguyện</strong> cung cấp những thông tin này. Chúng tôi không yêu cầu và không thu thập dữ liệu cá nhân nhạy cảm (dữ liệu sức khoẻ, sinh trắc học, tài chính…) qua website.</p>
+          <p>Việc cung cấp các thông tin nêu trên là <strong>hoàn toàn tự nguyện</strong>. Chúng tôi không yêu cầu và không thu thập dữ liệu cá nhân nhạy cảm qua website, bao gồm dữ liệu sức khoẻ, dữ liệu sinh trắc học và thông tin tài chính.</p>
 
           <h3>b. Thông tin thu thập tự động</h3>
-          <p>Website sử dụng <strong>Google Analytics 4</strong> để thống kê lượt truy cập. Công cụ này ghi nhận dữ liệu ẩn danh như: trang bạn đã xem, thời gian truy cập, loại thiết bị, trình duyệt, khu vực địa lý ước lượng và địa chỉ IP (được Google ẩn danh hoá). Chúng tôi <strong>không</strong> dùng dữ liệu này để nhận diện cá nhân bạn.</p>
+          <p>Website sử dụng <strong>Google Analytics 4</strong> để thống kê lượt truy cập. Công cụ này ghi nhận dữ liệu ẩn danh, bao gồm các trang đã được truy cập, thời gian truy cập, loại thiết bị, trình duyệt, khu vực địa lý ước lượng và địa chỉ IP (được Google ẩn danh hoá). Chúng tôi <strong>không</strong> sử dụng dữ liệu này để nhận diện danh tính cá nhân.</p>
 
           <h2>2. Mục đích sử dụng</h2>
           <ul>
-            <li>Liên hệ tư vấn và giải đáp thắc mắc của bạn về sản phẩm.</li>
+            <li>Liên hệ tư vấn và giải đáp thắc mắc của Quý khách về sản phẩm.</li>
             <li>Gửi thông tin về sản phẩm, chính sách bảo hành và thời gian giao hàng.</li>
             <li>Chăm sóc khách hàng và giải đáp thắc mắc.</li>
             <li>Phân tích ẩn danh nhằm cải thiện nội dung và trải nghiệm website.</li>
           </ul>
-          <p>Chúng tôi <strong>không</strong> sử dụng thông tin của bạn cho mục đích nào khác ngoài những mục đích nêu trên nếu chưa có sự đồng ý mới từ bạn.</p>
+          <p>Chúng tôi <strong>không</strong> sử dụng thông tin của Quý khách cho mục đích nào khác ngoài những mục đích nêu trên nếu chưa có sự đồng ý mới từ Quý khách.</p>
 
           <h2>3. Cơ sở pháp lý</h2>
-          <p>Chúng tôi xử lý dữ liệu cá nhân của bạn dựa trên <strong>sự đồng ý</strong> mà bạn thể hiện khi chủ động điền và gửi biểu mẫu trên website. Bạn có quyền rút lại sự đồng ý này bất cứ lúc nào (xem Mục 6).</p>
+          <p>Chúng tôi xử lý dữ liệu cá nhân của Quý khách dựa trên <strong>sự đồng ý</strong> mà Quý khách thể hiện khi chủ động điền và gửi biểu mẫu trên website. Quý khách có quyền rút lại sự đồng ý này bất cứ lúc nào (xem Mục 6).</p>
 
           <h2>4. Lưu trữ và bên thứ ba</h2>
-          <p>Dữ liệu bạn gửi qua biểu mẫu được lưu trong <strong>Google Sheets</strong> thuộc tài khoản Google do chúng tôi quản lý, và có thể được gửi thông báo tới email nội bộ của chúng tôi. Dữ liệu thống kê truy cập được xử lý bởi <strong>Google Analytics</strong>. Cả hai đều là dịch vụ của Google LLC, hoạt động theo chính sách bảo mật riêng của Google.</p>
-          <p>Chúng tôi <strong>không bán, không trao đổi, không cho thuê</strong> dữ liệu cá nhân của bạn cho bất kỳ bên thứ ba nào vì mục đích thương mại. Dữ liệu chỉ được tiết lộ khi có yêu cầu hợp pháp từ cơ quan nhà nước có thẩm quyền theo quy định pháp luật.</p>
+          <p>Dữ liệu Quý khách gửi qua biểu mẫu được lưu trong <strong>Google Sheets</strong> thuộc tài khoản Google do chúng tôi quản lý, và có thể được gửi thông báo tới email nội bộ của chúng tôi. Dữ liệu thống kê truy cập được xử lý bởi <strong>Google Analytics</strong>. Cả hai đều là dịch vụ của Google LLC, hoạt động theo chính sách bảo mật riêng của Google.</p>
+          <p>Chúng tôi <strong>không bán, không trao đổi, không cho thuê</strong> dữ liệu cá nhân của Quý khách cho bất kỳ bên thứ ba nào vì mục đích thương mại. Dữ liệu chỉ được tiết lộ khi có yêu cầu hợp pháp từ cơ quan nhà nước có thẩm quyền theo quy định pháp luật.</p>
 
           <h2>5. Thời gian lưu trữ</h2>
-          <p>Chúng tôi lưu dữ liệu của bạn cho đến khi hoàn tất mục đích thu thập (tư vấn, giao hàng, bảo hành), hoặc cho đến khi bạn yêu cầu xoá — tuỳ điều kiện nào đến trước. Sau đó dữ liệu sẽ được xoá khỏi hệ thống.</p>
+          <p>Chúng tôi lưu trữ dữ liệu cho đến khi hoàn tất mục đích thu thập, bao gồm tư vấn, giao hàng và bảo hành, hoặc cho đến khi Quý khách yêu cầu xoá, tuỳ điều kiện nào đến trước. Sau thời điểm đó, dữ liệu sẽ được xoá khỏi hệ thống.</p>
 
-          <h2>6. Quyền của bạn</h2>
-          <p>Theo Nghị định 13/2023/NĐ-CP, bạn có các quyền sau đối với dữ liệu cá nhân của mình:</p>
+          <h2>6. Quyền của Quý khách</h2>
+          <p>Theo Nghị định 13/2023/NĐ-CP, Quý khách có các quyền sau đối với dữ liệu cá nhân của mình:</p>
           <ul>
             <li><strong>Quyền được biết</strong> về việc dữ liệu của mình được xử lý.</li>
             <li><strong>Quyền đồng ý hoặc không đồng ý</strong> cho phép xử lý dữ liệu.</li>
@@ -193,26 +205,27 @@
             <li>Dữ liệu biểu mẫu được lưu trong tài khoản Google có bảo vệ bằng mật khẩu và xác thực hai lớp.</li>
             <li>Chỉ những người phụ trách tư vấn khách hàng mới được quyền truy cập dữ liệu.</li>
           </ul>
-          <p>Tuy nhiên, không có phương thức truyền tải nào trên Internet là an toàn tuyệt đối. Chúng tôi nỗ lực bảo vệ dữ liệu của bạn bằng các biện pháp hợp lý nhưng không thể cam kết an toàn 100%.</p>
+          <p>Tuy nhiên, không có phương thức truyền tải nào trên Internet là an toàn tuyệt đối. Chúng tôi nỗ lực bảo vệ dữ liệu của Quý khách bằng các biện pháp hợp lý nhưng không thể cam kết an toàn 100%.</p>
 
-          <h2>8. Cookie và cách từ chối</h2>
-          <p>Website sử dụng cookie của Google Analytics để phân biệt lượt truy cập. Bạn có thể từ chối bằng cách:</p>
+          <h2>8. Cookie và quyền lựa chọn</h2>
+          <p>Trong lần truy cập đầu tiên, website hiển thị hộp thoại xin phép sử dụng cookie. Cookie phân tích của Google Analytics <strong>chỉ được kích hoạt sau khi Quý khách bấm "Chấp nhận"</strong>. Nếu Quý khách bấm "Từ chối", website sẽ không lưu cookie phân tích và Google Analytics bị giới hạn ở chế độ không sử dụng cookie.</p>
+          <p>Lựa chọn của Quý khách được ghi nhớ trên trình duyệt. Để thay đổi lựa chọn đã lưu, Quý khách có thể thực hiện một trong các cách sau:</p>
           <ul>
-            <li>Cài đặt <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">tiện ích chặn Google Analytics</a> của Google.</li>
-            <li>Bật chế độ duyệt web riêng tư (Ẩn danh / Private) trên trình duyệt.</li>
-            <li>Xoá hoặc chặn cookie trong phần cài đặt trình duyệt.</li>
+            <li>Xoá dữ liệu website (bao gồm cookie và bộ nhớ cục bộ) trong phần cài đặt trình duyệt, sau đó tải lại trang để hộp thoại hiển thị trở lại.</li>
+            <li>Cài đặt <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">tiện ích chặn Google Analytics</a> chính thức của Google.</li>
+            <li>Sử dụng chế độ duyệt web riêng tư của trình duyệt.</li>
           </ul>
-          <p>Việc từ chối cookie <strong>không ảnh hưởng</strong> đến khả năng sử dụng website của bạn.</p>
+          <p>Việc từ chối cookie <strong>không ảnh hưởng</strong> đến khả năng sử dụng website. Toàn bộ nội dung và biểu mẫu liên hệ vẫn hoạt động bình thường.</p>
 
           <h2>9. Liên hệ</h2>
-          <p>Nếu bạn có câu hỏi về chính sách này hoặc muốn thực hiện quyền của mình đối với dữ liệu cá nhân, vui lòng liên hệ:</p>
+          <p>Nếu Quý khách có câu hỏi về chính sách này hoặc muốn thực hiện quyền của mình đối với dữ liệu cá nhân, vui lòng liên hệ:</p>
           <ul>
             <li><strong>Fanpage Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=100070111910232" target="_blank" rel="noopener noreferrer">Luvia AI</a></li>
             <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@luviabeautytech" target="_blank" rel="noopener noreferrer">@luviabeautytech</a></li>
           </ul>
 
           <div class="note-box">
-            <p><strong>Lưu ý:</strong> Chính sách này có thể được cập nhật để phù hợp với thay đổi của pháp luật hoặc hoạt động của chúng tôi. Mọi thay đổi sẽ được đăng tải tại trang này kèm ngày cập nhật mới. Việc bạn tiếp tục sử dụng website sau khi chính sách được cập nhật đồng nghĩa với việc bạn chấp nhận nội dung mới.</p>
+            <p><strong>Lưu ý:</strong> Chính sách này có thể được cập nhật để phù hợp với thay đổi của pháp luật hoặc hoạt động của chúng tôi. Mọi thay đổi sẽ được đăng tải tại trang này kèm ngày cập nhật mới. Việc Quý khách tiếp tục sử dụng website sau khi chính sách được cập nhật đồng nghĩa với việc Quý khách chấp nhận nội dung mới.</p>
           </div>
 
           <p>Xem thêm: <a href="/terms/">Điều khoản sử dụng</a>.</p>
@@ -241,5 +254,6 @@
         });
       })();
     </script>
+    <script defer src="/js/site-widgets.js"></script>
   </body>
 </html>

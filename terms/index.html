@@ -8,6 +8,18 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      // Consent Mode v2: mac dinh tu choi cho toi khi nguoi dung bam "Chap nhan"
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+      });
+      try {
+        if (localStorage.getItem('luvia_cookie_consent') === 'accepted') {
+          gtag('consent', 'update', { analytics_storage: 'granted' });
+        }
+      } catch (e) {}
       gtag('js', new Date());
       gtag('config', 'G-T1QMV0N1F1');
     </script>
@@ -137,13 +149,13 @@
         <p class="page-updated">Cập nhật lần cuối: 19/07/2026</p>
 
         <div class="prose">
-          <p>Chào mừng bạn đến với website Luvia AI. Khi truy cập và sử dụng website tại địa chỉ <strong>luvia.id.vn</strong>, bạn đồng ý tuân thủ các điều khoản dưới đây. Nếu bạn không đồng ý với bất kỳ nội dung nào, vui lòng ngừng sử dụng website.</p>
+          <p>Chào mừng Quý khách đến với website Luvia AI. Khi truy cập và sử dụng website tại địa chỉ <strong>luvia.id.vn</strong>, Quý khách đồng ý tuân thủ các điều khoản dưới đây. Nếu Quý khách không đồng ý với bất kỳ nội dung nào, vui lòng ngừng sử dụng website.</p>
 
           <h2>1. Phạm vi áp dụng</h2>
           <p>Các điều khoản này áp dụng cho toàn bộ nội dung, tính năng và dịch vụ được cung cấp trên website Luvia AI, bao gồm trang giới thiệu sản phẩm, các bài viết trong chuyên mục Tin tức và biểu mẫu liên hệ.</p>
 
           <h2>2. Sử dụng website</h2>
-          <p>Bạn được phép truy cập, đọc và chia sẻ nội dung trên website cho mục đích cá nhân, phi thương mại. Khi sử dụng website, bạn <strong>không được</strong>:</p>
+          <p>Quý khách được phép truy cập, đọc và chia sẻ nội dung trên website cho mục đích cá nhân, phi thương mại. Khi sử dụng website, Quý khách <strong>không được</strong>:</p>
           <ul>
             <li>Sao chép, phát tán lại nội dung vì mục đích thương mại khi chưa có sự cho phép bằng văn bản của chúng tôi.</li>
             <li>Cố gắng xâm nhập, dò quét, gây quá tải hoặc làm gián đoạn hoạt động của website.</li>
@@ -153,15 +165,15 @@
           </ul>
 
           <h2>3. Quyền sở hữu trí tuệ</h2>
-          <p>Toàn bộ nội dung trên website — bao gồm văn bản, bài viết, hình ảnh sản phẩm, logo, thương hiệu "Luvia", thiết kế giao diện và mã nguồn — thuộc quyền sở hữu của Luvia AI hoặc được chúng tôi sử dụng hợp pháp. Mọi hành vi sao chép, sửa đổi hoặc khai thác thương mại khi chưa được phép đều là vi phạm quyền sở hữu trí tuệ.</p>
-          <p>Bạn được phép trích dẫn ngắn nội dung bài viết với điều kiện ghi rõ nguồn và kèm liên kết trở về trang gốc.</p>
+          <p>Toàn bộ nội dung trên website, bao gồm văn bản, bài viết, hình ảnh sản phẩm, logo, thương hiệu "Luvia", thiết kế giao diện và mã nguồn, thuộc quyền sở hữu của Luvia AI hoặc được chúng tôi sử dụng hợp pháp. Mọi hành vi sao chép, sửa đổi hoặc khai thác thương mại khi chưa được phép đều cấu thành vi phạm quyền sở hữu trí tuệ.</p>
+          <p>Quý khách được phép trích dẫn ngắn nội dung bài viết với điều kiện ghi rõ nguồn và kèm liên kết trở về trang gốc.</p>
 
           <h2>4. Thông tin sản phẩm và giá</h2>
           <p>Chúng tôi nỗ lực mô tả sản phẩm chính xác nhất có thể. Tuy nhiên, hình ảnh minh hoạ có thể khác biệt đôi chút so với sản phẩm thực tế do điều kiện ánh sáng và thiết bị hiển thị.</p>
-          <p>Sản phẩm <strong>Gương thông minh AI Luvia</strong> hiện đang ở giai đoạn <strong>đặt trước (pre-order)</strong>, thời gian giao hàng dự kiến <strong>tháng 12/2026</strong>. Giá niêm yết trên website là <strong>5.990.000đ</strong>. Chúng tôi có quyền điều chỉnh giá và thông tin sản phẩm mà không cần báo trước; giá áp dụng cho đơn hàng của bạn là giá tại thời điểm chúng tôi xác nhận đơn.</p>
+          <p>Sản phẩm <strong>Gương thông minh AI Luvia</strong> hiện đang ở giai đoạn <strong>đặt trước (pre-order)</strong>, thời gian giao hàng dự kiến <strong>tháng 12/2026</strong>. Giá niêm yết trên website là <strong>5.990.000đ</strong>. Chúng tôi có quyền điều chỉnh giá và thông tin sản phẩm mà không cần báo trước; giá áp dụng cho đơn hàng của Quý khách là giá tại thời điểm chúng tôi xác nhận đơn.</p>
 
           <h2 id="doi-tra">5. Đặt trước, bảo hành và đổi trả</h2>
-          <p>Khi bạn gửi biểu mẫu liên hệ, đó chỉ là <strong>yêu cầu được tư vấn</strong>, chưa phải đơn hàng hay hợp đồng mua bán. Chúng tôi sẽ liên hệ để tư vấn và xác nhận trước khi phát sinh bất kỳ nghĩa vụ thanh toán nào.</p>
+          <p>Khi Quý khách gửi biểu mẫu liên hệ, đó chỉ là <strong>yêu cầu được tư vấn</strong>, chưa phải đơn hàng hay hợp đồng mua bán. Chúng tôi sẽ liên hệ để tư vấn và xác nhận trước khi phát sinh bất kỳ nghĩa vụ thanh toán nào.</p>
           <p>Các cam kết áp dụng cho sản phẩm chính hãng:</p>
           <ul>
             <li><strong>Bảo hành 1 đổi 1</strong> đối với lỗi kỹ thuật từ nhà sản xuất.</li>
@@ -173,21 +185,21 @@
 
           <h2>6. Miễn trừ trách nhiệm về nội dung chăm sóc da</h2>
           <div class="note-box">
-            <p>Các bài viết và thông tin phân tích da trên website chỉ mang <strong>tính chất tham khảo và giáo dục</strong>. Chúng <strong>không phải là chẩn đoán, tư vấn hay chỉ định y khoa</strong> và không thay thế ý kiến của bác sĩ da liễu. Nếu bạn có vấn đề về da cần điều trị, vui lòng tham khảo ý kiến bác sĩ hoặc chuyên gia y tế có chuyên môn.</p>
+            <p>Các bài viết và thông tin phân tích da trên website chỉ mang <strong>tính chất tham khảo và giáo dục</strong>. Chúng <strong>không phải là chẩn đoán, tư vấn hay chỉ định y khoa</strong> và không thay thế ý kiến của bác sĩ da liễu. Nếu Quý khách có vấn đề về da cần điều trị, vui lòng tham khảo ý kiến bác sĩ hoặc chuyên gia y tế có chuyên môn.</p>
           </div>
           <p>Kết quả phân tích từ thiết bị và ứng dụng mang tính hỗ trợ theo dõi, có thể sai lệch tuỳ điều kiện ánh sáng, cách sử dụng và đặc điểm từng làn da. Hiệu quả chăm sóc da khác nhau ở mỗi người.</p>
 
           <h2>7. Giới hạn trách nhiệm</h2>
-          <p>Website được cung cấp trên cơ sở "nguyên trạng". Trong phạm vi pháp luật cho phép, chúng tôi không chịu trách nhiệm đối với các thiệt hại gián tiếp phát sinh từ việc bạn sử dụng hoặc không thể sử dụng website, bao gồm gián đoạn dịch vụ do sự cố kỹ thuật, bảo trì hoặc nguyên nhân khách quan ngoài tầm kiểm soát.</p>
+          <p>Website được cung cấp trên cơ sở "nguyên trạng". Trong phạm vi pháp luật cho phép, chúng tôi không chịu trách nhiệm đối với các thiệt hại gián tiếp phát sinh từ việc Quý khách sử dụng hoặc không thể sử dụng website, bao gồm gián đoạn dịch vụ do sự cố kỹ thuật, bảo trì hoặc nguyên nhân khách quan ngoài tầm kiểm soát.</p>
 
           <h2>8. Liên kết đến bên thứ ba</h2>
-          <p>Website có thể chứa liên kết tới các nền tảng bên ngoài (Facebook, TikTok, công cụ của Google…). Chúng tôi không kiểm soát và không chịu trách nhiệm về nội dung hay chính sách bảo mật của những trang đó. Bạn nên đọc điều khoản riêng của từng nền tảng khi truy cập.</p>
+          <p>Website có thể chứa liên kết tới các nền tảng bên ngoài (Facebook, TikTok, công cụ của Google…). Chúng tôi không kiểm soát và không chịu trách nhiệm về nội dung hay chính sách bảo mật của những trang đó. Quý khách nên đọc điều khoản riêng của từng nền tảng khi truy cập.</p>
 
           <h2>9. Bảo mật thông tin cá nhân</h2>
-          <p>Việc thu thập và xử lý dữ liệu cá nhân của bạn được quy định chi tiết tại <a href="/privacy/">Chính sách bảo mật</a>. Bằng việc gửi biểu mẫu trên website, bạn xác nhận đã đọc và đồng ý với chính sách đó.</p>
+          <p>Việc thu thập và xử lý dữ liệu cá nhân của Quý khách được quy định chi tiết tại <a href="/privacy/">Chính sách bảo mật</a>. Bằng việc gửi biểu mẫu trên website, Quý khách xác nhận đã đọc và đồng ý với chính sách đó.</p>
 
           <h2>10. Thay đổi điều khoản</h2>
-          <p>Chúng tôi có thể cập nhật các điều khoản này theo thời gian. Phiên bản mới sẽ được đăng tại trang này kèm ngày cập nhật. Việc bạn tiếp tục sử dụng website sau khi điều khoản thay đổi đồng nghĩa với việc bạn chấp nhận nội dung mới.</p>
+          <p>Chúng tôi có thể cập nhật các điều khoản này theo thời gian. Phiên bản mới sẽ được đăng tại trang này kèm ngày cập nhật. Việc Quý khách tiếp tục sử dụng website sau khi điều khoản thay đổi đồng nghĩa với việc Quý khách chấp nhận nội dung mới.</p>
 
           <h2>11. Luật áp dụng</h2>
           <p>Các điều khoản này được điều chỉnh và giải thích theo <strong>pháp luật Việt Nam</strong>. Mọi tranh chấp phát sinh sẽ được ưu tiên giải quyết thông qua thương lượng; nếu không đạt được thoả thuận, tranh chấp sẽ được đưa ra toà án có thẩm quyền tại Việt Nam.</p>
@@ -225,5 +237,6 @@
         });
       })();
     </script>
+    <script defer src="/js/site-widgets.js"></script>
   </body>
 </html>
