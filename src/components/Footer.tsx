@@ -46,10 +46,22 @@ export function Footer({ onViewChange }: FooterProps) {
           >
             <Logo className="w-25 h-25" />
           </a>
-          <div className="text-[14px] text-[var(--color-espresso-muted)] leading-relaxed">
+          <div className="text-[14px] text-[var(--color-espresso-muted)] leading-relaxed mb-6">
             Tuyệt tác gương thông minh giải mã tương lai của làn da.
           </div>
-          <div className="flex items-center gap-3 mt-6">
+
+          {/* Trang Facebook: chỉ tải nội dung từ Facebook sau khi người dùng bấm */}
+          <div className="lv-fb-box" data-lv-fb-box="">
+            <button type="button" data-lv-fb-embed="" className="lv-fb-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9.5 21v-7H7v-3h2.5V8.5C9.5 6 11 4.7 13.2 4.7c1.06 0 2.17.19 2.17.19V7.3h-1.2c-1.2 0-1.57.74-1.57 1.5V11H15l-.44 3h-2.35v7z" />
+              </svg>
+              <strong>Trang Facebook Luvia</strong>
+              <span>Bấm để tải nội dung từ Facebook</span>
+            </button>
+          </div>
+
+          <div className="flex items-center gap-3">
             <a
               href="https://www.facebook.com/profile.php?id=100070111910232"
               target="_blank"

@@ -89,6 +89,16 @@
       'justify-content:center;background:rgba(160,98,76,.12);color:var(--color-brand,#A0624C);font-size:22px}' +
       '.lv-alert{margin:0 0 14px;padding:11px 13px;border-radius:8px;background:#fef2f2;border:1px solid #fecaca;' +
       'color:#b91c1c;font-size:12.5px;line-height:1.6}' +
+
+      '.lv-fb-box{width:100%;max-width:340px;margin:0 0 20px}' +
+      '.lv-fb-btn{width:100%;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;' +
+      'padding:20px 16px;border-radius:10px;background:var(--color-panel,#fff);text-align:center;' +
+      'border:1px solid var(--color-panel-border,rgba(160,98,76,.25));transition:border-color .2s,background .2s;' +
+      'font-family:var(--font-sans,system-ui,sans-serif)}' +
+      '.lv-fb-btn:hover{border-color:var(--color-brand,#A0624C);background:rgba(160,98,76,.05)}' +
+      '.lv-fb-btn svg{width:24px;height:24px;fill:#1877F2}' +
+      '.lv-fb-btn strong{font-size:13px;font-weight:600;color:var(--color-espresso,#241C1B)}' +
+      '.lv-fb-btn span{font-size:11px;line-height:1.5;color:var(--color-espresso-muted,#6b5b57)}' +
       '@media (max-width:600px){.lv-cookie{padding:18px}.lv-modal-box{padding:28px 20px}' +
       '.lv-cookie-actions .lv-btn{flex:1 1 auto;text-align:center}}';
 
@@ -341,6 +351,45 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
   }
+
+  /* ------------------------------------ Nhúng trang Facebook (bấm mới tải) */
+  var FB_PAGE = 'https://www.facebook.com/profile.php?id=100070111910232';
+
+  /**
+   * Chỉ gọi sang Facebook SAU KHI người dùng bấm, nên khi mới vào trang
+   * website không gửi dữ liệu nào sang Facebook.
+   */
+  function loadFacebookEmbed(box) {
+    if (box.getAttribute('data-lv-loaded') === '1') return;
+    box.setAttribute('data-lv-loaded', '1');
+
+    var src =
+      'https://www.facebook.com/plugins/page.php?href=' +
+      encodeURIComponent(FB_PAGE) +
+      '&tabs=timeline&width=340&height=400&small_header=false' +
+      '&adapt_container_width=true&hide_cover=false&show_facepile=true';
+
+    var frame = document.createElement('iframe');
+    frame.src = src;
+    frame.title = 'Trang Facebook Luvia';
+    frame.setAttribute('scrolling', 'no');
+    frame.setAttribute('frameborder', '0');
+    frame.setAttribute('allowfullscreen', 'true');
+    frame.setAttribute('allow', 'clipboard-write; encrypted-media; picture-in-picture; web-share');
+    frame.style.cssText = 'width:100%;height:400px;border:none;overflow:hidden;display:block;';
+
+    box.innerHTML = '';
+    box.appendChild(frame);
+    gtagSafe('event', 'facebook_embed_load', { page_path: window.location.pathname });
+  }
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target && e.target.closest ? e.target.closest('[data-lv-fb-embed]') : null;
+    if (btn) {
+      e.preventDefault();
+      loadFacebookEmbed(btn.closest('[data-lv-fb-box]') || btn.parentElement);
+    }
+  });
 
   /* ------------------------------------------- Mở lại lựa chọn cookie sau này */
   function openCookieSettings() {
