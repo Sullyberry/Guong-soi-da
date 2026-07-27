@@ -419,6 +419,19 @@
       { rootMargin: '300px' }
     );
     Array.prototype.forEach.call(boxes, function (b) { io.observe(b); });
+
+    /* Dự phòng: một số trình duyệt hoặc ngữ cảnh không kích hoạt
+       IntersectionObserver. Sau khi trang tải xong thì tải nốt khối còn lại. */
+    var fallback = function () {
+      setTimeout(function () {
+        Array.prototype.forEach.call(
+          document.querySelectorAll('[data-lv-fb-box]:not([data-lv-loaded="1"])'),
+          loadFacebookEmbed
+        );
+      }, 2000);
+    };
+    if (document.readyState === 'complete') fallback();
+    else window.addEventListener('load', fallback, { once: true });
   }
 
   /* ------------------------------------------- Mở lại lựa chọn cookie sau này */
