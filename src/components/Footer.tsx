@@ -136,8 +136,24 @@ export function Footer({ onViewChange }: FooterProps) {
         <div className="editorial-label !text-[10px]">
           © 2026 Luvia AI. Bảo lưu mọi bản quyền.
         </div>
-        <div className="editorial-label !text-[10px]">
-          Kiến tạo cho tương lai.
+        <div className="flex items-center gap-5">
+          <a
+            href="https://www.dmca.com/Protection/Status.aspx?ID=e69a4a6d-3648-4c74-ad79-4c732d2054b5"
+            title="DMCA.com Protection Status"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="dmca-badge inline-flex"
+          >
+            <img
+              src="https://images.dmca.com/Badges/dmca-badge-w100-2x1-04.png?ID=e69a4a6d-3648-4c74-ad79-4c732d2054b5"
+              alt="DMCA.com Protection Status"
+              width={100}
+              height={50}
+              loading="lazy"
+              className="block h-[26px] w-auto opacity-85 transition-opacity hover:opacity-100"
+            />
+          </a>
+          <div className="editorial-label !text-[10px]">Kiến tạo cho tương lai.</div>
         </div>
       </div>
     </footer>
