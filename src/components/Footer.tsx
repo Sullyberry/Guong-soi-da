@@ -57,7 +57,7 @@ export function Footer({ onViewChange }: FooterProps) {
                 <path d="M9.5 21v-7H7v-3h2.5V8.5C9.5 6 11 4.7 13.2 4.7c1.06 0 2.17.19 2.17.19V7.3h-1.2c-1.2 0-1.57.74-1.57 1.5V11H15l-.44 3h-2.35v7z" />
               </svg>
               <strong>Trang Facebook Luvia</strong>
-              <span>Bấm để tải nội dung từ Facebook</span>
+              <span>Bấm nếu nội dung chưa hiển thị</span>
             </button>
           </div>
 

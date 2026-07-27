@@ -1,6 +1,6 @@
-import { useRef, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { motion, useInView } from "motion/react";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, X } from "lucide-react";
 import { Img } from "./Img";
 import { LeadForm } from "./LeadForm";
 import { newsPosts } from "./News";
@@ -10,9 +10,6 @@ interface BrandHomeProps {
   onNavigateToAbout: () => void;
   onNavigateToNews: () => void;
 }
-
-/** Ba giá trị cốt lõi, trình bày ngắn gọn đè lên vùng trống bên trái ảnh gương. */
-const coreValues = ["Soi da bằng AI", "Cá nhân hóa theo da bạn", "Theo dõi tiến triển"];
 
 const commitments = [
   "Bảo hành 1 đổi 1",
@@ -26,61 +23,48 @@ const commitments = [
  */
 const gallery = [
   {
-    src: "/images/san-pham/quy-trinh-su-dung.jpg",
-    w: 1400,
-    h: 1122,
-    caption: "Quy trình sử dụng",
-    alt: "Quy trình sử dụng Gương thông minh AI Luvia từ soi da tới phối mặt nạ",
+    src: "/images/thu-vien/guong-luvia-tuong-da.jpg",
+    w: 944,
+    h: 1114,
+    caption: "Tường đá tự nhiên",
+    alt: "Gương thông minh AI Luvia gắn trên tường đá cùng kệ gỗ và ánh nắng buổi sáng",
   },
   {
-    src: "/images/san-pham/phan-tich.jpg",
-    w: 1100,
-    h: 1733,
-    caption: "Màn hình phân tích da",
-    alt: "Màn hình gương Luvia hiển thị kết quả phân tích da theo thời gian thực",
+    src: "/images/thu-vien/guong-luvia-phong-ngu.jpg",
+    w: 928,
+    h: 1120,
+    caption: "Phòng ngủ tối giản",
+    alt: "Gương thông minh AI Luvia trong phòng ngủ phong cách tối giản với cây bonsai",
   },
   {
-    src: "/images/san-pham/app-luvia.jpg",
-    w: 664,
-    h: 567,
-    caption: "Ứng dụng đồng hành",
-    alt: "Ứng dụng Luvia hiển thị bảng theo dõi sức khỏe làn da trên điện thoại",
+    src: "/images/thu-vien/guong-luvia-phong-thay-do.jpg",
+    w: 944,
+    h: 1114,
+    caption: "Phòng thay đồ",
+    alt: "Gương thông minh AI Luvia đặt trên bàn đá cẩm thạch trong phòng thay đồ cao cấp",
   },
   {
-    src: "/images/san-pham/hero-bg-mobile.jpg",
-    w: 1080,
-    h: 2546,
-    caption: "Thiết kế tổng thể",
-    alt: "Thiết kế tổng thể Gương thông minh AI Luvia trong phòng tắm",
-  },
-  {
-    src: "/images/san-pham/step-1.jpg",
-    w: 682,
-    h: 502,
-    caption: "Kết nối ứng dụng",
-    alt: "Bước kết nối gương Luvia với ứng dụng trên điện thoại",
-  },
-  {
-    src: "/images/san-pham/step-3.jpg",
-    w: 682,
-    h: 597,
-    caption: "Phối trộn dưỡng chất",
-    alt: "Gương Luvia tự động phối trộn dưỡng chất theo kết quả phân tích da",
+    src: "/images/thu-vien/guong-luvia-concept-mat-nuoc.jpg",
+    w: 944,
+    h: 1114,
+    caption: "Concept",
+    alt: "Ảnh concept Gương thông minh AI Luvia phản chiếu trên mặt nước tĩnh",
   },
 ];
 
 /**
  * Video giới thiệu lấy từ TikTok.
- * Chỉ tải khung nhúng của TikTok SAU KHI người dùng bấm nút phát, nên khi
- * mới vào trang website không gửi dữ liệu nào sang TikTok.
+ * Khung nhúng chỉ tải SAU KHI người dùng bấm phát, nên khi mới vào trang
+ * website không gửi dữ liệu nào sang TikTok.
  *
- * Cách thêm video: mở video trên TikTok, lấy dãy số cuối trong đường dẫn.
- *   https://www.tiktok.com/@luviabeautytech/video/7412345678901234567
- *                                                 └── đây là "id"
- * Rồi đặt một ảnh bìa vào public/images/thu-vien/ và thêm một dòng:
- *   { id: "7412345678901234567", poster: "/images/thu-vien/video-1.jpg", title: "Mô tả ngắn" },
+ * Lấy "id" là dãy số cuối trong đường dẫn video TikTok:
+ *   https://www.tiktok.com/@luviabeautytech/video/7659832686428622100
+ *                                                 └────── id ──────┘
  */
-const videos: { id: string; poster: string; title: string }[] = [];
+const videos: { id: string; title: string }[] = [
+  { id: "7659832686428622100", title: "Luvia trên TikTok" },
+  { id: "7659002625853050132", title: "Trải nghiệm Gương thông minh AI Luvia" },
+];
 
 const TIKTOK_PROFILE = "https://www.tiktok.com/@luviabeautytech";
 
@@ -90,7 +74,7 @@ function isPlainClick(e: MouseEvent<HTMLAnchorElement>) {
 }
 
 /** Ảnh bìa video: chỉ nhúng TikTok sau khi người dùng chủ động bấm phát. */
-function VideoCard({ video }: { video: { id: string; poster: string; title: string } }) {
+function VideoCard({ video }: { video: { id: string; title: string } }) {
   const [playing, setPlaying] = useState(false);
 
   if (playing) {
@@ -113,21 +97,16 @@ function VideoCard({ video }: { video: { id: string; poster: string; title: stri
       type="button"
       onClick={() => setPlaying(true)}
       aria-label={`Phát video: ${video.title}`}
-      className="group relative block w-full cursor-pointer overflow-hidden rounded-[10px] border border-[var(--color-panel-border)] bg-[var(--color-panel)] p-0"
+      className="group relative flex aspect-[9/16] w-full cursor-pointer flex-col items-center justify-center gap-5 overflow-hidden rounded-[10px] border border-[var(--color-panel-border)] bg-[linear-gradient(160deg,#ECDCD6_0%,#FCFAF7_60%,#F2E7E1_100%)] p-6"
     >
-      <Img
-        src={video.poster}
-        alt={video.title}
-        loading="lazy"
-        className="aspect-[9/16] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
-      <span className="absolute inset-0 flex items-center justify-center bg-[rgba(36,28,27,0.28)] transition-colors group-hover:bg-[rgba(36,28,27,0.15)]">
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-ivory)]/95 shadow-lg">
-          <Play className="ml-1 h-6 w-6 text-[var(--color-espresso)]" fill="currentColor" />
-        </span>
+      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-espresso)] shadow-lg transition-transform duration-300 group-hover:scale-110">
+        <Play className="ml-1 h-6 w-6 text-[var(--color-ivory)]" fill="currentColor" />
       </span>
-      <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(36,28,27,0.85)] to-transparent px-4 pb-3 pt-8 text-left text-[13px] text-[var(--color-ivory)]">
+      <span className="text-center font-display text-[18px] leading-snug text-[var(--color-espresso)]">
         {video.title}
+      </span>
+      <span className="text-[11px] uppercase tracking-widest text-[var(--color-espresso-muted)]">
+        Bấm để phát
       </span>
     </button>
   );
@@ -138,8 +117,6 @@ export function BrandHome({
   onNavigateToAbout,
   onNavigateToNews,
 }: BrandHomeProps) {
-  const showcaseRef = useRef(null);
-  const showcaseInView = useInView(showcaseRef, { once: true, margin: "-10%" });
   const galleryRef = useRef(null);
   const galleryInView = useInView(galleryRef, { once: true, margin: "-10%" });
   const videoRef = useRef(null);
@@ -147,138 +124,123 @@ export function BrandHome({
   const newsRef = useRef(null);
   const newsInView = useInView(newsRef, { once: true, margin: "-10%" });
 
+  /** Ảnh đang xem ở chế độ phóng to toàn màn hình (null = đang đóng). */
+  const [zoomed, setZoomed] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (zoomed === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setZoomed(null);
+    };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [zoomed]);
+
   const latestPosts = newsPosts.slice(0, 3);
 
   return (
     <>
-      {/* ---------------------------------------------------------------- Hero */}
-      <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_center,#ECDCD6_0%,#FCFAF7_80%)] pt-32 pb-14 md:pt-40 md:pb-16">
-        <div className="absolute inset-0 bg-grid-white bg-[size:50px_50px] opacity-60" />
+      {/* ------------------------- Hero: bố cục giống trang sản phẩm, có ảnh nền */}
+      <section className="relative overflow-hidden bg-[var(--color-ivory)] md:min-h-screen">
+        {/* Ảnh nền có sản phẩm - desktop (full-bleed) */}
+        <div
+          className="absolute inset-0 hidden bg-cover bg-center md:block"
+          style={{ backgroundImage: "url('/images/san-pham/hero-bg.jpg')" }}
+        />
+        {/* Lớp phủ ngang giúp chữ bên trái đọc rõ - desktop */}
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-[var(--color-ivory)]/95 via-[var(--color-ivory)]/55 to-transparent md:block" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-[1024px] flex-col items-center px-6 text-center md:px-12">
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="mb-8 font-display text-[44px] font-light leading-[1.05] tracking-tighter text-[var(--color-espresso)] md:text-[80px]"
-          >
-            HIỂU DA BẠN
-            <br />
-            <span className="text-[var(--color-rose-gold)]" style={{ fontSize: "0.85em" }}>
-              hơn chính bạn
-            </span>
-          </motion.h1>
+        {/* Ảnh dọc - mobile: hiển thị trọn theo tỷ lệ gốc, không cắt */}
+        <Img
+          src="/images/san-pham/hero-bg-mobile.jpg"
+          alt="Gương thông minh AI Luvia trong không gian phòng tắm cao cấp"
+          width={1080}
+          height={2546}
+          fetchPriority="high"
+          className="block h-auto w-full md:hidden"
+        />
+        {/* Lớp phủ sáng nhẹ cho vùng chữ phía trên - mobile */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(252,250,247,0.6)_0%,rgba(252,250,247,0.12)_40%,transparent_58%)] md:hidden" />
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.2 }}
-            className="mb-8 max-w-[520px] text-[16px] leading-relaxed text-[var(--color-espresso-muted)] md:text-[17px]"
-          >
-            Gương thông minh AI Luvia tự động soi da mỗi sáng: đo độ ẩm, phát hiện sợi bã nhờn và
-            nhân mụn ẩn, rồi gợi ý quy trình skincare được may đo riêng cho làn da bạn, ngay tại nhà.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex w-full max-w-[480px] flex-col justify-center gap-4 sm:flex-row sm:gap-6"
-          >
-            <a
-              href="/san-pham/"
-              onClick={(e) => {
-                if (!isPlainClick(e)) return;
-                e.preventDefault();
-                onNavigateToProduct();
-              }}
-              className="editorial-button h-[57px] flex-1 justify-center no-underline"
+        {/* Nội dung: md:relative là bắt buộc để z-index có tác dụng */}
+        <div className="absolute inset-x-0 top-0 z-10 mx-auto w-full max-w-[1024px] px-6 pt-40 pb-10 md:relative md:flex md:min-h-screen md:items-center md:px-12 md:py-0">
+          <div className="flex max-w-[540px] flex-col items-start text-left">
+            <motion.h1
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="mb-8 font-display text-[44px] font-light leading-[1.05] tracking-tighter text-[var(--color-espresso)] md:mb-10 md:text-[72px]"
             >
-              <span className="text-[11px]">Trải nghiệm sản phẩm</span>
-              <span className="ml-3">→</span>
-            </a>
+              HIỂU DA BẠN
+              <br />
+              <span className="text-[var(--color-rose-gold)]" style={{ fontSize: "0.85em" }}>
+                hơn chính bạn
+              </span>
+            </motion.h1>
 
-            <a
-              href="/gioi-thieu/"
-              onClick={(e) => {
-                if (!isPlainClick(e)) return;
-                e.preventDefault();
-                onNavigateToAbout();
-              }}
-              className="editorial-button-outline flex-1 py-4 text-center text-[11px] text-[var(--color-espresso)] no-underline"
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2, delay: 0.2 }}
+              className="mb-8 max-w-[440px] text-[15px] leading-relaxed text-[var(--color-espresso-muted)] md:text-[16px]"
             >
-              Sứ mệnh LUVIA
-            </a>
-          </motion.div>
+              Gương thông minh AI Luvia tự động soi da mỗi sáng: đo độ ẩm, phát hiện sợi bã nhờn và
+              nhân mụn ẩn, rồi gợi ý quy trình skincare được may đo riêng cho làn da bạn, ngay tại
+              nhà.
+            </motion.p>
 
-          <motion.ul
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.6 }}
-            className="m-0 mt-8 flex list-none flex-wrap items-center justify-center gap-x-3 gap-y-2 p-0 font-mono text-[10px] uppercase tracking-widest text-[var(--color-espresso-muted)]"
-          >
-            {commitments.map((c, i) => (
-              <li key={c} className="flex items-center gap-3">
-                {i > 0 && <span className="opacity-40">·</span>}
-                <span>{c}</span>
-              </li>
-            ))}
-          </motion.ul>
-        </div>
-      </section>
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex w-full max-w-[420px] flex-col gap-4 sm:flex-row sm:gap-5"
+            >
+              <a
+                href="/san-pham/"
+                onClick={(e) => {
+                  if (!isPlainClick(e)) return;
+                  e.preventDefault();
+                  onNavigateToProduct();
+                }}
+                className="editorial-button h-[57px] flex-1 justify-center no-underline"
+              >
+                <span className="text-[11px]">Trải nghiệm sản phẩm</span>
+                <span className="ml-3">→</span>
+              </a>
 
-      {/* ------------------- Ảnh gương + 3 giá trị cốt lõi đè lên vùng trống bên trái */}
-      <section className="bg-[var(--color-bg-dark)]" ref={showcaseRef}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={showcaseInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative mx-auto max-w-[1400px]"
-        >
-          <Img
-            src="/images/san-pham/hero-bg.jpg"
-            alt="Gương thông minh AI Luvia đặt trong không gian phòng tắm cao cấp"
-            width={2400}
-            height={1340}
-            className="block h-auto w-full"
-          />
+              <a
+                href="/gioi-thieu/"
+                onClick={(e) => {
+                  if (!isPlainClick(e)) return;
+                  e.preventDefault();
+                  onNavigateToAbout();
+                }}
+                className="editorial-button-outline flex-1 py-4 text-center text-[11px] text-[var(--color-espresso)] no-underline"
+              >
+                Sứ mệnh LUVIA
+              </a>
+            </motion.div>
 
-          {/* Chỉ đè chữ từ md trở lên: dưới màn hình nhỏ ảnh quá hẹp để đọc */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[52%] items-center px-8 md:flex lg:px-16">
-            <ul className="m-0 flex list-none flex-col gap-6 p-0 lg:gap-9">
-              {coreValues.map((v, i) => (
-                <motion.li
-                  key={v}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={showcaseInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                  transition={{ duration: 0.6, delay: 0.25 + i * 0.15 }}
-                  className="flex items-baseline gap-4 lg:gap-5"
-                >
-                  <span className="font-mono text-[12px] font-bold text-[var(--color-brand)] lg:text-[14px]">
-                    0{i + 1}
-                  </span>
-                  <span className="font-display text-[22px] leading-tight text-[var(--color-espresso)] lg:text-[34px]">
-                    {v}
-                  </span>
-                </motion.li>
+            <motion.ul
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.6 }}
+              className="m-0 mt-8 flex list-none flex-wrap items-center gap-x-3 gap-y-2 p-0 font-mono text-[10px] uppercase tracking-widest text-[var(--color-espresso-muted)]"
+            >
+              {commitments.map((c, i) => (
+                <li key={c} className="flex items-center gap-3">
+                  {i > 0 && <span className="opacity-40">·</span>}
+                  <span>{c}</span>
+                </li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
-        </motion.div>
-
-        {/* Bản rút gọn cho màn hình nhỏ, đặt ngay dưới ảnh */}
-        <ul className="m-0 flex list-none flex-col gap-3 px-6 py-8 md:hidden">
-          {coreValues.map((v, i) => (
-            <li key={v} className="flex items-baseline gap-4">
-              <span className="font-mono text-[11px] font-bold text-[var(--color-brand)]">
-                0{i + 1}
-              </span>
-              <span className="font-display text-[21px] leading-tight text-[var(--color-espresso)]">
-                {v}
-              </span>
-            </li>
-          ))}
-        </ul>
+        </div>
       </section>
 
       {/* -------------------------------------------------- Thư viện hình ảnh sản phẩm */}
@@ -296,34 +258,71 @@ export function BrandHome({
             Hình ảnh sản phẩm
           </motion.h2>
 
-          {/* Ảnh nhỏ, rê chuột thì phóng to nổi lên trên các ảnh khác */}
-          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 md:gap-4">
+          {/* Ảnh giữ nguyên tỷ lệ gốc, không cắt. Bấm để xem gần toàn màn hình. */}
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
             {gallery.map((g, i) => (
-              <motion.figure
+              <motion.button
                 key={g.src}
-                initial={{ opacity: 0, y: 16 }}
-                animate={galleryInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-                transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="group relative m-0 transition-transform duration-300 ease-out hover:z-20 hover:scale-[1.85] focus-within:z-20 focus-within:scale-[1.85]"
+                type="button"
+                onClick={() => setZoomed(i)}
+                aria-label={`Phóng to ảnh: ${g.caption}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={galleryInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="group m-0 block cursor-zoom-in overflow-hidden rounded-[10px] border border-[var(--color-panel-border)] bg-[var(--color-panel)] p-0 text-left"
               >
-                <div className="overflow-hidden rounded-[8px] border border-[var(--color-panel-border)] bg-[var(--color-panel)] shadow-none transition-shadow duration-300 group-hover:shadow-[0_14px_40px_-10px_rgba(36,28,27,0.45)]">
-                  <Img
-                    src={g.src}
-                    alt={g.alt}
-                    width={g.w}
-                    height={g.h}
-                    loading="lazy"
-                    className="aspect-square w-full object-cover"
-                  />
-                </div>
-                <figcaption className="pointer-events-none absolute inset-x-0 -bottom-6 text-center text-[9px] leading-tight text-[var(--color-espresso-muted)] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <Img
+                  src={g.src}
+                  alt={g.alt}
+                  width={g.w}
+                  height={g.h}
+                  loading="lazy"
+                  className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+                <span className="block px-3 py-2.5 text-center text-[11px] text-[var(--color-espresso-muted)]">
                   {g.caption}
-                </figcaption>
-              </motion.figure>
+                </span>
+              </motion.button>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Lớp xem ảnh phóng to: nền tối, ảnh hiện trọn không bị cắt */}
+      {zoomed !== null && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          role="dialog"
+          aria-modal="true"
+          aria-label={gallery[zoomed].caption}
+          onClick={() => setZoomed(null)}
+          className="fixed inset-0 z-[9999] flex cursor-zoom-out flex-col items-center justify-center bg-[rgba(20,15,14,0.92)] p-4 md:p-8"
+        >
+          <button
+            type="button"
+            onClick={() => setZoomed(null)}
+            aria-label="Đóng"
+            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 md:right-8 md:top-8"
+          >
+            <X className="h-5 w-5" />
+          </button>
+
+          <motion.img
+            key={gallery[zoomed].src}
+            initial={{ scale: 0.94, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            src={gallery[zoomed].src}
+            alt={gallery[zoomed].alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[85vh] max-w-full cursor-default rounded-[8px] object-contain shadow-2xl"
+          />
+          <p className="mt-5 text-center text-[13px] text-white/75">
+            {gallery[zoomed].caption}
+          </p>
+        </motion.div>
+      )}
 
       {/* ------------------------------------------------------------------- Video */}
       {videos.length > 0 && (
@@ -336,15 +335,15 @@ export function BrandHome({
               initial={{ opacity: 0, y: 20 }}
               animate={videoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              className="editorial-h2 mb-4 text-center"
+              className="editorial-h2 mb-3 text-center"
             >
               Video
             </motion.h2>
-            <p className="mx-auto mb-10 max-w-[520px] text-center text-[13px] leading-relaxed text-[var(--color-espresso-muted)]">
+            <p className="mx-auto mb-10 max-w-[520px] text-center text-[12px] leading-relaxed text-[var(--color-espresso-muted)]">
               Video chỉ được tải từ TikTok sau khi bạn bấm phát.
             </p>
 
-            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3">
+            <div className="mx-auto grid max-w-[640px] gap-6 sm:grid-cols-2">
               {videos.map((v) => (
                 <VideoCard key={v.id} video={v} />
               ))}

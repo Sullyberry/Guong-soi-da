@@ -90,8 +90,9 @@
       '.lv-alert{margin:0 0 14px;padding:11px 13px;border-radius:8px;background:#fef2f2;border:1px solid #fecaca;' +
       'color:#b91c1c;font-size:12.5px;line-height:1.6}' +
 
-      '.lv-fb-box{width:100%;max-width:340px;margin:0 0 20px}' +
-      '.lv-fb-btn{width:100%;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;' +
+      '.lv-fb-box{width:100%;max-width:340px;margin:0 0 20px;min-height:400px}' +
+      '.lv-fb-btn{width:100%;min-height:400px;display:flex;flex-direction:column;align-items:center;' +
+      'justify-content:center;gap:8px;cursor:pointer;' +
       'padding:20px 16px;border-radius:10px;background:var(--color-panel,#fff);text-align:center;' +
       'border:1px solid var(--color-panel-border,rgba(160,98,76,.25));transition:border-color .2s,background .2s;' +
       'font-family:var(--font-sans,system-ui,sans-serif)}' +
@@ -383,6 +384,7 @@
     gtagSafe('event', 'facebook_embed_load', { page_path: window.location.pathname });
   }
 
+  /* Vẫn giữ xử lý bấm để phòng trường hợp khối được thêm vào sau khi trang tải */
   document.addEventListener('click', function (e) {
     var btn = e.target && e.target.closest ? e.target.closest('[data-lv-fb-embed]') : null;
     if (btn) {
@@ -390,6 +392,34 @@
       loadFacebookEmbed(btn.closest('[data-lv-fb-box]') || btn.parentElement);
     }
   });
+
+  /**
+   * Tự động tải khung Facebook khi khối cuộn tới gần khung nhìn.
+   * Dùng IntersectionObserver để không tải ngay lúc mở trang (footer nằm cuối trang),
+   * tránh làm chậm lần tải đầu.
+   */
+  function autoLoadFacebookEmbeds() {
+    var boxes = document.querySelectorAll('[data-lv-fb-box]');
+    if (!boxes.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(boxes, loadFacebookEmbed);
+      return;
+    }
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            loadFacebookEmbed(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '300px' }
+    );
+    Array.prototype.forEach.call(boxes, function (b) { io.observe(b); });
+  }
 
   /* ------------------------------------------- Mở lại lựa chọn cookie sau này */
   function openCookieSettings() {
@@ -420,6 +450,21 @@
       applyConsent(consent);
       schedulePopup();
     }
+
+    /* Trang React dựng footer sau khi tải, nên thử lại vài lần để bắt được khối */
+    autoLoadFacebookEmbeds();
+    var tries = 0;
+    var retry = setInterval(function () {
+      tries++;
+      if (document.querySelector('[data-lv-fb-box]:not([data-lv-observed])')) {
+        Array.prototype.forEach.call(
+          document.querySelectorAll('[data-lv-fb-box]'),
+          function (b) { b.setAttribute('data-lv-observed', '1'); }
+        );
+        autoLoadFacebookEmbeds();
+      }
+      if (tries >= 10) clearInterval(retry);
+    }, 500);
   }
 
   if (document.readyState === 'loading') {
