@@ -138,7 +138,7 @@ export function Footer({ onViewChange }: FooterProps) {
         </div>
         <div className="flex items-center gap-5">
           <a
-            href="https://www.dmca.com/Protection/Status.aspx?ID=e69a4a6d-3648-4c74-ad79-4c732d2054b5"
+            href="https://www.dmca.com/Protection/Status.aspx?ID=e69a4a6d-3648-4c74-ad79-4c732d2054b5&refurl=https://luvia.id.vn/"
             title="DMCA.com Protection Status"
             target="_blank"
             rel="noopener noreferrer"
