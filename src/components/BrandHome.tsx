@@ -79,19 +79,9 @@ function isPlainClick(e: MouseEvent<HTMLAnchorElement>) {
 }
 
 /** Khung nhúng TikTok. Dùng loading="lazy" nên chỉ tải khi cuộn tới gần. */
-function VideoFrame({
-  video,
-  featured = false,
-}: {
-  video: { id: string; title: string };
-  featured?: boolean;
-}) {
+function VideoFrame({ video }: { video: { id: string; title: string } }) {
   return (
-    <div
-      className={`overflow-hidden rounded-[10px] border border-[var(--color-panel-border)] bg-black ${
-        featured ? "sm:col-span-2 sm:row-span-2" : ""
-      }`}
-    >
+    <div className="w-full max-w-[380px] overflow-hidden rounded-[10px] border border-[var(--color-panel-border)] bg-black">
       <iframe
         src={`https://www.tiktok.com/embed/v2/${video.id}`}
         title={video.title}
@@ -332,21 +322,28 @@ export function BrandHome({
               Video LUVIA
             </motion.h2>
 
-            {/* Mục đầu ở khung lớn (2x2), các mục sau ở khung nhỏ */}
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-5">
-              {videos.map((v, i) => (
-                <VideoFrame key={v.id} video={v} featured={i === 0} />
-              ))}
-            </div>
+            {/* 1 khung video chính + nút dọc cao bằng khung, dẫn sang TikTok */}
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-stretch md:gap-5">
+              <VideoFrame video={videos[0]} />
 
-            <div className="mt-10 text-center">
               <a
                 href={TIKTOK_PROFILE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-widest text-[var(--color-brand)] no-underline"
+                title="Xem thêm video trên TikTok Luvia"
+                className="group flex w-full max-w-[380px] items-center justify-center gap-3 rounded-[10px] border border-[var(--color-panel-border)] bg-[var(--color-panel)] px-8 py-6 no-underline transition-colors hover:border-[var(--color-brand)] hover:bg-[var(--color-brand)]/5 sm:w-auto sm:flex-col sm:px-10 sm:py-0"
               >
-                Xem thêm trên TikTok <ArrowRight className="h-4 w-4" />
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-8 w-8 fill-[var(--color-brand)]"
+                  aria-hidden="true"
+                >
+                  <path d="M16.6 5.82a4.3 4.3 0 0 1-1.06-2.82h-3.2v12.9a2.34 2.34 0 0 1-2.34 2.28 2.34 2.34 0 1 1 .73-4.57V8.3a5.56 5.56 0 0 0-.73-.05A5.55 5.55 0 1 0 15.5 14.4V9.01a7.5 7.5 0 0 0 4.37 1.4V7.2a4.3 4.3 0 0 1-3.27-1.38z" />
+                </svg>
+                <span className="text-center text-[12px] font-semibold uppercase tracking-widest text-[var(--color-espresso)] sm:[writing-mode:vertical-rl]">
+                  Xem thêm trên TikTok
+                </span>
+                <ArrowRight className="h-4 w-4 text-[var(--color-brand)] transition-transform group-hover:translate-x-1 sm:rotate-90 sm:group-hover:translate-x-0 sm:group-hover:translate-y-1" />
               </a>
             </div>
           </div>

@@ -454,6 +454,18 @@
     getState: function () { return getLS(CONSENT_KEY); }
   };
 
+  /* Mở popup liên hệ theo yêu cầu (nút "LIÊN HỆ TƯ VẤN" trên header).
+     Mở thủ công thì bỏ qua mọi điều kiện loại trừ của popup tự động. */
+  document.addEventListener('click', function (e) {
+    var t = e.target && e.target.closest ? e.target.closest('[data-lv-contact]') : null;
+    if (t) {
+      e.preventDefault();
+      if (!document.querySelector('.lv-modal')) openPopup();
+    }
+  });
+
+  window.LuviaLead = { open: openPopup };
+
   /* ------------------------------------------------------------------ init */
   function init() {
     var consent = getLS(CONSENT_KEY);

@@ -141,15 +141,10 @@ export function Navbar({ currentView, onViewChange }: NavbarProps) {
             ))}
           </div>
 
+          {/* href là dự phòng khi không có JS; site-widgets.js chặn điều hướng và mở popup */}
           <a
             href="/san-pham/#lien-he"
-            onClick={(e) => {
-              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-              if (currentView === 'product') {
-                e.preventDefault();
-                document.getElementById('lien-he')?.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            data-lv-contact=""
             className="editorial-nav-link border-b border-[var(--color-espresso)]/50 pb-0.5 hover:text-[var(--color-espresso)] cursor-pointer no-underline"
             style={{ borderBottomWidth: '1px' }}
             title="Để lại thông tin để Luvia liên hệ tư vấn"
@@ -201,14 +196,8 @@ export function Navbar({ currentView, onViewChange }: NavbarProps) {
               <li className="mt-4">
                 <a
                   href="/san-pham/#lien-he"
-                  onClick={(e) => {
-                    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-                    if (currentView === 'product') {
-                      e.preventDefault();
-                      setMobileOpen(false);
-                      document.getElementById('lien-he')?.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                  data-lv-contact=""
+                  onClick={() => setMobileOpen(false)}
                   className="block w-full editorial-nav-link text-center py-3 rounded-full border border-[var(--color-espresso)]/40 text-[var(--color-espresso)] no-underline"
                 >
                   LIÊN HỆ TƯ VẤN
