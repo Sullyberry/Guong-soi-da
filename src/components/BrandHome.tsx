@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { motion, useInView } from "motion/react";
-import { ArrowRight, Play, X } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { Img } from "./Img";
 import { LeadForm } from "./LeadForm";
 import { newsPosts } from "./News";
@@ -53,17 +53,22 @@ const gallery = [
 ];
 
 /**
- * Video giới thiệu lấy từ TikTok.
- * Khung nhúng chỉ tải SAU KHI người dùng bấm phát, nên khi mới vào trang
- * website không gửi dữ liệu nào sang TikTok.
+ * Bài đăng TikTok của Luvia. Khung nhúng tải cùng trang (dùng loading="lazy"
+ * nên chỉ thực sự tải khi người dùng cuộn tới gần).
  *
- * Lấy "id" là dãy số cuối trong đường dẫn video TikTok:
+ * Lấy "id" là dãy số cuối trong đường dẫn TikTok:
  *   https://www.tiktok.com/@luviabeautytech/video/7659832686428622100
  *                                                 └────── id ──────┘
+ * Bài dạng ảnh (đường dẫn /photo/) cũng dùng chung cách lấy id.
+ * Mục đầu tiên hiển thị ở khung lớn, các mục sau ở khung nhỏ.
  */
 const videos: { id: string; title: string }[] = [
-  { id: "7659832686428622100", title: "Luvia trên TikTok" },
-  { id: "7659002625853050132", title: "Trải nghiệm Gương thông minh AI Luvia" },
+  { id: "7659832686428622100", title: "Gương thông minh AI Luvia" },
+  { id: "7659058074187042069", title: "Trải nghiệm soi da cùng Luvia" },
+  { id: "7659002625853050132", title: "Luvia phân tích da bằng AI" },
+  { id: "7658664768793824532", title: "Chăm sóc da cùng Luvia" },
+  { id: "7660177612571987220", title: "Hình ảnh sản phẩm Luvia" },
+  { id: "7660172749100354837", title: "Khoảnh khắc cùng Luvia" },
 ];
 
 const TIKTOK_PROFILE = "https://www.tiktok.com/@luviabeautytech";
@@ -73,42 +78,29 @@ function isPlainClick(e: MouseEvent<HTMLAnchorElement>) {
   return !(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0);
 }
 
-/** Ảnh bìa video: chỉ nhúng TikTok sau khi người dùng chủ động bấm phát. */
-function VideoCard({ video }: { video: { id: string; title: string } }) {
-  const [playing, setPlaying] = useState(false);
-
-  if (playing) {
-    return (
-      <div className="overflow-hidden rounded-[10px] border border-[var(--color-panel-border)] bg-black">
-        <iframe
-          src={`https://www.tiktok.com/embed/v2/${video.id}`}
-          title={video.title}
-          allow="autoplay; encrypted-media; fullscreen"
-          allowFullScreen
-          loading="lazy"
-          className="aspect-[9/16] w-full border-0"
-        />
-      </div>
-    );
-  }
-
+/** Khung nhúng TikTok. Dùng loading="lazy" nên chỉ tải khi cuộn tới gần. */
+function VideoFrame({
+  video,
+  featured = false,
+}: {
+  video: { id: string; title: string };
+  featured?: boolean;
+}) {
   return (
-    <button
-      type="button"
-      onClick={() => setPlaying(true)}
-      aria-label={`Phát video: ${video.title}`}
-      className="group relative flex aspect-[9/16] w-full cursor-pointer flex-col items-center justify-center gap-5 overflow-hidden rounded-[10px] border border-[var(--color-panel-border)] bg-[linear-gradient(160deg,#ECDCD6_0%,#FCFAF7_60%,#F2E7E1_100%)] p-6"
+    <div
+      className={`overflow-hidden rounded-[10px] border border-[var(--color-panel-border)] bg-black ${
+        featured ? "sm:col-span-2 sm:row-span-2" : ""
+      }`}
     >
-      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-espresso)] shadow-lg transition-transform duration-300 group-hover:scale-110">
-        <Play className="ml-1 h-6 w-6 text-[var(--color-ivory)]" fill="currentColor" />
-      </span>
-      <span className="text-center font-display text-[18px] leading-snug text-[var(--color-espresso)]">
-        {video.title}
-      </span>
-      <span className="text-[11px] uppercase tracking-widest text-[var(--color-espresso-muted)]">
-        Bấm để phát
-      </span>
-    </button>
+      <iframe
+        src={`https://www.tiktok.com/embed/v2/${video.id}`}
+        title={video.title}
+        allow="encrypted-media; fullscreen"
+        allowFullScreen
+        loading="lazy"
+        className="aspect-[9/16] w-full border-0"
+      />
+    </div>
   );
 }
 
@@ -335,17 +327,15 @@ export function BrandHome({
               initial={{ opacity: 0, y: 20 }}
               animate={videoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              className="editorial-h2 mb-3 text-center"
+              className="editorial-h2 mb-10 text-center"
             >
-              Video
+              Video LUVIA
             </motion.h2>
-            <p className="mx-auto mb-10 max-w-[520px] text-center text-[12px] leading-relaxed text-[var(--color-espresso-muted)]">
-              Video chỉ được tải từ TikTok sau khi bạn bấm phát.
-            </p>
 
-            <div className="mx-auto grid max-w-[640px] gap-6 sm:grid-cols-2">
-              {videos.map((v) => (
-                <VideoCard key={v.id} video={v} />
+            {/* Mục đầu ở khung lớn (2x2), các mục sau ở khung nhỏ */}
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-5">
+              {videos.map((v, i) => (
+                <VideoFrame key={v.id} video={v} featured={i === 0} />
               ))}
             </div>
 
