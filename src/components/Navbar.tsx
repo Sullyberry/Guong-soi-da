@@ -230,7 +230,6 @@ export function Navbar({ currentView, onViewChange }: NavbarProps) {
                     </svg>
                   </a>
                 ))}
-                </a>
               </li>
             </ul>
           </motion.nav>
