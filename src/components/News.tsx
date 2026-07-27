@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { Img } from "./Img";
 
-interface NewsPost {
+export interface NewsPost {
   category: string;
   title: string;
   image: string;
@@ -11,7 +11,8 @@ interface NewsPost {
   url: string;
 }
 
-const newsPosts: NewsPost[] = [
+// Xuất ra để trang chủ tái sử dụng 3 bài mới nhất, tránh khai báo trùng lặp.
+export const newsPosts: NewsPost[] = [
   {
     category: "KIẾN THỨC CHĂM SÓC DA",
     title: "Cách xác định loại da chính xác tại nhà: Đừng skincare theo cảm giác nữa",

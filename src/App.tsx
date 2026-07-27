@@ -62,9 +62,10 @@ export default function App() {
     switch (currentView) {
       case "home":
         return (
-          <BrandHome 
-            onNavigateToProduct={() => handleViewChange('product')} 
-            onNavigateToAbout={() => handleViewChange('about')} 
+          <BrandHome
+            onNavigateToProduct={() => handleViewChange('product')}
+            onNavigateToAbout={() => handleViewChange('about')}
+            onNavigateToNews={() => handleViewChange('news')}
           />
         );
       case "about":
