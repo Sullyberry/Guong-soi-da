@@ -18,6 +18,8 @@
 
   /* Không hiện popup ở những trang này: trang sản phẩm đã có form, trang pháp lý cần tập trung đọc */
   var POPUP_EXCLUDE = ['/san-pham/', '/privacy/', '/terms/'];
+  /* Trang chủ cũng đã có biểu mẫu liên hệ; so khớp chính xác vì '/' là tiền tố của mọi đường dẫn */
+  var POPUP_EXCLUDE_EXACT = ['/', '/index.html'];
 
   var PHONE_RE = /^(0\d{9}|(\+?84)\d{9})$/;
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -156,6 +158,9 @@
     var path = window.location.pathname;
     for (var i = 0; i < POPUP_EXCLUDE.length; i++) {
       if (path.indexOf(POPUP_EXCLUDE[i]) === 0) return false;
+    }
+    for (var j = 0; j < POPUP_EXCLUDE_EXACT.length; j++) {
+      if (path === POPUP_EXCLUDE_EXACT[j]) return false;
     }
     var raw = getLS(POPUP_KEY);
     if (!raw) return true;
