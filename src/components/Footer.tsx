@@ -133,8 +133,16 @@ export function Footer({ onViewChange }: FooterProps) {
       </div>
       
       <div className="max-w-[1024px] mx-auto border-t border-[var(--color-panel-border)] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="editorial-label !text-[10px]">
-          © 2026 Luvia AI. Bảo lưu mọi bản quyền.
+        <div className="flex flex-col items-center gap-2 md:items-start">
+          <div className="editorial-label !text-[10px]">© Luvia All Rights Reserved</div>
+          <a
+            href="/san-pham/"
+            onClick={(e) => handlePageClick(e, 'product')}
+            className="footer-link !text-[11px]"
+            title="Chi tiết Gương thông minh AI Luvia"
+          >
+            Gương thông minh AI Luvia
+          </a>
         </div>
         <div className="flex items-center gap-5">
           <a

@@ -1,7 +1,8 @@
 import { useRef, type MouseEvent } from "react";
 import { motion, useInView } from "motion/react";
-import { ScanFace, Sparkles, LineChart, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Img } from "./Img";
+import { LeadForm } from "./LeadForm";
 import { newsPosts } from "./News";
 
 interface BrandHomeProps {
@@ -10,28 +11,48 @@ interface BrandHomeProps {
   onNavigateToNews: () => void;
 }
 
-const coreValues = [
-  {
-    icon: ScanFace,
-    title: "Soi da bằng AI",
-    desc: "Camera và cảm biến quét khuôn mặt, đo độ ẩm, lượng dầu, sắc tố, mụn và độ nhạy cảm của da chỉ trong vài giây.",
-  },
-  {
-    icon: Sparkles,
-    title: "Cá nhân hóa theo da bạn",
-    desc: "AI đọc dữ liệu thực tế của làn da bạn để gợi ý thành phần dưỡng phù hợp, thay vì chạy theo routine của người khác.",
-  },
-  {
-    icon: LineChart,
-    title: "Theo dõi tiến triển",
-    desc: "Ứng dụng lưu lại lịch sử làn da theo tuần và tháng, giúp bạn thấy rõ điều gì đang hiệu quả và điều gì thì không.",
-  },
-];
+/** Ba giá trị cốt lõi, trình bày ngắn gọn đè lên vùng trống bên trái ảnh gương. */
+const coreValues = ["Soi da bằng AI", "Cá nhân hóa theo da bạn", "Theo dõi tiến triển"];
 
 const commitments = [
   "Bảo hành 1 đổi 1",
   "Đổi trả trong 30 ngày",
   "Miễn phí vận chuyển toàn quốc",
+];
+
+/**
+ * Thư viện hình ảnh sản phẩm.
+ * Thêm ảnh mới: đặt tệp vào public/images/san-pham/ rồi thêm một dòng vào mảng này.
+ */
+const gallery = [
+  {
+    src: "/images/san-pham/quy-trinh-su-dung.jpg",
+    w: 1400,
+    h: 1122,
+    caption: "Quy trình sử dụng",
+    alt: "Quy trình sử dụng Gương thông minh AI Luvia từ soi da tới phối mặt nạ",
+  },
+  {
+    src: "/images/san-pham/phan-tich.jpg",
+    w: 1100,
+    h: 1733,
+    caption: "Màn hình phân tích da",
+    alt: "Màn hình gương Luvia hiển thị kết quả phân tích da theo thời gian thực",
+  },
+  {
+    src: "/images/san-pham/app-luvia.jpg",
+    w: 664,
+    h: 567,
+    caption: "Ứng dụng đồng hành",
+    alt: "Ứng dụng Luvia hiển thị bảng theo dõi sức khỏe làn da trên điện thoại",
+  },
+  {
+    src: "/images/san-pham/hero-bg-mobile.jpg",
+    w: 1080,
+    h: 2546,
+    caption: "Thiết kế tổng thể",
+    alt: "Thiết kế tổng thể Gương thông minh AI Luvia trong phòng tắm",
+  },
 ];
 
 /** Chỉ chặn hành vi mặc định với cú nhấp trái thường, giữ Ctrl/Cmd/chuột giữa mở tab mới. */
@@ -44,8 +65,10 @@ export function BrandHome({
   onNavigateToAbout,
   onNavigateToNews,
 }: BrandHomeProps) {
-  const valuesRef = useRef(null);
-  const valuesInView = useInView(valuesRef, { once: true, margin: "-10%" });
+  const showcaseRef = useRef(null);
+  const showcaseInView = useInView(showcaseRef, { once: true, margin: "-10%" });
+  const galleryRef = useRef(null);
+  const galleryInView = useInView(galleryRef, { once: true, margin: "-10%" });
   const newsRef = useRef(null);
   const newsInView = useInView(newsRef, { once: true, margin: "-10%" });
 
@@ -54,7 +77,7 @@ export function BrandHome({
   return (
     <>
       {/* ---------------------------------------------------------------- Hero */}
-      <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_center,#ECDCD6_0%,#FCFAF7_80%)] pt-32 md:pt-40 pb-20">
+      <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_center,#ECDCD6_0%,#FCFAF7_80%)] pt-32 pb-20 md:pt-40">
         <div className="absolute inset-0 bg-grid-white bg-[size:50px_50px] opacity-60" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-[1024px] flex-col items-center px-6 text-center md:px-12">
@@ -113,7 +136,6 @@ export function BrandHome({
             </a>
           </motion.div>
 
-          {/* Cam kết thật thay cho dòng khẩu hiệu cũ */}
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -127,108 +149,127 @@ export function BrandHome({
               </li>
             ))}
           </motion.ul>
-
-          {/* Ảnh sản phẩm thật */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="mt-14 w-full overflow-hidden rounded-[12px] border border-[var(--color-panel-border)] shadow-[0_20px_60px_-20px_rgba(36,28,27,0.28)]"
-          >
-            <Img
-              src="/images/san-pham/hero-bg.jpg"
-              alt="Gương thông minh AI Luvia đặt trong không gian phòng tắm cao cấp"
-              width={2400}
-              height={1340}
-              className="block h-auto w-full"
-            />
-          </motion.div>
         </div>
       </section>
 
-      {/* -------------------------------------------------------- 3 giá trị cốt lõi */}
+      {/* ------------------- Ảnh gương + 3 giá trị cốt lõi đè lên vùng trống bên trái */}
+      <section className="bg-[var(--color-bg-dark)]" ref={showcaseRef}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={showcaseInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative mx-auto max-w-[1400px]"
+        >
+          <Img
+            src="/images/san-pham/hero-bg.jpg"
+            alt="Gương thông minh AI Luvia đặt trong không gian phòng tắm cao cấp"
+            width={2400}
+            height={1340}
+            className="block h-auto w-full"
+          />
+
+          {/* Chỉ đè chữ từ md trở lên: dưới màn hình nhỏ ảnh quá hẹp để đọc */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[52%] items-center px-8 md:flex lg:px-16">
+            <ul className="m-0 flex list-none flex-col gap-6 p-0 lg:gap-9">
+              {coreValues.map((v, i) => (
+                <motion.li
+                  key={v}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={showcaseInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  transition={{ duration: 0.6, delay: 0.25 + i * 0.15 }}
+                  className="flex items-baseline gap-4 lg:gap-5"
+                >
+                  <span className="font-mono text-[12px] font-bold text-[var(--color-brand)] lg:text-[14px]">
+                    0{i + 1}
+                  </span>
+                  <span className="font-display text-[22px] leading-tight text-[var(--color-espresso)] lg:text-[34px]">
+                    {v}
+                  </span>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+
+        {/* Bản rút gọn cho màn hình nhỏ, đặt ngay dưới ảnh */}
+        <ul className="m-0 flex list-none flex-col gap-4 px-6 py-10 md:hidden">
+          {coreValues.map((v, i) => (
+            <li key={v} className="flex items-baseline gap-4">
+              <span className="font-mono text-[11px] font-bold text-[var(--color-brand)]">
+                0{i + 1}
+              </span>
+              <span className="font-display text-[21px] leading-tight text-[var(--color-espresso)]">
+                {v}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* -------------------------------------------------- Thư viện hình ảnh sản phẩm */}
       <section
         className="border-t border-[var(--color-panel-border)] bg-[var(--color-bg-dark)] py-24 md:py-32"
-        ref={valuesRef}
+        ref={galleryRef}
       >
         <div className="mx-auto max-w-[1024px] px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0 }}
-            animate={valuesInView ? { opacity: 1 } : { opacity: 0 }}
-            className="editorial-eyebrow mb-4"
+            animate={galleryInView ? { opacity: 1 } : { opacity: 0 }}
+            className="editorial-eyebrow mb-4 text-center"
           >
-            Luvia làm được gì
+            Hình ảnh sản phẩm
           </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
-            animate={valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={galleryInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
-            className="editorial-h2 mb-14 max-w-[640px]"
+            className="editorial-h2 mb-14 text-center"
           >
-            Ngưng đoán mò làn da,{" "}
-            <span className="text-[var(--color-espresso-muted)]">hãy để dữ liệu lên tiếng</span>
+            Nhìn gần hơn
           </motion.h2>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {coreValues.map((v, i) => (
-              <motion.div
-                key={v.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: i * 0.12 }}
-                className="rounded-[10px] border border-[var(--color-panel-border)] bg-[var(--color-panel)] p-8"
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+            {gallery.map((g, i) => (
+              <motion.figure
+                key={g.src}
+                initial={{ opacity: 0, y: 24 }}
+                animate={galleryInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="m-0 overflow-hidden rounded-[10px] border border-[var(--color-panel-border)] bg-[var(--color-panel)]"
               >
-                <v.icon className="mb-5 h-6 w-6 text-[var(--color-brand)]" aria-hidden="true" />
-                <h3 className="mb-3 text-[17px] font-semibold text-[var(--color-espresso)]">
-                  {v.title}
-                </h3>
-                <p className="text-[14px] leading-relaxed text-[var(--color-espresso-muted)]">
-                  {v.desc}
-                </p>
-              </motion.div>
+                <div className="overflow-hidden">
+                  <Img
+                    src={g.src}
+                    alt={g.alt}
+                    width={g.w}
+                    height={g.h}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <figcaption className="px-4 py-3 text-center text-[12px] text-[var(--color-espresso-muted)]">
+                  {g.caption}
+                </figcaption>
+              </motion.figure>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ------------------------------------------------------ 3 bài viết mới nhất */}
+      {/* ------------------------------------------------------------------ Tin tức */}
       <section
         className="border-t border-[var(--color-panel-border)] bg-[var(--color-bg-dark)] py-24 md:py-32"
         ref={newsRef}
       >
         <div className="mx-auto max-w-[1024px] px-6 md:px-12">
-          <div className="mb-14 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={newsInView ? { opacity: 1 } : { opacity: 0 }}
-                className="editorial-eyebrow mb-4"
-              >
-                Kiến thức chăm sóc da
-              </motion.div>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                animate={newsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.6 }}
-                className="editorial-h2 max-w-[560px]"
-              >
-                Hiểu da trước, <span className="text-[var(--color-espresso-muted)]">rồi hãy mua</span>
-              </motion.h2>
-            </div>
-
-            <a
-              href="/tin-tuc/"
-              onClick={(e) => {
-                if (!isPlainClick(e)) return;
-                e.preventDefault();
-                onNavigateToNews();
-              }}
-              className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-widest text-[var(--color-brand)] no-underline"
-            >
-              Xem tất cả bài viết <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={newsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6 }}
+            className="editorial-h2 mb-14 text-center"
+          >
+            Tin tức
+          </motion.h2>
 
           <div className="grid gap-6 md:grid-cols-3">
             {latestPosts.map((post, i) => (
@@ -263,8 +304,25 @@ export function BrandHome({
               </motion.a>
             ))}
           </div>
+
+          <div className="mt-12 text-center">
+            <a
+              href="/tin-tuc/"
+              onClick={(e) => {
+                if (!isPlainClick(e)) return;
+                e.preventDefault();
+                onNavigateToNews();
+              }}
+              className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-widest text-[var(--color-brand)] no-underline"
+            >
+              Xem tất cả bài viết <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </section>
+
+      {/* ------------------------------------------------------------------ Liên hệ */}
+      <LeadForm />
     </>
   );
 }
