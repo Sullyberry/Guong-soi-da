@@ -8,9 +8,11 @@ interface LogoProps {
 export function Logo({ className = "w-25 h-25" }: LogoProps) {
   return (
     <div className="flex items-center shrink-0 select-none">
-      <img 
-        src={logoImg} 
-        alt="Luvia Logo" 
+      <img
+        src={logoImg}
+        alt="Luvia Logo"
+        width={619}
+        height={440}
         className={`${className} object-contain`}
         referrerPolicy="no-referrer"
       />

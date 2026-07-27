@@ -22,6 +22,8 @@ export function InteractiveDemo() {
           <Img
             src="/images/san-pham/phan-tich.jpg"
             alt="AI tự động quét và phân tích da mặt trên gương Luvia mỗi sáng"
+            width={1100}
+            height={1733}
             loading="lazy"
             className="w-full h-full object-cover"
           />
