@@ -28,15 +28,6 @@ export function Hero() {
       {/* Nội dung chữ: đè lên phần trên (mobile) / căn giữa (desktop) */}
       <div className="absolute top-0 inset-x-0 md:relative z-10 max-w-[1024px] mx-auto w-full px-6 md:px-12 pt-40 pb-10 md:py-0 md:min-h-screen md:flex md:items-center">
         <div className="flex flex-col items-start text-left max-w-[540px]">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.1 }}
-            className="editorial-eyebrow mb-4"
-          >
-            Khơi mở tương lai làn da của bạn.
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}

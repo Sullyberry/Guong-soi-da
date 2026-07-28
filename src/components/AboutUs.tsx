@@ -31,15 +31,6 @@ export function AboutUs() {
       <div className="max-w-[1024px] mx-auto px-6 md:px-12">
         {/* About Hero Section (Editorial Split) */}
         <div className="mb-20 pb-16 border-b border-[var(--color-panel-border)]">
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="editorial-eyebrow mb-4"
-          >
-            Triết lý và Hành trình LUVIA
-          </motion.p>
-          
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             <div className="md:col-span-7">
               <motion.h1
