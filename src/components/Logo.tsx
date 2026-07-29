@@ -10,7 +10,7 @@ export function Logo({ className = "w-25 h-25" }: LogoProps) {
     <div className="flex items-center shrink-0 select-none">
       <img
         src={logoImg}
-        alt="Luvia Logo"
+        alt="Luvia AI"
         width={619}
         height={440}
         className={`${className} object-contain`}
