@@ -156,11 +156,11 @@ export function BrandHome({
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="mb-8 font-display text-[44px] font-light leading-[1.05] tracking-tighter text-[var(--color-espresso)] md:mb-10 md:text-[72px]"
+              className="mb-8 font-display text-[44px] font-light leading-[1.05] tracking-tighter md:mb-10 md:text-[72px]"
             >
-              HIỂU DA BẠN
+              <span className="headline-main">HIỂU DA BẠN</span>
               <br />
-              <span className="text-[var(--color-rose-gold)]" style={{ fontSize: "0.85em" }}>
+              <span className="headline-accent" style={{ fontSize: "0.85em" }}>
                 hơn chính bạn
               </span>
             </motion.h1>

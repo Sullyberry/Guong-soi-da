@@ -60,6 +60,76 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-espresso);
   margin: 0;
 }
+
+/* ---------------------------------------------------------------------------
+   Tiêu đề lớn "HIỂU DA BẠN / hơn chính bạn"
+   Chữ tô màu chuyển sắc kèm vệt sáng quét chậm để nổi bật hơn nền sáng.
+
+   Màu đặc luôn được khai báo TRƯỚC làm phương án dự phòng: nếu trình duyệt
+   không hỗ trợ background-clip:text mà ta để color:transparent thì chữ sẽ
+   biến mất hoàn toàn. Chỉ chuyển sang chuyển sắc bên trong @supports.
+--------------------------------------------------------------------------- */
+.headline-main {
+  color: var(--color-brand);
+}
+.headline-accent {
+  color: var(--color-rose-gold);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .headline-main,
+  .headline-accent {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 220% 100%;
+    animation: headline-sheen 7s ease-in-out infinite;
+  }
+
+  .headline-main {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-espresso) 0%,
+      var(--color-espresso) 32%,
+      var(--color-brand) 48%,
+      var(--color-rose-gold) 56%,
+      var(--color-espresso) 72%,
+      var(--color-espresso) 100%
+    );
+  }
+
+  .headline-accent {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-brand) 0%,
+      var(--color-brand) 30%,
+      var(--color-rose-gold) 50%,
+      var(--color-brand) 70%,
+      var(--color-brand) 100%
+    );
+    animation-delay: 0.9s;
+  }
+}
+
+@keyframes headline-sheen {
+  0%,
+  100% {
+    background-position: 170% 0;
+  }
+  50% {
+    background-position: -70% 0;
+  }
+}
+
+/* Tôn trọng thiết lập giảm chuyển động của người dùng */
+@media (prefers-reduced-motion: reduce) {
+  .headline-main,
+  .headline-accent {
+    animation: none;
+    background-position: 50% 0;
+  }
+}
 @media (min-width: 768px) {
   .editorial-h1 {
     font-size: 84px;

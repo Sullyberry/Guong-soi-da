@@ -34,8 +34,8 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="editorial-h1 !text-[44px] md:!text-[80px] leading-[1.05] mb-8 md:mb-24"
           >
-            HIỂU DA BẠN<br/>
-            <span className="text-[var(--color-rose-gold)]" style={{ fontSize: "0.85em" }}>hơn chính bạn</span>
+            <span className="headline-main">HIỂU DA BẠN</span><br/>
+            <span className="headline-accent" style={{ fontSize: "0.85em" }}>hơn chính bạn</span>
           </motion.h1>
 
           <motion.p
