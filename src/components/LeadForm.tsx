@@ -170,7 +170,7 @@ export function LeadForm({ compact = false }: LeadFormProps) {
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-brand)]/12 text-[var(--color-brand)]">
               <Check className="h-6 w-6" />
             </div>
-            <h3 className="mb-2 font-display text-[22px] text-[var(--color-espresso)]">
+            <h3 className="mb-2 font-display text-[22px] text-[var(--color-brand)]">
               Đã nhận thông tin của bạn!
             </h3>
             <p className="text-[15px] leading-relaxed text-[var(--color-espresso-muted)]">

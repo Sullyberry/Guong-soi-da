@@ -125,7 +125,7 @@ export function News() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="editorial-h2 text-[var(--color-espresso)]"
+            className="editorial-h2"
           >
             Cập nhật Khoa Học &amp; Công Nghệ Sắc Đẹp
           </motion.h1>
@@ -151,7 +151,7 @@ export function News() {
             <span className="editorial-label mb-3 block font-semibold tracking-wider text-[var(--color-brand)]">
               {featured.category}
             </span>
-            <h2 className="mb-3 text-[21px] font-bold uppercase leading-snug text-[var(--color-espresso)] transition-colors duration-200 group-hover:text-[var(--color-brand)] md:text-[24px]">
+            <h2 className="mb-3 text-[21px] font-bold uppercase leading-snug text-[var(--color-brand)] transition-colors duration-200 group-hover:text-[var(--color-espresso)] md:text-[24px]">
               {featured.title}
             </h2>
             <p
@@ -185,7 +185,7 @@ export function News() {
                   />
                 </div>
                 <h3
-                  className="text-[13px] font-semibold uppercase leading-snug text-[var(--color-espresso)] transition-colors duration-200 group-hover:text-[var(--color-brand)]"
+                  className="text-[13px] font-semibold uppercase leading-snug text-[var(--color-brand)] transition-colors duration-200 group-hover:text-[var(--color-espresso)]"
                   style={clamp3}
                 >
                   {post.title}
@@ -218,7 +218,7 @@ export function News() {
                 </div>
 
                 <div className="flex flex-1 flex-col">
-                  <h3 className="mb-2 text-[15px] font-bold uppercase leading-snug text-[var(--color-espresso)] transition-colors duration-200 group-hover:text-[var(--color-brand)] md:text-[17px]">
+                  <h3 className="mb-2 text-[15px] font-bold uppercase leading-snug text-[var(--color-brand)] transition-colors duration-200 group-hover:text-[var(--color-espresso)] md:text-[17px]">
                     {post.title}
                   </h3>
                   <span className="mb-2 font-mono text-[11px] text-[var(--color-espresso-muted)]">

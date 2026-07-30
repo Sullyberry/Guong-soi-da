@@ -10,37 +10,6 @@ const capabilities = [
   { icon: LineChart, text: "Lưu hồ sơ da và theo dõi hiệu quả chăm sóc theo thời gian." },
 ];
 
-const steps = [
-  {
-    n: "01",
-    img: "/images/san-pham/step-1.jpg",
-    w: 682, h: 502,
-    title: "Tải app & Kết nối",
-    desc: "Tải ứng dụng Luvia, kết nối gương qua Bluetooth hoặc Wi-Fi và đăng nhập. Hệ thống tạo hồ sơ skincare cá nhân để lưu dữ liệu phân tích da.",
-  },
-  {
-    n: "02",
-    img: "/images/san-pham/step-2.jpg",
-    w: 695, h: 502,
-    title: "AI phân tích da",
-    desc: "Đứng trước gương, camera và cảm biến quét khuôn mặt để đo độ ẩm, lượng dầu, sắc tố, mụn và độ nhạy cảm của da.",
-  },
-  {
-    n: "03",
-    img: "/images/san-pham/step-3.jpg",
-    w: 682, h: 597,
-    title: "Kết quả & Phối trộn dưỡng chất",
-    desc: "Kết quả hiển thị trên gương và đồng bộ lên app. AI chọn dưỡng chất phù hợp và tự động phối trộn mặt nạ cá nhân hóa chỉ trong 90 giây.",
-  },
-  {
-    n: "04",
-    img: "/images/san-pham/step-4.jpg",
-    w: 695, h: 597,
-    title: "Xuất mặt nạ & Lưu dữ liệu",
-    desc: "Mặt nạ được xuất ra tại khay bên dưới gương. Dữ liệu được lưu trữ an toàn trên cloud để theo dõi sự thay đổi của làn da theo thời gian.",
-  },
-];
-
 export function AppExperience() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
@@ -109,51 +78,6 @@ export function AppExperience() {
           </motion.ul>
         </div>
 
-        {/* Usage flow */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="editorial-eyebrow mb-3"
-        >
-          Quy trình sử dụng
-        </motion.div>
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          className="editorial-h2 !text-3xl mb-12"
-        >
-          Từ điện thoại đến mặt nạ cá nhân hóa <span className="text-[var(--color-espresso-muted)]">trong 4 bước</span>
-        </motion.h3>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.n}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="bg-[var(--color-panel)] border border-[var(--color-panel-border)] rounded-[8px] overflow-hidden flex flex-col"
-            >
-              <Img
-                src={step.img}
-                alt={`Bước ${step.n}: ${step.title}`}
-                width={step.w}
-                height={step.h}
-                loading="lazy"
-                className="w-full h-auto block border-b border-[var(--color-panel-border)]"
-              />
-              <div className="p-6 md:p-8">
-                <div className="flex items-baseline gap-3 mb-3">
-                  <span className="font-mono text-[14px] font-bold text-[var(--color-brand)]">{step.n}</span>
-                  <h4 className="text-[16px] font-bold text-[var(--color-espresso)] uppercase tracking-wide">{step.title}</h4>
-                </div>
-                <p className="text-[14px] leading-relaxed text-[var(--color-espresso-muted)]">{step.desc}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

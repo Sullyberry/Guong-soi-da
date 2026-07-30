@@ -13,10 +13,10 @@ export function Problem() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="editorial-h2 text-[var(--color-espresso)]/40 mb-8"
+          className="editorial-h2 text-[var(--color-brand)]/40 mb-8"
         >
           Bạn đang chọn sản phẩm dưỡng da <br className="hidden md:block" />
-          <span className="text-[var(--color-espresso)]">theo cảm tính?</span>
+          <span className="text-[var(--color-brand)]">theo cảm tính?</span>
         </motion.h2>
 
         <motion.p

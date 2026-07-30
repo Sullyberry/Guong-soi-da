@@ -387,7 +387,7 @@ export function BrandHome({
                   <span className="editorial-label mb-2 block font-semibold tracking-wider text-[var(--color-brand)]">
                     {post.category}
                   </span>
-                  <h3 className="mb-3 font-display text-[18px] font-normal leading-snug text-[var(--color-espresso)] transition-colors duration-200 group-hover:text-[var(--color-brand)]">
+                  <h3 className="mb-3 font-display text-[18px] font-normal leading-snug text-[var(--color-brand)] transition-colors duration-200 group-hover:text-[var(--color-espresso)]">
                     {post.title}
                   </h3>
                   <div className="mt-auto flex items-center justify-between border-t border-[var(--color-panel-border)]/50 pt-3 font-mono text-[10px] text-[var(--color-espresso-muted)]">

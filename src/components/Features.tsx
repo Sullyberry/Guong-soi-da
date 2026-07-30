@@ -78,7 +78,7 @@ export function Features() {
           >
             <feature.icon className="w-8 h-8 text-glow-blue mb-8 opacity-80" />
             <div>
-              <h3 className="text-base sm:text-lg md:text-sm lg:text-base xl:text-lg font-bold text-[var(--color-espresso)] mb-3 uppercase tracking-wide font-serif">{feature.title}</h3>
+              <h3 className="text-base sm:text-lg md:text-sm lg:text-base xl:text-lg font-bold text-[var(--color-brand)] mb-3 uppercase tracking-wide font-serif">{feature.title}</h3>
               <p className="text-[14px] leading-relaxed text-[var(--color-espresso-muted)]">
                 {feature.description}
               </p>
