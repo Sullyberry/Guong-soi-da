@@ -28,6 +28,8 @@ export default defineConfig(() => {
           baiGuongSoiAi: path.resolve(__dirname, 'tin-tuc/guong-soi-ai/index.html'),
           baiBeautyTech: path.resolve(__dirname, 'tin-tuc/beauty-tech-la-gi/index.html'),
           baiAiSkincare: path.resolve(__dirname, 'tin-tuc/ai-skincare-la-gi/index.html'),
+          baiGuongAiXacDinhLoaiDa: path.resolve(__dirname, 'tin-tuc/guong-ai-xac-dinh-loai-da/index.html'),
+          baiRoutineSkincareThayDoi: path.resolve(__dirname, 'tin-tuc/routine-skincare-thay-doi/index.html'),
         },
       },
     },
