@@ -15,6 +15,26 @@ export interface NewsPost {
 export const newsPosts: NewsPost[] = [
   {
     category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Bước đầu tiên để xây dựng routine skincare phù hợp: Gương AI xác định loại da",
+    excerpt:
+      "Không phải loại mỹ phẩm nào cũng phù hợp với mọi làn da. Hiểu chính xác tình trạng da trước khi thay đổi sản phẩm hay thử thêm một routine mới.",
+    image: "/images/tin-tuc/guong-ai-xac-dinh-loai-da-1.jpg",
+    date: "31 TH07, 2026",
+    readTime: "5 phút đọc",
+    url: "/tin-tuc/guong-ai-xac-dinh-loai-da/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Vì sao routine từng hiệu quả nay không còn phù hợp? Gương AI xác định loại da",
+    excerpt:
+      "Da thay đổi theo tuổi tác, thời tiết, nội tiết và môi trường sống. Routine hiệu quả không phải routine cố định mà là routine hợp với da ở từng thời điểm.",
+    image: "/images/tin-tuc/routine-skincare-thay-doi-1.jpg",
+    date: "31 TH07, 2026",
+    readTime: "5 phút đọc",
+    url: "/tin-tuc/routine-skincare-thay-doi/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
     title: "Cách xác định loại da chính xác tại nhà: Đừng skincare theo cảm giác nữa",
     excerpt:
       "Hiểu đúng làn da của mình thuộc loại nào trước khi mua thêm mỹ phẩm, bước quan trọng nhất mà nhiều người bỏ qua khi skincare.",
