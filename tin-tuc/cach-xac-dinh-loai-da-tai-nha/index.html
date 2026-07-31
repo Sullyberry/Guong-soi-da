@@ -150,14 +150,36 @@
       @media (max-width: 460px) { .related-grid { grid-template-columns: 1fr; } }
       .back-link { display: inline-block; margin: 40px 0 8px; font-size: 13px; color: var(--color-brand); text-decoration: none; }
       .back-link:hover { text-decoration: underline; }
-      .site-footer { max-width: 1024px; margin: 64px auto 0; padding: 28px 24px; border-top: 1px solid var(--color-panel-border); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: 12px; color: var(--color-espresso-muted); }
-      .footer-social { display: inline-flex; align-items: center; gap: 10px; }
-      .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 999px; border: 1px solid rgba(160,98,76,0.3); background: rgba(160,98,76,0.08); color: var(--color-brand); transition: color .2s, border-color .2s, background .2s; }
+      .site-footer { border-top: 1px solid var(--color-panel-border); background: var(--color-panel); margin-top: 64px; padding: 48px 48px; }
+      .footer-grid { max-width: 1024px; margin: 0 auto 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; }
+      .footer-logo { display: inline-block; margin-bottom: 24px; }
+      .footer-logo img { display: block; width: 100px; height: auto; }
+      .footer-tagline { font-size: 14px; line-height: 1.7; color: var(--color-espresso-muted); margin: 0 0 24px; }
+      .footer-col .editorial-label { display: block; margin-bottom: 24px; }
+      .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+      .footer-col li { font-size: 13px; color: var(--color-espresso-muted); }
+      .footer-col a { font-size: 13px; text-decoration: none; }
+      .footer-social { display: flex; align-items: center; gap: 12px; }
+      .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(160,98,76,0.3); background: rgba(160,98,76,0.1); color: var(--color-brand); transition: color .3s, background .3s, border-color .3s; }
       .footer-social a:hover { color: var(--color-ivory); background: var(--color-brand); border-color: var(--color-brand); }
-      .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
-      .footer-dmca { display: inline-flex; align-items: center; }
+      .footer-social svg { width: 18px; height: 18px; fill: currentColor; }
+      .footer-bottom { max-width: 1024px; margin: 0 auto; border-top: 1px solid var(--color-panel-border); padding-top: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+      .footer-bottom-left { display: flex; flex-direction: column; gap: 8px; }
+      .footer-bottom-left .footer-link { font-size: 11px; text-decoration: none; }
+      .footer-bottom-right { display: flex; align-items: center; gap: 20px; }
       .footer-dmca img { display: block; height: 26px; width: auto; opacity: .85; transition: opacity .2s; }
-      .footer-dmca a:hover img { opacity: 1; }
+      .footer-dmca:hover img { opacity: 1; }
+      @media (max-width: 900px) {
+        .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+        .footer-brand { grid-column: span 2; }
+      }
+      @media (max-width: 600px) {
+        .site-footer { padding: 40px 24px; }
+        .footer-grid { grid-template-columns: 1fr; margin-bottom: 48px; }
+        .footer-brand { grid-column: span 1; }
+        .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+        .footer-bottom-left { align-items: center; }
+      }
       .nav-toggle { display: none; background: transparent; border: none; cursor: pointer; padding: 4px; color: var(--color-espresso); line-height: 0; }
       .nav-toggle svg { width: 26px; height: 26px; display: block; }
       .nav-toggle .icon-close { display: none; }
@@ -283,22 +305,64 @@
     </main>
 
     <footer class="site-footer">
-      <span>&copy; Luvia All Rights Reserved<br /><a href="/san-pham/" style="color: var(--color-brand); text-decoration: none;" title="Chi tiết Gương thông minh AI Luvia">Gương thông minh AI Luvia</a></span>
-      <span><a href="/gioi-thieu/" style="color: var(--color-brand); text-decoration: none;">Giới thiệu</a> · <a href="/san-pham/" style="color: var(--color-brand); text-decoration: none;">Sản phẩm</a> &middot; <a href="#" data-lv-cookie-settings style="color: var(--color-brand); text-decoration: none;">Cài đặt cookie</a></span>
-      <span class="footer-fb lv-fb-box" data-lv-fb-box>
-        <button type="button" data-lv-fb-embed class="lv-fb-btn">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 21v-7H7v-3h2.5V8.5C9.5 6 11 4.7 13.2 4.7c1.06 0 2.17.19 2.17.19V7.3h-1.2c-1.2 0-1.57.74-1.57 1.5V11H15l-.44 3h-2.35v7z"/></svg>
-          <strong>Trang Facebook Luvia</strong>
-          <span>Bấm nếu nội dung chưa hiển thị</span>
-        </button>
-      </span>
-      <span class="footer-dmca">
-        <a href="https://www.dmca.com/Protection/Status.aspx?ID=e69a4a6d-3648-4c74-ad79-4c732d2054b5&amp;refurl=https://luvia.id.vn/" title="DMCA.com Protection Status" target="_blank" rel="noopener noreferrer" class="dmca-badge"><img src="https://images.dmca.com/Badges/dmca-badge-w100-2x1-04.png?ID=e69a4a6d-3648-4c74-ad79-4c732d2054b5" alt="DMCA.com Protection Status" width="100" height="50" loading="lazy" /></a>
-      </span>
-      <span class="footer-social">
-        <a href="https://www.facebook.com/profile.php?id=100070111910232" target="_blank" rel="noopener noreferrer" aria-label="Fanpage Facebook Luvia" title="Fanpage Facebook Luvia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 21v-7H7v-3h2.5V8.5C9.5 6 11 4.7 13.2 4.7c1.06 0 2.17.19 2.17.19V7.3h-1.2c-1.2 0-1.57.74-1.57 1.5V11H15l-.44 3h-2.35v7z"/></svg></a>
-        <a href="https://www.tiktok.com/@luviabeautytech?_r=1&amp;_t=ZS-97heWj7tLNM" target="_blank" rel="noopener noreferrer" aria-label="TikTok Luvia" title="TikTok Luvia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.3 4.3 0 0 1-1.06-2.82h-3.2v12.9a2.34 2.34 0 0 1-2.34 2.28 2.34 2.34 0 1 1 .73-4.57V8.3a5.56 5.56 0 0 0-.73-.05A5.55 5.55 0 1 0 15.5 14.4V9.01a7.5 7.5 0 0 0 4.37 1.4V7.2a4.3 4.3 0 0 1-3.27-1.38z"/></svg></a>
-      </span>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo" title="Về trang chủ Luvia"><img src="/luvia_logo.png" alt="Luvia AI" width="619" height="440" /></a>
+          <p class="footer-tagline">Tuyệt tác gương thông minh giải mã tương lai của làn da.</p>
+          <div class="lv-fb-box" data-lv-fb-box>
+            <button type="button" data-lv-fb-embed class="lv-fb-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 21v-7H7v-3h2.5V8.5C9.5 6 11 4.7 13.2 4.7c1.06 0 2.17.19 2.17.19V7.3h-1.2c-1.2 0-1.57.74-1.57 1.5V11H15l-.44 3h-2.35v7z"/></svg>
+              <strong>Trang Facebook Luvia</strong>
+              <span>Bấm nếu nội dung chưa hiển thị</span>
+            </button>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=100070111910232" target="_blank" rel="noopener noreferrer" aria-label="Fanpage Facebook Luvia" title="Fanpage Facebook Luvia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 21v-7H7v-3h2.5V8.5C9.5 6 11 4.7 13.2 4.7c1.06 0 2.17.19 2.17.19V7.3h-1.2c-1.2 0-1.57.74-1.57 1.5V11H15l-.44 3h-2.35v7z"/></svg></a>
+            <a href="https://www.tiktok.com/@luviabeautytech?_r=1&amp;_t=ZS-97heWj7tLNM" target="_blank" rel="noopener noreferrer" aria-label="TikTok Luvia" title="TikTok Luvia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.3 4.3 0 0 1-1.06-2.82h-3.2v12.9a2.34 2.34 0 0 1-2.34 2.28 2.34 2.34 0 1 1 .73-4.57V8.3a5.56 5.56 0 0 0-.73-.05A5.55 5.55 0 1 0 15.5 14.4V9.01a7.5 7.5 0 0 0 4.37 1.4V7.2a4.3 4.3 0 0 1-3.27-1.38z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="editorial-label">Khám phá</div>
+          <ul>
+            <li><a href="/san-pham/#features" class="footer-link" title="Công nghệ phân tích da AI">Công nghệ &amp; Khoa học</a></li>
+            <li><a href="/san-pham/#how-it-works" class="footer-link" title="Gương soi thông minh Luvia">Gương thông minh</a></li>
+            <li><a href="/san-pham/#pricing" class="footer-link" title="Đặt mua sản phẩm Luvia">Sản phẩm &amp; Đặt hàng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="editorial-label">Kết nối</div>
+          <ul>
+            <li><a href="/tin-tuc/" class="footer-link" title="Bản tin khoa học da liễu Luvia">Tin tức &amp; Xu hướng</a></li>
+            <li><a href="/gioi-thieu/" class="footer-link" title="Câu chuyện phát triển LUVIA">Về LUVIA</a></li>
+            <li><a href="/tin-tuc/" class="footer-link" title="Báo cáo &amp; Sưu tập tài liệu mới nhất">Tòa soạn &amp; Insights</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="editorial-label">Hỗ trợ &amp; Pháp lý</div>
+          <ul>
+            <li><a href="/san-pham/#faq" class="footer-link" title="Câu hỏi thường gặp và giải đáp thắc mắc">Hỏi đáp (FAQs)</a></li>
+            <li><a href="/privacy/" class="footer-link" title="Chính sách bảo mật thông tin khách hàng">Chính sách Bảo mật</a></li>
+            <li><a href="/terms/#doi-tra" class="footer-link" title="Chính sách bảo hành và đổi trả sản phẩm Luvia">Chính sách Đổi trả</a></li>
+            <li><a href="/terms/#doi-tra" class="footer-link" title="Chính sách bảo hành sản phẩm thông minh Luvia">Chính sách Bảo hành</a></li>
+            <li><a href="/terms/" class="footer-link" title="Điều khoản sử dụng gương thông minh Luvia">Điều khoản Sử dụng</a></li>
+            <li><a href="#" data-lv-cookie-settings class="footer-link" title="Thay đổi lựa chọn cookie của bạn">Cài đặt Cookie</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <div class="editorial-label">&copy; Luvia All Rights Reserved</div>
+          <a href="/san-pham/" class="footer-link" title="Chi tiết Gương thông minh AI Luvia">Gương thông minh AI Luvia</a>
+        </div>
+        <div class="footer-bottom-right">
+          <a href="https://www.dmca.com/Protection/Status.aspx?ID=e69a4a6d-3648-4c74-ad79-4c732d2054b5&amp;refurl=https://luvia.id.vn/" title="DMCA.com Protection Status" target="_blank" rel="noopener noreferrer" class="dmca-badge footer-dmca"><img src="https://images.dmca.com/Badges/dmca-badge-w100-2x1-04.png?ID=e69a4a6d-3648-4c74-ad79-4c732d2054b5" alt="DMCA.com Protection Status" width="100" height="50" loading="lazy" /></a>
+          <div class="editorial-label">Kiến tạo cho tương lai.</div>
+        </div>
+      </div>
     </footer>
     <script>
       (function () {
