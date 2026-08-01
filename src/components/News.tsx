@@ -15,6 +15,26 @@ export interface NewsPost {
 export const newsPosts: NewsPost[] = [
   {
     category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Skincare đủ bước nhưng da vẫn không đẹp? Khám phá giải pháp với Gương AI cho skincare không hiệu quả",
+    excerpt:
+      "Chăm sóc da mỗi ngày nhưng kết quả vẫn không như mong muốn? Có thể vấn đề không phải skincare chưa đủ, mà là bạn chưa hiểu đúng tình trạng da.",
+    image: "/images/tin-tuc/guong-ai-skincare-khong-hieu-qua-1.jpg",
+    date: "01 TH08, 2026",
+    readTime: "5 phút đọc",
+    url: "/tin-tuc/guong-ai-skincare-khong-hieu-qua/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Skincare theo TikTok nhưng vẫn không hiệu quả? Giải pháp từ Gương AI cho skincare không hiệu quả",
+    excerpt:
+      "Xu hướng skincare trên TikTok cho nhiều gợi ý hay, nhưng không phải routine nào cũng hợp với da bạn. Hiểu đúng tình trạng da trước khi chạy theo trend.",
+    image: "/images/tin-tuc/skincare-theo-tiktok-1.jpg",
+    date: "01 TH08, 2026",
+    readTime: "5 phút đọc",
+    url: "/tin-tuc/skincare-theo-tiktok/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
     title: "Bước đầu tiên để xây dựng routine skincare phù hợp: Gương AI xác định loại da",
     excerpt:
       "Không phải loại mỹ phẩm nào cũng phù hợp với mọi làn da. Hiểu chính xác tình trạng da trước khi thay đổi sản phẩm hay thử thêm một routine mới.",
