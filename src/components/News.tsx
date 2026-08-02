@@ -15,6 +15,26 @@ export interface NewsPost {
 export const newsPosts: NewsPost[] = [
   {
     category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Giải pháp giúp hiểu đúng làn da trước khi skincare: Gương AI phân tích da bằng AI",
+    excerpt:
+      "Chăm sóc da hiệu quả không bắt đầu từ việc mua thêm mỹ phẩm, mà từ việc hiểu làn da đang cần gì. Công nghệ AI giúp phân tích da ngay tại nhà.",
+    image: "/images/tin-tuc/guong-ai-phan-tich-da-1.jpg",
+    date: "02 TH08, 2026",
+    readTime: "5 phút đọc",
+    url: "/tin-tuc/guong-ai-phan-tich-da/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Đừng mua mỹ phẩm khi chưa hiểu làn da: Gương AI phân tích da bằng AI",
+    excerpt:
+      "Đầu tư nhiều mỹ phẩm chưa chắc cho làn da khỏe đẹp. Khi chưa hiểu rõ tình trạng da, bạn rất dễ chọn sai sản phẩm và tốn kém không cần thiết.",
+    image: "/images/tin-tuc/hieu-lan-da-truoc-khi-mua-my-pham-1.jpg",
+    date: "02 TH08, 2026",
+    readTime: "5 phút đọc",
+    url: "/tin-tuc/hieu-lan-da-truoc-khi-mua-my-pham/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
     title: "Skincare đủ bước nhưng da vẫn không đẹp? Khám phá giải pháp với Gương AI cho skincare không hiệu quả",
     excerpt:
       "Chăm sóc da mỗi ngày nhưng kết quả vẫn không như mong muốn? Có thể vấn đề không phải skincare chưa đủ, mà là bạn chưa hiểu đúng tình trạng da.",

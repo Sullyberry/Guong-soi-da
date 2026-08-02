@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://luvia.id.vn/tin-tuc/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -37,6 +37,20 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://luvia.id.vn/tin-tuc/guong-ai-phan-tich-da/</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/tin-tuc/guong-ai-phan-tich-da-1.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://luvia.id.vn/tin-tuc/hieu-lan-da-truoc-khi-mua-my-pham/</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://luvia.id.vn/images/tin-tuc/hieu-lan-da-truoc-khi-mua-my-pham-1.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://luvia.id.vn/tin-tuc/guong-ai-skincare-khong-hieu-qua/</loc>
