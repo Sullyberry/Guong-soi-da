@@ -36,6 +36,8 @@ export default defineConfig(() => {
           baiHieuLanDaTruocKhiMua: path.resolve(__dirname, 'tin-tuc/hieu-lan-da-truoc-khi-mua-my-pham/index.html'),
           baiDonGianHoaRoutine: path.resolve(__dirname, 'tin-tuc/don-gian-hoa-routine-skincare/index.html'),
           baiTheoDoiThayDoiLanDa: path.resolve(__dirname, 'tin-tuc/theo-doi-thay-doi-lan-da/index.html'),
+          baiGuongAiLuvia: path.resolve(__dirname, 'tin-tuc/guong-ai-luvia/index.html'),
+          baiNgungLangPhiTienMyPham: path.resolve(__dirname, 'tin-tuc/ngung-lang-phi-tien-my-pham/index.html'),
         },
       },
     },

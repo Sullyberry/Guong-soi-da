@@ -15,6 +15,26 @@ export interface NewsPost {
 export const newsPosts: NewsPost[] = [
   {
     category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Skincare mãi không hiệu quả? Hãy thử Gương AI",
+    excerpt:
+      "Khám phá Gương AI Luvia giúp kiểm tra tình trạng da, phân tích gương mặt bằng AI và hỗ trợ xây dựng quy trình smart skincare phù hợp.",
+    image: "/images/tin-tuc/guong-ai-luvia-1.jpg",
+    date: "04 TH08, 2026",
+    readTime: "5 phút đọc",
+    url: "/tin-tuc/guong-ai-luvia/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Ngừng lãng phí tiền mỹ phẩm với Gương AI",
+    excerpt:
+      "Khám phá Gương AI Luvia giúp kiểm tra tình trạng da, phân tích gương mặt và xây dựng quy trình smart skincare dựa trên dữ liệu thay vì cảm tính.",
+    image: "/images/tin-tuc/ngung-lang-phi-tien-my-pham-1.jpg",
+    date: "04 TH08, 2026",
+    readTime: "5 phút đọc",
+    url: "/tin-tuc/ngung-lang-phi-tien-my-pham/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
     title: "Đơn giản hóa skincare bằng công nghệ AI: Gương AI chăm sóc da thông minh",
     excerpt:
       "Chăm sóc da không cần thật nhiều bước. Khi hiểu rõ tình trạng làn da, bạn có thể xây dựng routine đơn giản mà vẫn hiệu quả nhờ công nghệ AI.",
