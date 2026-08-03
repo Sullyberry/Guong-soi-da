@@ -15,6 +15,26 @@ export interface NewsPost {
 export const newsPosts: NewsPost[] = [
   {
     category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Đơn giản hóa skincare bằng công nghệ AI: Gương AI chăm sóc da thông minh",
+    excerpt:
+      "Chăm sóc da không cần thật nhiều bước. Khi hiểu rõ tình trạng làn da, bạn có thể xây dựng routine đơn giản mà vẫn hiệu quả nhờ công nghệ AI.",
+    image: "/images/tin-tuc/don-gian-hoa-routine-skincare-1.jpg",
+    date: "03 TH08, 2026",
+    readTime: "4 phút đọc",
+    url: "/tin-tuc/don-gian-hoa-routine-skincare/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Giải pháp theo dõi sự thay đổi của làn da mỗi ngày: Gương AI chăm sóc da thông minh",
+    excerpt:
+      "Làn da thay đổi mỗi ngày nhưng không phải lúc nào ta cũng nhận ra. Theo dõi bằng công nghệ AI giúp bạn điều chỉnh skincare đúng thời điểm.",
+    image: "/images/tin-tuc/theo-doi-thay-doi-lan-da-1.jpg",
+    date: "03 TH08, 2026",
+    readTime: "4 phút đọc",
+    url: "/tin-tuc/theo-doi-thay-doi-lan-da/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
     title: "Giải pháp giúp hiểu đúng làn da trước khi skincare: Gương AI phân tích da bằng AI",
     excerpt:
       "Chăm sóc da hiệu quả không bắt đầu từ việc mua thêm mỹ phẩm, mà từ việc hiểu làn da đang cần gì. Công nghệ AI giúp phân tích da ngay tại nhà.",
