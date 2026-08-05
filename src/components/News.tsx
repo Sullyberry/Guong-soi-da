@@ -15,6 +15,26 @@ export interface NewsPost {
 export const newsPosts: NewsPost[] = [
   {
     category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Chăm sóc da hiệu quả hơn cùng Máy phân tích da",
+    excerpt:
+      "Máy phân tích da Luvia giúp kiểm tra tình trạng da, theo dõi các chỉ số làn da và hỗ trợ xây dựng quy trình smart skincare phù hợp với từng người.",
+    image: "/images/tin-tuc/cham-soc-da-cung-may-phan-tich-da-1.jpg",
+    date: "05 TH08, 2026",
+    readTime: "5 phút đọc",
+    url: "/tin-tuc/cham-soc-da-cung-may-phan-tich-da/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Skincare không còn \"đoán mò\" với Máy phân tích da",
+    excerpt:
+      "Khám phá Máy phân tích da Luvia giúp kiểm tra tình trạng da, theo dõi các chỉ số làn da và xây dựng quy trình smart skincare hiệu quả hơn.",
+    image: "/images/tin-tuc/skincare-khong-doan-mo-1.jpg",
+    date: "05 TH08, 2026",
+    readTime: "5 phút đọc",
+    url: "/tin-tuc/skincare-khong-doan-mo/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
     title: "Skincare mãi không hiệu quả? Hãy thử Gương AI",
     excerpt:
       "Khám phá Gương AI Luvia giúp kiểm tra tình trạng da, phân tích gương mặt bằng AI và hỗ trợ xây dựng quy trình smart skincare phù hợp.",
