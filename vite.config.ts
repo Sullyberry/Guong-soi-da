@@ -40,6 +40,8 @@ export default defineConfig(() => {
           baiNgungLangPhiTienMyPham: path.resolve(__dirname, 'tin-tuc/ngung-lang-phi-tien-my-pham/index.html'),
           baiChamSocDaCungMayPhanTichDa: path.resolve(__dirname, 'tin-tuc/cham-soc-da-cung-may-phan-tich-da/index.html'),
           baiSkincareKhongDoanMo: path.resolve(__dirname, 'tin-tuc/skincare-khong-doan-mo/index.html'),
+          baiReviewMyPhamBangAi: path.resolve(__dirname, 'tin-tuc/review-my-pham-bang-ai/index.html'),
+          baiTietKiemThoiGianSkincare: path.resolve(__dirname, 'tin-tuc/tiet-kiem-thoi-gian-skincare/index.html'),
         },
       },
     },
