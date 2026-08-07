@@ -15,6 +15,16 @@ export interface NewsPost {
 export const newsPosts: NewsPost[] = [
   {
     category: "KIẾN THỨC CHĂM SÓC DA",
+    title: "Xu hướng Tech-Beauty hiện đại cùng Gương AI chăm sóc da theo tình trạng da",
+    excerpt:
+      "Tech-Beauty đang thay đổi cách chăm sóc da. Gương AI chăm sóc da theo tình trạng da giúp bạn hiểu làn da bằng dữ liệu thay vì chỉ theo cảm tính.",
+    image: "/images/tin-tuc/xu-huong-tech-beauty-1.jpg",
+    date: "07 TH08, 2026",
+    readTime: "4 phút đọc",
+    url: "/tin-tuc/xu-huong-tech-beauty/"
+  },
+  {
+    category: "KIẾN THỨC CHĂM SÓC DA",
     title: "Lựa chọn mỹ phẩm hiệu quả hơn với Review mỹ phẩm bằng AI",
     excerpt:
       "Khám phá Review mỹ phẩm bằng AI cùng Luvia giúp hiểu rõ tình trạng da, lựa chọn mỹ phẩm phù hợp và xây dựng quy trình skincare khoa học.",
